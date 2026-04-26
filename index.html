@@ -102,16 +102,11 @@
           <span class="ll-onboard-close-x" aria-hidden="true">&times;</span>
         </button>
         <div class="ll-onboard-shell">
-          <aside class="ll-onboard-intro" aria-hidden="true">
+          <div class="ll-onboard-header">
             <p class="ll-onboard-eyebrow">Quick Start</p>
             <h2 id="llOnboardTitle">Where should we begin today?</h2>
-            <p id="llOnboardDesc">Choose one clear starting point. You can always switch later.</p>
-            <ul class="ll-onboard-points">
-              <li>Three focused options</li>
-              <li>Best path for new visitors</li>
-              <li>Opens the right page immediately</li>
-            </ul>
-          </aside>
+            <p id="llOnboardDesc">Choose one starting point. You can always come back to the others.</p>
+          </div>
 
           <div class="ll-onboard-main">
             <div class="ll-onboard-grid" role="list" aria-label="Start options">
@@ -1087,9 +1082,7 @@
         }
 
         const alreadySeen = localStorage.getItem(guideKey) === '1';
-        if (!alreadySeen && !window.__nbttWasBack) {
-          setTimeout(openGuide, 850);
-        }
+        // Auto-open removed — guide opens only when user clicks the button
 
         if (startBtn) startBtn.addEventListener('click', openGuide);
         if (fabBtn) fabBtn.addEventListener('click', openGuide);
