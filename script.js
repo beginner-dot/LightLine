@@ -39,11 +39,13 @@ function renderStories(filter) {
                 playback-id="${story.playbackId}"
                 style="border-radius:8px;--accent-color:${story.brandColor||'#ff0055'};"
                 metadata-video-title="${story.title}"
+                metadata-video-id="${story.id}"
                 preload="auto"
                 autoplay
                 muted
                 playsinline
-                ${story.poster ? `poster='${story.poster}'` : ''}
+                default-text-track-lang="en"
+                ${story.thumbnail ? `poster='${story.thumbnail}'` : ''}
             >
                 <div slot="play-button">${story.playEmoji||''}</div>
                 <div slot="pause-button">${story.pauseEmoji||''}</div>
@@ -62,6 +64,7 @@ function renderStories(filter) {
         if (story.playbackId) {
             const contentUrl = `https://stream.mux.com/${story.playbackId}.m3u8`;
             const embedUrl = `https://mux.com/embed/${story.playbackId}`;
+            const thumbnailUrl = story.thumbnail || `https://image.mux.com/${story.playbackId}/thumbnail.jpg`;
             jsonLd = `
 <script type="application/ld+json">
 ${JSON.stringify({
@@ -69,8 +72,8 @@ ${JSON.stringify({
     "@type": "VideoObject",
     name: story.title,
     description: story.summary || '',
-    thumbnailUrl: story.thumbnail || '',
-    uploadDate: new Date().toISOString().split('T')[0],
+    thumbnailUrl,
+    uploadDate: '2025-01-01',
     contentUrl,
     embedUrl
 }, null, 2)}

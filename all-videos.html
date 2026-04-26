@@ -322,6 +322,36 @@
         color: rgba(255,255,255,0.75);
         font-size: 0.9rem;
       }
+      .outsourced-disclaimer {
+        max-width: 1200px;
+        margin: 0 auto 1.2rem;
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 14px;
+        background: rgba(6, 12, 28, 0.72);
+        padding: 0.85rem 1rem;
+      }
+      .outsourced-disclaimer summary {
+        color: #ffd803;
+        font-size: 0.86rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .outsourced-disclaimer p {
+        margin: 0.6rem 0 0;
+        color: rgba(255,255,255,0.84);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+      .outsourced-platforms {
+        margin: 0.7rem 0 0;
+        padding-left: 1rem;
+        display: grid;
+        gap: 0.3rem;
+        color: rgba(255,255,255,0.78);
+        font-size: 0.83rem;
+      }
       .outsourced-grid {
         padding: 1rem;
         display: grid;
@@ -365,6 +395,88 @@
         text-transform: uppercase;
         padding: 10px 16px;
         cursor: pointer;
+      }
+      .outsourced-inline-control {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        z-index: 3;
+        border: 1px solid rgba(255,255,255,0.48);
+        border-radius: 999px;
+        background: rgba(8, 8, 16, 0.82);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.02em;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+      .outsourced-fullscreen-btn {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        z-index: 3;
+        border: 1px solid rgba(255,255,255,0.48);
+        border-radius: 999px;
+        background: rgba(8, 8, 16, 0.82);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.75rem;
+        letter-spacing: 0.02em;
+        padding: 6px 10px;
+        cursor: pointer;
+        line-height: 1;
+      }
+      #outsourced-fs-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #000;
+        flex-direction: column;
+      }
+      #outsourced-fs-overlay.active {
+        display: flex;
+      }
+      #outsourced-fs-iframe-wrap {
+        flex: 1;
+        position: relative;
+      }
+      #outsourced-fs-iframe-wrap iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      #outsourced-fs-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 16px;
+        background: #0a0a18;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      #outsourced-fs-title {
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+      }
+      #outsourced-fs-close {
+        border: 1px solid rgba(255,255,255,0.4);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 6px 14px;
+        cursor: pointer;
+        flex-shrink: 0;
       }
       .outsourced-meta {
         padding: 10px 12px 12px;
@@ -416,18 +528,33 @@
   <section class="outsourced-hub" aria-labelledby="outsourcedHubTitle">
     <div class="outsourced-head">
       <div id="outsourcedHubTitle" class="outsourced-title">Outsourced Videos</div>
-      <div class="outsourced-sub">Tap a cover to play right here on LightLine.</div>
+      <div class="outsourced-sub">These videos are created by external ministries, not by LightLine. We feature them because they are biblically rich and spiritually uplifting.</div>
     </div>
     <div id="outsourcedVideosGrid" class="outsourced-grid" aria-live="polite"></div>
   </section>
+
+  <details class="outsourced-disclaimer">
+    <summary>Video Source and Rights Notice</summary>
+    <p>LightLine curates and embeds selected videos from third-party ministries through official YouTube embeds. LightLine does not claim authorship of outsourced videos and all credit belongs to the original creators.</p>
+    <ul class="outsourced-platforms">
+      <li>Hope Channel</li>
+      <li>3ABN</li>
+      <li>It Is Written</li>
+      <li>Lineage Journey</li>
+      <li>Amazing Discoveries Africa</li>
+      <li>Little Light Studios</li>
+      <li>Secrets Unsealed (Stephen Bohr)</li>
+      <li>ARtv (Adventist Review TV)</li>
+      <li>Voice of Prophecy</li>
+      <li>Adventist Frontier Missions</li>
+    </ul>
+  </details>
 
     <div class="nbtt-recommend nbtt-newest-pill">
       <div class="nbtt-recommend nbtt-newest-inner nbtt-rel-overflow">
         <div class="nbtt-recommend-glass-overlay"></div>
         <i class="fas fa-bolt"></i>
         <div class="nbtt-newest-main">
-          <span class="nbtt-newest-title">There Is an error in the Commandments videos, One Commandment is missing, therefore the sequence of the commandments is incorrect.</span><br>
-          <span class="nbtt-newest-desc">Please forgive the Error, we are working to correct it.</span>
         </div>
       </div>
     </div>
@@ -476,9 +603,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 3rd Commandment - Respect the Sabbath</h3>
+          <h3>📽️ 3rd Commandment - Do Not Take God's Name in Vain</h3>
           <div class="nbtt-date">2025-10-13</div>
-          <p>Remember and keep holy the Sabbath day.</p>
+          <p>Honoring and protecting the name of God.</p>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep4"></div>
@@ -486,9 +613,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 4th Commandment - Honor your parents</h3>
+          <h3>📽️ 4th Commandment - Remember the Sabbath</h3>
           <div class="nbtt-date">2025-10-20</div>
-          <p>Family obedience and respect.</p>
+          <p>Remember and keep holy the Sabbath day.</p>
           <div class="nbtt-recommend nbtt-cmd-rec"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/hannahs_devotion.html' style='color:#8bb4f8;text-decoration:underline;'>Hannah's Devotion</a></span></div>
         </div>
         <div class="video-card">
@@ -497,9 +624,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 5th Commandment - Do not murder</h3>
+          <h3>📽️ 5th Commandment - Honor Your Parents</h3>
           <div class="nbtt-date">2025-10-27</div>
-          <p>The sanctity of human life.</p>
+          <p>Family obedience and respect.</p>
           <div class="nbtt-recommend nbtt-cmd-rec"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/faith_under_fire.html' style='color:#8bb4f8;text-decoration:underline;'>Faith Under Fire</a></span></div>
         </div>
         <div class="video-card">
@@ -508,9 +635,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 6th Commandment - No adultery</h3>
+          <h3>📽️ 6th Commandment - Do Not Murder</h3>
           <div class="nbtt-date">2025-11-03</div>
-          <p>Faithfulness in marriage.</p>
+          <p>The sanctity of human life.</p>
           <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/love_that_saves.html' style='color:#2563eb;text-decoration:underline;'>Love That Saves</a></span></div>
         </div>
         <div class="video-card">
@@ -519,9 +646,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 7th Commandment - Do not steal</h3>
+          <h3>📽️ 7th Commandment - No Adultery</h3>
           <div class="nbtt-date">2025-11-10</div>
-          <p>Honesty and respect for others’ property.</p>
+          <p>Faithfulness in marriage.</p>
           <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/walking_in_the_light.html' style='color:#2563eb;text-decoration:underline;'>Walking in the Light</a></span></div>
         </div>
         <div class="video-card">
@@ -530,9 +657,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 8th Commandment - Do not lie</h3>
+          <h3>📽️ 8th Commandment - Do Not Steal</h3>
           <div class="nbtt-date">2025-11-17</div>
-          <p>The power and penalty of falsehood.</p>
+          <p>Honesty and respect for others' property.</p>
           <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/the_power_of_the_cross.html' style='color:#2563eb;text-decoration:underline;'>The Power of the Cross</a></span></div>
         </div>
         <div class="video-card">
@@ -541,9 +668,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#2563eb;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 9th Commandment - Do not covet</h3>
+          <h3>📽️ 9th Commandment - Do Not Bear False Witness</h3>
           <div class="nbtt-date">2025-11-24</div>
-          <p>Contentment and trust in God's provision.</p>
+          <p>The power and penalty of falsehood.</p>
           <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/unshackled_by_grace.html' style='color:#2563eb;text-decoration:underline;'>Unshackled by Grace</a></span></div>
         </div>
         <div class="video-card">
@@ -552,9 +679,9 @@
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
           <div class="nbtt-badge nbtt-cmd" style="background:#2563eb;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
-          <h3>📽️ 10th Commandment</h3>
+          <h3>📽️ 10th Commandment - Do Not Covet</h3>
           <div class="nbtt-date">2025-12-01</div>
-          <p>Final episode of the commandments series.</p>
+          <p>Contentment and trust in God's provision.</p>
           <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/anchor_of_hope.html' style='color:#2563eb;text-decoration:underline;'>Anchor of Hope</a></span></div>
         </div>
       </div>
@@ -648,46 +775,81 @@
 (function() {
   const OUTSOURCED_VIDEOS = [
     {
-      title: 'How to Study the Bible',
-      source: 'YouTube',
-      summary: 'Hope Sabbath School guidance on reading Scripture carefully and faithfully.',
-      cover: 'https://i.ytimg.com/vi/SFqhMeGzqyo/hqdefault.jpg',
-      embed: 'https://www.youtube-nocookie.com/embed/SFqhMeGzqyo?autoplay=1&rel=0&modestbranding=1'
+      title: 'Genesis Overview',
+      source: 'BibleProject',
+      summary: 'Animated overview of Genesis — the foundation of the whole Bible story.',
+      cover: 'https://i.ytimg.com/vi/GQI72THyO5I/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/GQI72THyO5I?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'What Is the Bible?',
+      source: 'BibleProject',
+      summary: 'A short animated explainer on what the Bible is and how it all fits together.',
+      cover: 'https://i.ytimg.com/vi/ak06MSETeo4/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/ak06MSETeo4?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Old Testament Summary',
+      source: 'BibleProject',
+      summary: 'A complete animated walkthrough of the entire Old Testament narrative.',
+      cover: 'https://i.ytimg.com/vi/ALsluAKBZ-c/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/ALsluAKBZ-c?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'New Testament Summary',
+      source: 'BibleProject',
+      summary: 'A complete animated walkthrough of the entire New Testament narrative.',
+      cover: 'https://i.ytimg.com/vi/Q0BrP8bqj0c/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/Q0BrP8bqj0c?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Does Hell Burn Forever?',
+      source: 'Amazing Facts',
+      summary: 'Doug Batchelor examines what the Bible actually teaches about hell and judgment.',
+      cover: 'https://i.ytimg.com/vi/ecjaQ_La8U0/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/ecjaQ_La8U0?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Walking With God in a Wicked World',
+      source: 'Amazing Facts',
+      summary: 'Doug Batchelor on how to live faithfully for God in a world that pulls against it.',
+      cover: 'https://i.ytimg.com/vi/n2lLDZXxs9E/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/n2lLDZXxs9E?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'What Happens When You Die?',
+      source: 'It Is Written',
+      summary: 'John Bradshaw presents the Bible\'s clear teaching on death and what comes after — separating truth from tradition.',
+      cover: 'https://i.ytimg.com/vi/DtA_OdEFgUg/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/DtA_OdEFgUg?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'The Hidden Danger in the Last Days',
+      source: 'It Is Written',
+      summary: 'A powerful message by John Bradshaw on spiritual deception and how to stand firm as the end draws near.',
+      cover: 'https://i.ytimg.com/vi/epsm1MlP6Yc/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/epsm1MlP6Yc?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Do We Truly Understand the Sabbath?',
+      source: 'Voice of Prophecy',
+      summary: 'Shawn Boonstra explores what the Sabbath really means — and why so many Christians misunderstand it.',
+      cover: 'https://i.ytimg.com/vi/V1e97XTJDiY/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/V1e97XTJDiY?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Is the Bible Full of Mistakes?',
+      source: 'Voice of Prophecy',
+      summary: 'Shawn Boonstra tackles the most common objections to Scripture and shows why the Bible can be trusted.',
+      cover: 'https://i.ytimg.com/vi/gGiz5w0Bn7U/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/gGiz5w0Bn7U?autoplay=1&rel=0&modestbranding=1'
     },
     {
       title: 'The Bible: A Guidebook for Life',
-      source: 'YouTube',
-      summary: 'A practical Bible study episode from Hope Sabbath School - Official.',
+      source: 'Hope Sabbath School',
+      summary: 'A Sabbath School panel explores how Scripture guides every area of life — and why studying it together matters.',
       cover: 'https://i.ytimg.com/vi/AFQA5ea4eVE/hqdefault.jpg',
       embed: 'https://www.youtube-nocookie.com/embed/AFQA5ea4eVE?autoplay=1&rel=0&modestbranding=1'
-    },
-    {
-      title: 'Learning to Know God',
-      source: 'YouTube',
-      summary: 'Hope Sabbath School lesson focused on growing in a deeper relationship with God.',
-      cover: 'https://i.ytimg.com/vi/BxHTN7XgwBA/hqdefault.jpg',
-      embed: 'https://www.youtube-nocookie.com/embed/BxHTN7XgwBA?autoplay=1&rel=0&modestbranding=1'
-    },
-    {
-      title: 'How to Study the Bible (3ABN Panel)',
-      source: 'YouTube',
-      summary: '3ABN Sabbath School Panel discussion on methods for understanding Scripture.',
-      cover: 'https://i.ytimg.com/vi/FoukqkHKuao/hqdefault.jpg',
-      embed: 'https://www.youtube-nocookie.com/embed/FoukqkHKuao?autoplay=1&rel=0&modestbranding=1'
-    },
-    {
-      title: 'The Role of the Bible (3ABN Panel)',
-      source: 'YouTube',
-      summary: 'A focused 3ABN panel study on the authority and role of Scripture.',
-      cover: 'https://i.ytimg.com/vi/zXBUXA0hVxg/hqdefault.jpg',
-      embed: 'https://www.youtube-nocookie.com/embed/zXBUXA0hVxg?autoplay=1&rel=0&modestbranding=1'
-    },
-    {
-      title: 'Genesis Overview (BibleProject)',
-      source: 'YouTube',
-      summary: 'BibleProject animated overview of Genesis to support foundational Bible literacy.',
-      cover: 'https://i.ytimg.com/vi/GQI72THyO5I/hqdefault.jpg',
-      embed: 'https://www.youtube-nocookie.com/embed/GQI72THyO5I?autoplay=1&rel=0&modestbranding=1'
     }
   ];
 
@@ -714,7 +876,15 @@
     playBtn.addEventListener('click', function() {
       if (player.querySelector('iframe')) return;
       const frame = document.createElement('iframe');
-      frame.src = video.embed;
+      const embedUrl = new URL(video.embed, window.location.href);
+      embedUrl.searchParams.set('enablejsapi', '1');
+      embedUrl.searchParams.set('playsinline', '1');
+      embedUrl.searchParams.set('controls', '1');
+      if (window.location.protocol !== 'file:') {
+        embedUrl.searchParams.set('origin', window.location.origin);
+        embedUrl.searchParams.set('widget_referrer', window.location.href);
+      }
+      frame.src = embedUrl.toString();
       frame.loading = 'lazy';
       frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
       frame.referrerPolicy = 'strict-origin-when-cross-origin';
@@ -722,15 +892,54 @@
       frame.title = video.title;
       player.appendChild(frame);
 
+      const inlineControl = document.createElement('button');
+      inlineControl.type = 'button';
+      inlineControl.className = 'outsourced-inline-control';
+      inlineControl.textContent = 'Pause';
+      inlineControl.setAttribute('aria-label', 'Pause video');
+      player.appendChild(inlineControl);
+
+      let isPaused = false;
+      inlineControl.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const command = isPaused ? 'playVideo' : 'pauseVideo';
+        if (frame.contentWindow) {
+          frame.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: command,
+            args: []
+          }), '*');
+        }
+        isPaused = !isPaused;
+        inlineControl.textContent = isPaused ? 'Play' : 'Pause';
+        inlineControl.setAttribute('aria-label', isPaused ? 'Play video' : 'Pause video');
+      });
+
       // Block the YouTube title bar (top) and logo (bottom-right)
       // so clicking those areas doesn't redirect to YouTube.com
       const topGuard = document.createElement('div');
-      topGuard.style.cssText = 'position:absolute;top:0;left:0;right:0;height:40px;z-index:2;cursor:default;';
+      topGuard.style.cssText = 'position:absolute;top:0;left:0;right:0;height:12%;max-height:40px;z-index:2;cursor:default;';
       player.appendChild(topGuard);
 
       const logoGuard = document.createElement('div');
-      logoGuard.style.cssText = 'position:absolute;bottom:0;right:0;width:140px;height:40px;z-index:2;cursor:default;';
+      logoGuard.style.cssText = 'position:absolute;bottom:0;right:0;width:30%;max-width:120px;height:12%;max-height:36px;z-index:2;cursor:default;';
       player.appendChild(logoGuard);
+
+      // Fullscreen button
+      const fsBtn = document.createElement('button');
+      fsBtn.type = 'button';
+      fsBtn.className = 'outsourced-fullscreen-btn';
+      fsBtn.textContent = '⛶';
+      fsBtn.setAttribute('aria-label', 'Fullscreen');
+      fsBtn.setAttribute('title', 'Fullscreen');
+      player.appendChild(fsBtn);
+
+      fsBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openOutsourcedFullscreen(video, frame);
+      });
 
       playBtn.remove();
       const cover = player.querySelector('img');
@@ -739,6 +948,69 @@
 
     return card;
   }
+
+  // --- Fullscreen overlay ---
+  const fsOverlay = document.createElement('div');
+  fsOverlay.id = 'outsourced-fs-overlay';
+  fsOverlay.innerHTML = `
+    <div id="outsourced-fs-topbar">
+      <span id="outsourced-fs-title"></span>
+      <button id="outsourced-fs-close" type="button">✕ Close</button>
+    </div>
+    <div id="outsourced-fs-iframe-wrap"></div>
+  `;
+  document.body.appendChild(fsOverlay);
+
+  const fsClose = fsOverlay.querySelector('#outsourced-fs-close');
+  const fsWrap = fsOverlay.querySelector('#outsourced-fs-iframe-wrap');
+  const fsTitle = fsOverlay.querySelector('#outsourced-fs-title');
+  let fsActiveFrame = null;
+
+  function openOutsourcedFullscreen(video, cardFrame) {
+    fsTitle.textContent = video.title;
+    fsWrap.innerHTML = '';
+    const overlayFrame = document.createElement('iframe');
+    const embedUrl = new URL(video.embed, window.location.href);
+    embedUrl.searchParams.set('enablejsapi', '1');
+    embedUrl.searchParams.set('playsinline', '0');
+    embedUrl.searchParams.set('controls', '1');
+    embedUrl.searchParams.set('autoplay', '1');
+    if (window.location.protocol !== 'file:') {
+      embedUrl.searchParams.set('origin', window.location.origin);
+    }
+    overlayFrame.src = embedUrl.toString();
+    overlayFrame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    overlayFrame.setAttribute('allowfullscreen', '');
+    overlayFrame.title = video.title;
+    overlayFrame.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
+    fsWrap.appendChild(overlayFrame);
+    fsActiveFrame = overlayFrame;
+
+    // Pause the card iframe so two videos don't play at once
+    if (cardFrame && cardFrame.contentWindow) {
+      cardFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+    }
+
+    fsOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  fsClose.addEventListener('click', function() {
+    fsOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    if (fsActiveFrame && fsActiveFrame.contentWindow) {
+      fsActiveFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+    }
+    fsWrap.innerHTML = '';
+    fsActiveFrame = null;
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && fsOverlay.classList.contains('active')) {
+      fsClose.click();
+    }
+  });
 
   OUTSOURCED_VIDEOS.forEach(function(video) {
     grid.appendChild(renderOutsourcedCard(video));
@@ -801,14 +1073,14 @@ document.querySelectorAll('.folder-header').forEach(h => {
 const muxVideos = [
   {id:'ep1', play:'At02BeC1XsfvnzLdph1i7WcMbgljkszxUGYd2tH5018Ow', color:'#0077cc', playEmoji:'▶️', pauseEmoji:'⏹️', title:'1st Commandment - No other Gods', desc:'Explains the meaning of placing God first and avoiding idols.'},
   {id:'ep2', play:'cCbeBi2BZhcEEe8MNnYvlI4Cwn02w00wk29x31bHj02XE8', color:'#00cc77', playEmoji:'🎬', pauseEmoji:'⏸️', title:'2nd Commandment - No Graven Images', desc:'The prohibition against idols.'},
-  {id:'ep3', play:'tL02o02bj5IM7RSt6hywQmA5rrP0001t3qLBLOyz9wNKIqM', color:'#cc7700', playEmoji:'🔥', pauseEmoji:'⏸️', title:'3rd Commandment - Respect the Sabbath', desc:'Remember and keep holy the Sabbath day.'},
-  {id:'ep4', play:'fFpSPCm2u01rdH2XhpEjLg7C6CWQVD9kMWHSsuvD8Bgc', color:'#ff9900', playEmoji:'👪', pauseEmoji:'⏸️', title:'4th Commandment - Honor your parents', desc:'Family obedience and respect.'},
-  {id:'ep5', play:'3w3PIq4AHnH9MWsNIxY4kX01slQX8LHt02BeCvPXIawyc', color:'#008800', playEmoji:'🛡️', pauseEmoji:'⏸️', title:'5th Commandment - Do not murder', desc:'The sanctity of human life.'},
-  {id:'ep6', play:'ug848kYdAXqfuhzB1sKGdYKkV8EiC9OIHYsMplwObMs', color:'#aa00ff', playEmoji:'💔', pauseEmoji:'⏸️', title:'6th Commandment - No adultery', desc:'Faithfulness in marriage.'},
-  {id:'ep7', play:'KrxyIaJWF8XmqX5xjzkz34aQYo6ECfkgUBvGv9QgnbY', color:'#ffaa00', playEmoji:'💰', pauseEmoji:'⏸️', title:'7th Commandment - Do not steal', desc:'Honesty and respect for others’ property.'},
-  {id:'ep8', play:'700Jk02F3jkWj9BbhwpUV4cAWWFcikk01sr01LMxCKrAFBo', color:'#007700', playEmoji:'🗣️', pauseEmoji:'⏸️', title:'8th Commandment - Do not lie', desc:'The power and penalty of falsehood.'},
-  {id:'ep9', play:'VenN8sry1z2eWrAdoPbgsQlMF029SGK00qBmlnzHbYQPQ', color:'#550055', playEmoji:'🔍', pauseEmoji:'⏸️', title:'9th Commandment - Do not covet', desc:'Contentment and trust in God\'s provision.'},
-  {id:'ep10', play:'9YK3gk4u1kebsw6p5zzIqFzo1vCYBK7AByMlZqIXbMM', color:'#2255aa', playEmoji:'✅', pauseEmoji:'⏸️', title:'10th Commandment', desc:'Final episode of the commandments series.'},
+  {id:'ep3', play:'tL02o02bj5IM7RSt6hywQmA5rrP0001t3qLBLOyz9wNKIqM', color:'#7c3aed', playEmoji:'🕊️', pauseEmoji:'⏸️', title:"3rd Commandment - Do Not Take God's Name in Vain", desc:'Honoring and protecting the name of God.'},
+  {id:'ep4', play:'fFpSPCm2u01rdH2XhpEjLg7C6CWQVD9kMWHSsuvD8Bgc', color:'#cc7700', playEmoji:'🔥', pauseEmoji:'⏸️', title:'4th Commandment - Remember the Sabbath', desc:'Remember and keep holy the Sabbath day.'},
+  {id:'ep5', play:'3w3PIq4AHnH9MWsNIxY4kX01slQX8LHt02BeCvPXIawyc', color:'#ff9900', playEmoji:'👪', pauseEmoji:'⏸️', title:'5th Commandment - Honor Your Parents', desc:'Family obedience and respect.'},
+  {id:'ep6', play:'ug848kYdAXqfuhzB1sKGdYKkV8EiC9OIHYsMplwObMs', color:'#008800', playEmoji:'🛡️', pauseEmoji:'⏸️', title:'6th Commandment - Do Not Murder', desc:'The sanctity of human life.'},
+  {id:'ep7', play:'KrxyIaJWF8XmqX5xjzkz34aQYo6ECfkgUBvGv9QgnbY', color:'#aa00ff', playEmoji:'💔', pauseEmoji:'⏸️', title:'7th Commandment - No Adultery', desc:'Faithfulness in marriage.'},
+  {id:'ep8', play:'700Jk02F3jkWj9BbhwpUV4cAWWFcikk01sr01LMxCKrAFBo', color:'#ffaa00', playEmoji:'💰', pauseEmoji:'⏸️', title:'8th Commandment - Do Not Steal', desc:"Honesty and respect for others' property."},
+  {id:'ep9', play:'VenN8sry1z2eWrAdoPbgsQlMF029SGK00qBmlnzHbYQPQ', color:'#007700', playEmoji:'🗣️', pauseEmoji:'⏸️', title:'9th Commandment - Do Not Bear False Witness', desc:'The power and penalty of falsehood.'},
+  {id:'ep10', play:'9YK3gk4u1kebsw6p5zzIqFzo1vCYBK7AByMlZqIXbMM', color:'#550055', playEmoji:'🔍', pauseEmoji:'⏸️', title:'10th Commandment - Do Not Covet', desc:"Contentment and trust in God's provision."},
   {id:'hist1', play:'vyyX1iWsXBo647NDltev45sx5JKMA8Wb8lqIktQ02Yb8', color:'#8b5cf6', playEmoji:'🏛️', pauseEmoji:'⏸️', title:'History and Formation of the Christian Church', desc:'A historical teaching on how the Christian church formed, expanded, and endured through biblical history.'}
 ];
 
