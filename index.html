@@ -97,7 +97,10 @@
 
     <div class="ll-onboard-backdrop" id="llOnboardBackdrop" aria-hidden="true">
       <section class="ll-onboard-modal" role="dialog" aria-modal="true" aria-labelledby="llOnboardTitle" aria-describedby="llOnboardDesc">
-        <button class="ll-onboard-close" id="llOnboardClose" aria-label="Close guide">&times;</button>
+        <button class="ll-onboard-close" id="llOnboardClose" aria-label="Close quick guide">
+          <span class="ll-onboard-close-text">Close</span>
+          <span class="ll-onboard-close-x" aria-hidden="true">&times;</span>
+        </button>
         <div class="ll-onboard-shell">
           <aside class="ll-onboard-intro" aria-hidden="true">
             <p class="ll-onboard-eyebrow">Quick Start</p>
@@ -621,14 +624,17 @@
     </div>
 </section>
 
-<button class="ll-guide-fab" id="llGuideFab" type="button" aria-label="Open quick guide">
-  <span class="ll-guide-fab-orb" aria-hidden="true">🧭</span>
-  <span class="ll-guide-fab-copy">
-    <span class="ll-guide-fab-title">Quick Guide</span>
-    <span class="ll-guide-fab-sub">Find your best lane</span>
-  </span>
-  <span class="ll-guide-fab-arrow" aria-hidden="true">-&gt;</span>
-</button>
+<div class="ll-guide-fab-wrap" id="llGuideFabWrap">
+  <button class="ll-guide-fab" id="llGuideFab" type="button" aria-label="Open quick guide">
+    <span class="ll-guide-fab-orb" aria-hidden="true">🧭</span>
+    <span class="ll-guide-fab-copy">
+      <span class="ll-guide-fab-title">Quick Guide</span>
+      <span class="ll-guide-fab-sub">Find your best lane</span>
+    </span>
+    <span class="ll-guide-fab-arrow" aria-hidden="true">-&gt;</span>
+  </button>
+  <button class="ll-guide-fab-dismiss" id="llGuideFabDismiss" type="button" aria-label="Dismiss quick guide">&times;</button>
+</div>
 
 <!-- ═══ Notification Banner ═══ -->
 <div class="nbtt-notification-bar" id="nbttNotifBar">
@@ -1034,12 +1040,15 @@
       function initQuickGuide() {
         const guideKey = 'll_quick_guide_seen';
         const guideLastKey = 'll_quick_guide_last';
+        const guideFabHiddenKey = 'll_quick_guide_fab_hidden';
         const backdrop = document.getElementById('llOnboardBackdrop');
         const closeBtn = document.getElementById('llOnboardClose');
         const skipBtn = document.getElementById('llOnboardSkip');
         const neverAgain = document.getElementById('llOnboardNeverAgain');
         const startBtn = document.getElementById('llStartHereBtn');
         const fabBtn = document.getElementById('llGuideFab');
+        const fabWrap = document.getElementById('llGuideFabWrap');
+        const fabDismissBtn = document.getElementById('llGuideFabDismiss');
         const optionBtns = document.querySelectorAll('.ll-onboard-card[data-guide-target]');
 
         if (!backdrop) return;
@@ -1063,6 +1072,19 @@
           document.body.classList.remove('ll-guide-open');
         }
 
+        function hideFab() {
+          localStorage.setItem(guideFabHiddenKey, '1');
+          if (fabWrap) {
+            fabWrap.classList.add('is-hidden');
+            fabWrap.setAttribute('aria-hidden', 'true');
+          }
+        }
+
+        if (localStorage.getItem(guideFabHiddenKey) === '1' && fabWrap) {
+          fabWrap.classList.add('is-hidden');
+          fabWrap.setAttribute('aria-hidden', 'true');
+        }
+
         const alreadySeen = localStorage.getItem(guideKey) === '1';
         if (!alreadySeen && !window.__nbttWasBack) {
           setTimeout(openGuide, 850);
@@ -1070,6 +1092,12 @@
 
         if (startBtn) startBtn.addEventListener('click', openGuide);
         if (fabBtn) fabBtn.addEventListener('click', openGuide);
+        if (fabDismissBtn) {
+          fabDismissBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            hideFab();
+          });
+        }
         if (closeBtn) closeBtn.addEventListener('click', closeGuide);
         if (skipBtn) skipBtn.addEventListener('click', closeGuide);
 
@@ -1723,21 +1751,6 @@
             <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> The Bible repeatedly invites honest investigation: Isaiah 1:18 says, "Come now, and let us reason together." Scripture includes observations often highlighted by later science, including the earth suspended in space (Job 26:7) and practical health isolation principles (Leviticus 13). Real science and biblical faith both pursue truth.</p>
             <p class="mb-myth-source"><strong>Bible:</strong> Isa. 1:18; Isa. 40:22; Job 26:7 &nbsp;|&nbsp; <strong>Theme:</strong> faith and reason together</p>
             <a href="Studies/why_the_bible_is_expanded.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-
-        <!-- Myth 4 -->
-        <article class="mb-myth-card">
-          <div class="mb-myth-video-wrap">
-            <mux-player class="mb-myth-player" playback-id="t00Gqgwlm3OM02Qm02wPaYMk5qyw4oy47TpPzejEjBWqN8" metadata-video-title="State of the Dead - The 6,000-Year Lie" preload="none" playsinline></mux-player>
-          </div>
-          <div class="mb-myth-body">
-            <div class="mb-myth-number">Myth 4</div>
-            <h3 class="mb-myth-title">The Dead Are Already Conscious in Heaven or Hell</h3>
-            <p class="mb-myth-lie"><span class="mb-lie-label">The Lie</span> People remain conscious immediately after death and can communicate with the living.</p>
-            <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> Scripture describes death as an unconscious sleep until resurrection: "the dead know not any thing" (Eccl. 9:5), and "many ... shall awake" at the end (Dan. 12:2). Hope is not in disembodied survival, but in Christ's return and the resurrection of the dead.</p>
-            <p class="mb-myth-source"><strong>Bible:</strong> Eccl. 9:5; John 11:11-14; 1 Thess. 4:16-17 &nbsp;|&nbsp; <strong>Theme:</strong> resurrection hope</p>
-            <a href="New_Sections/non-live/state-of-the-dead-study.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 

@@ -296,6 +296,102 @@
         display: inline-block;
         animation: pointy-bounce 1.2s infinite alternate cubic-bezier(.5,1.5,.5,1);
       }
+
+      .outsourced-hub {
+        max-width: 1200px;
+        margin: 0 auto 1.4rem;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 16px;
+        background: linear-gradient(140deg, rgba(22, 10, 40, 0.72), rgba(8, 18, 46, 0.72));
+        overflow: hidden;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.34);
+      }
+      .outsourced-head {
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .outsourced-title {
+        color: #ffd803;
+        font-size: 1rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .outsourced-sub {
+        margin-top: 4px;
+        color: rgba(255,255,255,0.75);
+        font-size: 0.9rem;
+      }
+      .outsourced-grid {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 14px;
+      }
+      .outsourced-card {
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.04);
+        overflow: hidden;
+      }
+      .outsourced-player {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #0f172a;
+      }
+      .outsourced-player img,
+      .outsourced-player iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .outsourced-player img {
+        object-fit: cover;
+      }
+      .outsourced-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        border: 1px solid rgba(255,215,3,0.66);
+        background: rgba(10, 10, 24, 0.84);
+        color: #ffd803;
+        font-weight: 800;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+      .outsourced-meta {
+        padding: 10px 12px 12px;
+      }
+      .outsourced-source {
+        display: inline-block;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+        padding: 4px 8px;
+        color: #c9b8ff;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .outsourced-meta h3 {
+        margin: 8px 0 4px;
+        font-size: 0.98rem;
+        color: #fff;
+      }
+      .outsourced-meta p {
+        margin: 0;
+        color: rgba(255,255,255,0.76);
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
   </style>
               <meta name="description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
               <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -316,34 +412,15 @@
 <body>
   <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Home</a>
   <h1>🎥 All Videos</h1>
-    <section class="featured-shell" aria-label="Featured BibleProject videos">
-      <div class="featured-head">
-        <div class="featured-title"><i class="fas fa-star"></i> Featured</div>
-        <div class="featured-sub">BibleProject spotlight collection</div>
-      </div>
-      <div class="featured-grid">
-        <article class="featured-main">
-          <h3>The Creation — BibleProject Collection</h3>
-          <p>A curated creation-focused track sourced from BibleProject. This section highlights origin, heaven and earth, and the Tree of Life themes for doctrinal study flow.</p>
-          <div class="featured-links">
-            <a class="featured-link" href="https://bibleproject.com/explore/video/genesis-1-11/" target="_blank" rel="noopener noreferrer">
-              <span>Genesis 1-11 Overview</span><i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <a class="featured-link" href="https://bibleproject.com/explore/video/heaven-and-earth/" target="_blank" rel="noopener noreferrer">
-              <span>Heaven &amp; Earth</span><i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-            <a class="featured-link" href="https://bibleproject.com/explore/video/tree-of-life/" target="_blank" rel="noopener noreferrer">
-              <span>Tree of Life</span><i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </article>
-        <aside class="featured-aside">
-          <span class="featured-pill"><i class="fas fa-shield"></i> External Source</span>
-          <p style="margin:0;color:rgba(255,255,255,0.75);font-size:0.9rem;line-height:1.6;">BibleProject media is opened from official sources to preserve attribution and avoid rehosting conflicts.</p>
-          <a class="featured-cta" href="https://www.youtube.com/@bibleproject/search?query=creation" target="_blank" rel="noopener noreferrer">Open Creation Playlist/Series</a>
-        </aside>
-      </div>
-    </section>
+
+  <section class="outsourced-hub" aria-labelledby="outsourcedHubTitle">
+    <div class="outsourced-head">
+      <div id="outsourcedHubTitle" class="outsourced-title">Outsourced Videos</div>
+      <div class="outsourced-sub">Tap a cover to play right here on LightLine.</div>
+    </div>
+    <div id="outsourcedVideosGrid" class="outsourced-grid" aria-live="polite"></div>
+  </section>
+
     <div class="nbtt-recommend nbtt-newest-pill">
       <div class="nbtt-recommend nbtt-newest-inner nbtt-rel-overflow">
         <div class="nbtt-recommend-glass-overlay"></div>
@@ -568,6 +645,108 @@
   </div>
 
 <script>
+(function() {
+  const OUTSOURCED_VIDEOS = [
+    {
+      title: 'How to Study the Bible',
+      source: 'YouTube',
+      summary: 'Hope Sabbath School guidance on reading Scripture carefully and faithfully.',
+      cover: 'https://i.ytimg.com/vi/SFqhMeGzqyo/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/SFqhMeGzqyo?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'The Bible: A Guidebook for Life',
+      source: 'YouTube',
+      summary: 'A practical Bible study episode from Hope Sabbath School - Official.',
+      cover: 'https://i.ytimg.com/vi/AFQA5ea4eVE/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/AFQA5ea4eVE?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Learning to Know God',
+      source: 'YouTube',
+      summary: 'Hope Sabbath School lesson focused on growing in a deeper relationship with God.',
+      cover: 'https://i.ytimg.com/vi/BxHTN7XgwBA/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/BxHTN7XgwBA?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'How to Study the Bible (3ABN Panel)',
+      source: 'YouTube',
+      summary: '3ABN Sabbath School Panel discussion on methods for understanding Scripture.',
+      cover: 'https://i.ytimg.com/vi/FoukqkHKuao/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/FoukqkHKuao?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'The Role of the Bible (3ABN Panel)',
+      source: 'YouTube',
+      summary: 'A focused 3ABN panel study on the authority and role of Scripture.',
+      cover: 'https://i.ytimg.com/vi/zXBUXA0hVxg/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/zXBUXA0hVxg?autoplay=1&rel=0&modestbranding=1'
+    },
+    {
+      title: 'Genesis Overview (BibleProject)',
+      source: 'YouTube',
+      summary: 'BibleProject animated overview of Genesis to support foundational Bible literacy.',
+      cover: 'https://i.ytimg.com/vi/GQI72THyO5I/hqdefault.jpg',
+      embed: 'https://www.youtube-nocookie.com/embed/GQI72THyO5I?autoplay=1&rel=0&modestbranding=1'
+    }
+  ];
+
+  const grid = document.getElementById('outsourcedVideosGrid');
+  if (!grid) return;
+
+  function renderOutsourcedCard(video) {
+    const card = document.createElement('article');
+    card.className = 'outsourced-card';
+    card.innerHTML = `
+      <div class="outsourced-player">
+        <img src="${video.cover}" alt="${video.title} cover" loading="lazy">
+        <button class="outsourced-play" type="button">Tap to play</button>
+      </div>
+      <div class="outsourced-meta">
+        <span class="outsourced-source">${video.source}</span>
+        <h3>${video.title}</h3>
+        <p>${video.summary}</p>
+      </div>
+    `;
+
+    const player = card.querySelector('.outsourced-player');
+    const playBtn = card.querySelector('.outsourced-play');
+    playBtn.addEventListener('click', function() {
+      if (player.querySelector('iframe')) return;
+      const frame = document.createElement('iframe');
+      frame.src = video.embed;
+      frame.loading = 'lazy';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.setAttribute('allowfullscreen', '');
+      frame.title = video.title;
+      player.appendChild(frame);
+
+      // Block the YouTube title bar (top) and logo (bottom-right)
+      // so clicking those areas doesn't redirect to YouTube.com
+      const topGuard = document.createElement('div');
+      topGuard.style.cssText = 'position:absolute;top:0;left:0;right:0;height:40px;z-index:2;cursor:default;';
+      player.appendChild(topGuard);
+
+      const logoGuard = document.createElement('div');
+      logoGuard.style.cssText = 'position:absolute;bottom:0;right:0;width:140px;height:40px;z-index:2;cursor:default;';
+      player.appendChild(logoGuard);
+
+      playBtn.remove();
+      const cover = player.querySelector('img');
+      if (cover) cover.remove();
+    });
+
+    return card;
+  }
+
+  OUTSOURCED_VIDEOS.forEach(function(video) {
+    grid.appendChild(renderOutsourcedCard(video));
+  });
+})();
+</script>
+
+<script>
 // Star animation interval logic
 function animateStars() {
   const stars = document.querySelectorAll('.nbtt-star-animate');
@@ -583,7 +762,6 @@ setInterval(animateStars, 3500); // Animate every 3.5s
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(animateStars, 1200);
 });
-<i class="fas fa-star nbtt-star-animate"></i>
 function openFullscreen(button) {
   const card = button.closest('.video-card');
   const player = card.querySelector('iframe, mux-player');
