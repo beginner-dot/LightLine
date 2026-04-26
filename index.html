@@ -2674,13 +2674,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 </main>
+    <!-- Rebrand Notice + Contact -->
+    <section id="contact" style="
+      max-width:700px;
+      margin:2.5rem auto 0;
+      padding:2rem 1.4rem 2.5rem;
+      border-top:1px solid rgba(255,255,255,0.1);
+      text-align:center;
+    ">
+      <!-- Rebrand notice -->
+      <div style="
+        display:inline-block;
+        background:linear-gradient(120deg,#7c3aed,#2563eb);
+        color:#fff;
+        font-size:0.78rem;
+        font-weight:800;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+        padding:5px 14px;
+        border-radius:999px;
+        margin-bottom:1rem;
+      ">Rebrand Notice</div>
+      <p style="color:rgba(255,255,255,0.88);font-size:1rem;line-height:1.7;margin:0 0 0.6rem;">
+        <strong style="color:#ffd803;">NothingButTheTRUTH is now LightLine.</strong><br>
+        Same mission. Same conviction. A clearer name.
+      </p>
+      <p style="color:rgba(255,255,255,0.68);font-size:0.9rem;line-height:1.6;margin:0 0 2rem;">
+        This site is being actively built and improved. I am a student of the Word myself — still studying, still growing.
+        New content, studies, and videos are added regularly. Thank you for being here.
+      </p>
+
+      <!-- Contact form -->
+      <h2 style="color:#ffd803;font-size:1.1rem;font-weight:800;letter-spacing:0.04em;margin:0 0 0.4rem;">Get in Touch</h2>
+      <p style="color:rgba(255,255,255,0.6);font-size:0.87rem;margin:0 0 1.2rem;">
+        Have a question, a Bible topic you want covered, or just want to connect? Send a message below.
+      </p>
+      <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" style="display:flex;flex-direction:column;gap:0.75rem;text-align:left;">
+        <input type="text" name="name" placeholder="Your name (optional)" autocomplete="name" style="
+          background:rgba(255,255,255,0.07);
+          border:1px solid rgba(255,255,255,0.18);
+          border-radius:10px;
+          color:#fff;
+          padding:0.75rem 1rem;
+          font-size:0.95rem;
+          outline:none;
+        ">
+        <input type="email" name="email" placeholder="Your email" required autocomplete="email" style="
+          background:rgba(255,255,255,0.07);
+          border:1px solid rgba(255,255,255,0.18);
+          border-radius:10px;
+          color:#fff;
+          padding:0.75rem 1rem;
+          font-size:0.95rem;
+          outline:none;
+        ">
+        <textarea name="message" rows="4" placeholder="Your message or Bible question…" required style="
+          background:rgba(255,255,255,0.07);
+          border:1px solid rgba(255,255,255,0.18);
+          border-radius:10px;
+          color:#fff;
+          padding:0.75rem 1rem;
+          font-size:0.95rem;
+          outline:none;
+          resize:vertical;
+        "></textarea>
+        <input type="hidden" name="_subject" value="LightLine Contact Message">
+        <button type="submit" style="
+          background:linear-gradient(120deg,#7c3aed,#2563eb);
+          color:#fff;
+          font-weight:800;
+          font-size:0.95rem;
+          letter-spacing:0.04em;
+          border:none;
+          border-radius:10px;
+          padding:0.85rem 1.4rem;
+          cursor:pointer;
+        ">Send Message</button>
+      </form>
+      <p style="color:rgba(255,255,255,0.35);font-size:0.78rem;margin:1rem 0 0;">
+        ⚠️ To activate this form: create a free account at <a href="https://formspree.io" target="_blank" rel="noopener" style="color:#a78bfa;">formspree.io</a> with your ministry email, then replace <code style="color:#ffd803;">REPLACE_WITH_YOUR_FORMSPREE_ID</code> in this page with your form ID.
+      </p>
+    </section>
+
     <footer class="footer scroll-fade" role="contentinfo">
-        <p>&copy; 2025 LightLine. All rights reserved.</p>
-        <p>
-            <i class="fas fa-share-alt" style="color:#ffd803" aria-hidden="true"></i> Follow us on:
-        </p>
+        <p>&copy; 2026 LightLine. All rights reserved.</p>
       <p>
         <a href="about-us.html" style="color:#ffd803;text-decoration:none;font-weight:600;">About Us</a>
+        &nbsp;·&nbsp;
+        <a href="#contact" style="color:#ffd803;text-decoration:none;font-weight:600;">Contact</a>
       </p>
     </footer>
 
