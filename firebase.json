@@ -24,6 +24,18 @@
   "hosting": {
     "site": "lightline",
     "public": ".",
+    "redirects": [
+      {
+        "source": "/watchmans-ledger.html",
+        "destination": "/",
+        "type": 302
+      },
+      {
+        "source": "/ledger-post.html",
+        "destination": "/",
+        "type": 302
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
