@@ -1,0 +1,72 @@
+﻿LightLine Repository Report
+Quick orientation document for people new to this codebase.
+Generated: April 19, 2026
+
+Tags:
+- Static Site + Firebase
+- Games Platform
+- Newsroom / Evidence Desk
+- Nested Next.js Course App
+
+1) MAIN PURPOSE
+This repository powers a Christian educational content platform called LightLine.
+It delivers Bible studies, devotions, interactive scripture games, video resources, and a
+current-events reporting experience tied to biblical interpretation.
+
+It is not just one app. It combines:
+- A large, production-style static website at the repository root.
+- A separate, modern Next.js course app inside christianity-of-christ.
+- An exported static build of that Next.js app under systematic-reconstruction.
+
+2) TECH STACK AND FRAMEWORKS
+- Frontend (root site): HTML, CSS, Vanilla JavaScript.
+- Backend services: Firebase Hosting, Firestore, Firebase Auth, Storage Rules, Functions scaffold.
+- Visualization/media: Chart.js and Mux player embeds.
+- Data model: JSON-driven content files (studies, newsroom, commandment/video content, etc.).
+- Nested app stack: Next.js 15, React 19, TypeScript, Tailwind, Prisma,
+  SQLite/PostgreSQL adapter, Vitest.
+
+3) MAJOR FOLDERS AND WHAT THEY HOLD
+- games: Large set of standalone Bible games plus leaderboard and gamification logic.
+- Studies: Long-form study pages (mostly standalone HTML).
+- Devotions: Devotional content pages and related assets.
+- functions: Firebase Functions directory (currently mostly starter scaffold).
+- christianity-of-christ: Full Next.js TypeScript project for a structured interactive course.
+- systematic-reconstruction: Static export output generated from the nested Next.js app.
+- New_Sections: Experimental/new content pages and draft work.
+- public: Firebase starter hosting page assets (not the primary public site entry).
+
+4) KEY FILES TO UNDERSTAND FIRST
+- index.html: Main entry page and top-level navigation/sections.
+- Indexstyles.js: Core homepage behavior (auth modal, account modes, Firebase auth wiring, UI controls).
+- nbtt-features.js: Search index, bookmarks, theme logic, reading-progress features.
+- script.js: Homepage commandment/video cards loaded from JSON, quiz modal behavior.
+- ledger.js: Evidence Desk/Newsroom rendering from newsroom.json.
+- newsroom.json: Structured content source for reports displayed in the newsroom.
+- firebase.json: Hosting + Firestore + Functions + Storage configuration.
+- package.json (root): build/sync/deploy scripts, including static deploy flow for nested app.
+- christianity-of-christ/README.md: architecture and roadmap of the nested Next.js app.
+
+5) CURRENT USER EXPERIENCE (WHAT VISITORS CAN DO)
+- Browse homepage sections for studies, devotions, games, courses, videos, and newsroom reports.
+- Use sign-in options (public account, anonymous account, or limited no-sign-in mode).
+- Use search overlay to find studies/devotions/games quickly.
+- Open commandment video cards and in-page quiz popups.
+- Read newsroom report cards and open full report pages from Evidence Desk data.
+- Play numerous scripture-themed games and view leaderboard-related pages.
+
+6) INCOMPLETE / IN-PROGRESS SIGNALS
+- Some sections are explicitly marked as staged/internal preview and not fully public.
+- Several pages still display "Coming Soon" states (for example, course placeholders).
+- The nested Next.js app intentionally contains stubs (auth and admin endpoints) that need production hardening.
+- Firebase Functions code remains mostly starter-template level.
+- Audit documents show many fixes completed, but also identify a backlog of medium-priority game UX and architecture improvements.
+
+Practical interpretation:
+The platform is already broad and usable, but it is still evolving with an active migration path
+from a large static architecture toward more structured app modules.
+
+7) QUICK CONCLUSION
+This repository is a multi-surface content ecosystem rather than a single monolithic app.
+The root static site appears to be the primary active user surface today, while the nested
+Next.js project represents a more modern and structured direction for future course experiences.

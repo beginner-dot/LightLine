@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 6,000-Year Lie: The State of the Dead | LightLine</title>
+  <link rel="stylesheet" href="/Studies/study-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="description" content="A systematic, interactive, and beautiful study on the State of the Dead, using the KJV Bible and Adventist pioneers. Discover the truth about death, the soul, and God's character.">
+  <meta name="keywords" content="state of the dead, soul sleep, biblical anthropology, theodicy, polemic theology, KJV Bible, Ellen White, Uriah Smith, Waggoner, Great Controversy, death, resurrection, spiritualism, immortality, Christian doctrine, Bible study, controversy, truth, mythbusters, Seventh-day Adventist, Christian apologetics, afterlife, soul, spirit, body, resurrection, Jesus, salvation, prophecy, end times, heaven, hell, judgment, gospel, hope, comfort, mercy, justice, love, God, Satan, Eden, Greek philosophy, Plato, spiritual deception, resurrection, sleep, Lazarus, Ecclesiastes, John, Thessalonians, Revelation, Christian video, Bible video, Christian shorts, apologetics video, SDA, Adventist, LightLine">
+  <meta property="og:title" content="The 6,000-Year Lie: The State of the Dead | LightLine" />
+  <meta property="og:description" content="A systematic, interactive, and beautiful study on the State of the Dead, using the KJV Bible and Adventist pioneers. Discover the truth about death, the soul, and God's character." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="LightLine" />
+  <meta property="og:url" content="https://LightLine.web.app/New_Sections/state-of-the-dead-study.html" />
+  <meta property="og:image" content="https://LightLine.web.app/seo-default-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The 6,000-Year Lie: The State of the Dead | LightLine" />
+  <meta name="twitter:description" content="A systematic, interactive, and beautiful study on the State of the Dead, using the KJV Bible and Adventist pioneers. Discover the truth about death, the soul, and God's character." />
+  <meta name="twitter:image" content="https://LightLine.web.app/seo-default-image.jpg" />
+  <script defer src="https://unpkg.com/@mux/mux-player"></script>
+    <style>
+      .timeline {
+        position: relative;
+        margin: 2.5em 0 3em 0;
+        padding-left: 2.5em;
+        border-left: 4px solid #2575fc;
+      }
+      .timeline-event {
+        position: relative;
+        margin-bottom: 2.5em;
+      }
+      .timeline-dot {
+        position: absolute;
+        left: -1.2em;
+        top: 0.2em;
+        width: 1.5em;
+        height: 1.5em;
+        background: linear-gradient(135deg, #ffd803 0%, #2575fc 100%);
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 8px #2575fc44;
+        z-index: 2;
+      }
+      .timeline-content {
+        background: #f3f0fa;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px 0 #2575fc11;
+        padding: 1.2em 1.5em;
+        margin-left: 1.5em;
+        position: relative;
+      }
+      .timeline-date {
+        font-weight: bold;
+        color: #2575fc;
+        margin-bottom: 0.2em;
+      }
+      .timeline-quote {
+        color: #6a11cb;
+        font-style: italic;
+        margin-top: 0.7em;
+        display: block;
+      }
+      .matrix-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2em 0 2.5em 0;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px 0 #2575fc11;
+      }
+      .matrix-table th, .matrix-table td {
+        padding: 1em 1.2em;
+        border-bottom: 1px solid #e3e3f7;
+        text-align: left;
+      }
+      .matrix-table th {
+        background: #eaf4fd;
+        color: #2575fc;
+        font-size: 1.1em;
+      }
+      .matrix-table tr:last-child td {
+        border-bottom: none;
+      }
+      .matrix-table .bible-verse {
+        background: #eaf4fd;
+        border-left: 4px solid #2575fc;
+        border-radius: 7px;
+        padding: 0.5em 1em;
+        margin: 0.2em 0;
+        font-style: italic;
+        color: #222;
+        font-size: 1em;
+        box-shadow: 0 2px 8px 0 #2575fc11;
+      }
+      .matrix-table .character {
+        color: #6a11cb;
+        font-weight: 500;
+      }
+      .verse-link {
+        color: #2575fc;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .source-link {
+        color: #6a11cb;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .tooltip {
+        border-bottom: 2px dashed #ffd803;
+        color: #6a11cb;
+        cursor: pointer;
+        position: relative;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: max-content;
+        max-width: 260px;
+        background: #fffbe6;
+        color: #222;
+        text-align: left;
+        border-radius: 8px;
+        padding: 0.7em 1em;
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 120%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 16px #0002;
+        font-size: 0.98em;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .tooltip:hover .tooltiptext,
+      .tooltip:focus .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .nav-books {
+        margin: 2em 0 1em 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7em;
+      }
+      .nav-books a {
+        background: #eaf4fd;
+        color: #2575fc;
+        border-radius: 7px;
+        padding: 0.5em 1.1em;
+        text-decoration: none;
+        font-weight: 500;
+        box-shadow: 0 2px 8px 0 #2575fc11;
+        transition: background 0.2s, color 0.2s;
+      }
+      .nav-books a:hover {
+        background: #2575fc;
+        color: #fff;
+      }
+      .diagram {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2.5em 0 2em 0;
+      }
+      .diagram-card {
+        background: #eaf4fd;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px 0 #2575fc11;
+        padding: 1.2em 2em;
+        margin: 0 1em;
+        text-align: center;
+        font-size: 1.1em;
+        color: #2575fc;
+        font-weight: 600;
+        min-width: 120px;
+      }
+      .diagram-sign {
+        font-size: 2.2em;
+        color: #6a11cb;
+        font-weight: bold;
+        margin: 0 0.5em;
+      }
+      @media (max-width: 700px) {
+        .diagram {
+          flex-direction: column;
+        }
+        .diagram-card {
+          margin: 0.7em 0;
+          min-width: 0;
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient-border"></div>
+    <div class="main-content">
+      <div class="header-section">
+        <h1>The 6,000-Year Lie: The State of the Dead</h1>
+        <span class="header-subtitle">A Systematic, Interactive, and Beautiful Study</span>
+      </div>
+      <div style="display:flex;justify-content:center;margin:2em 0;">
+        <mux-player playback-id="t00Gqgwlm3OM02Qm02wPaYMk5qyw4oy47TpPzejEjBWqN8" metadata-video-title="State of the Dead Video" style="width:100%;max-width:640px;height:360px;border-radius:16px;border:none;box-shadow:0 4px 24px #0002;" stream-type="on-demand"></mux-player>
+      </div>
+      <h2>The Premise: Life is a Borrowed Spark</h2>
+      <p>Life is not an inherent right of the creature, but a gift from the Creator. <span class="tooltip">Soul<span class="tooltiptext">Hebrew: Nephesh. A living being. Result of Body + Breath.</span></span> and <span class="tooltip">Spirit<span class="tooltiptext">Hebrew: Ruach. Wind or breath. The spark of life from God.</span></span> are not immortal entities, but describe the living, conscious person as a whole.</p>
+      <div class="diagram">
+        <div class="diagram-card">DUST<br><span style="font-size:0.9em; color:#6a11cb;">(The Body)</span></div>
+        <div class="diagram-sign">+</div>
+        <div class="diagram-card">BREATH<br><span style="font-size:0.9em; color:#6a11cb;">(The Spirit/Ruach)</span></div>
+        <div class="diagram-sign">=</div>
+        <div class="diagram-card">LIVING SOUL<br><span style="font-size:0.9em; color:#6a11cb;">(Nephesh)</span></div>
+      </div>
+      <div class="bible-verse">"And the LORD God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul." <strong>(Genesis 2:7, KJV)</strong></div>
+      <h2>The Crime: The 6,000-Year Lie</h2>
+      <p>In Eden, the Serpent claimed that life could exist apart from God: <span class="bible-verse">"Ye shall not surely die." (Genesis 3:4)</span> This is the root of the "immortality in sin" myth that has persisted through history.</p>
+      <div class="timeline">
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Eden (4004 BC)</div>
+            <div><strong>The First Lie:</strong> <span class="bible-verse">"Ye shall not surely die." (Gen 3:4)</span></div>
+            <span class="timeline-quote">GC: "The first sermon ever preached upon the immortality of the soul was that sermon uttered by the serpent to Eve in Eden."</span>
+          </div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Greece (350 BC)</div>
+            <div><strong>Plato’s Dualism:</strong> The body is a prison for the "immortal soul."</div>
+            <span class="timeline-quote">GC: "The doctrine of man’s consciousness in death, especially the belief that spirits of the dead return to minister to the living, has no foundation in the Scriptures, and was borrowed from paganism."</span>
+          </div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Rome (500 AD)</div>
+            <div><strong>Purgatory & Prayers for the Dead:</strong> The rise of unscriptural traditions.</div>
+            <span class="timeline-quote">GC: "The doctrine of eternal torment was one of the false doctrines that Rome borrowed from paganism and incorporated into the religion of Christendom."</span>
+          </div>
+        </div>
+        <div class="timeline-event">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Modern Day</div>
+            <div><strong>Modern Spiritualism:</strong> The "Watching from Heaven" myth.</div>
+            <span class="timeline-quote">Uriah Smith: "If man is immortal, the resurrection is entirely unnecessary."</span>
+          </div>
+        </div>
+      </div>
+      <h2>The Evidence: The Sleep of the Dead</h2>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Scripture</th>
+            <th>Testimony</th>
+            <th>Character of God</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="verse-link" onclick="window.open('https://www.kingjamesbibleonline.org/John-11-11/','_blank')">John 11:11</span><div class="bible-verse">"Our friend Lazarus sleepeth."</div></td>
+            <td>Jesus Himself calls death a sleep, not a transition to another life.</td>
+            <td class="character">A merciful Father who gives rest, not torment.</td>
+          </tr>
+          <tr>
+            <td><span class="verse-link" onclick="window.open('https://www.kingjamesbibleonline.org/1-Thessalonians-4-15/','_blank')">1 Thessalonians 4:15</span><div class="bible-verse">"We which are alive and remain unto the coming of the Lord shall not prevent them which are asleep."</div></td>
+            <td>Paul affirms the dead are asleep until the resurrection.</td>
+            <td class="character">God’s justice and love are preserved—no one suffers eternal torment.</td>
+          </tr>
+          <tr>
+            <td><span class="verse-link" onclick="window.open('https://www.kingjamesbibleonline.org/Ecclesiastes-9-5/','_blank')">Ecclesiastes 9:5</span><div class="bible-verse">"The dead know not any thing."</div></td>
+            <td>Solomon teaches the dead are unconscious, awaiting judgment.</td>
+            <td class="character">God is not a tyrant—He does not torture the dead.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>The Defense: Pioneer Testimony</h2>
+      <div class="quote">"God gives to man no message that He may make him immortal in sin. He permits him to be cut off if he will not be obedient, and in mercy to the universe He will destroy sin and sinners at last."<span class="quote-cite">— Patriarchs and Prophets, p. 73</span></div>
+      <div class="quote">"Death is a sleep, a silence, a darkness."<span class="quote-cite">— Ellen G. White, The Great Controversy</span></div>
+      <div class="quote">"If man is immortal, the resurrection is entirely unnecessary."<span class="quote-cite">— Uriah Smith, State of the Dead</span></div>
+      <div class="quote">"Modern Spiritualism, resting upon the same foundation as the ancient witchcraft and heathen idolatries, is simply a revival in a new form of the witchcraft condemned and prohibited of old."<span class="quote-cite">— J.H. Waggoner, Modern Spiritualism</span></div>
+      <h2>The Verdict: The Truth vs. The Lie</h2>
+      <p>Because death is a sleep, any "spirit" claiming to be a dead loved one is a "spirit of a devil" (see <span class="verse-link" onclick="window.open('https://www.kingjamesbibleonline.org/Revelation-16-14/','_blank')">Revelation 16:14</span>).</p>
+      <div class="bible-verse">"For they are the spirits of devils, working miracles..." (Revelation 16:14)</div>
+      <div class="nav-books">
+        <a href="https://www.kingjamesbibleonline.org/" target="_blank">KJV Bible</a>
+        <a href="https://m.egwwritings.org/en/book/132.2" target="_blank">The Great Controversy</a>
+        <a href="https://m.egwwritings.org/en/book/20.2" target="_blank">Patriarchs and Prophets</a>
+        <a href="https://m.egwwritings.org/en/book/1182.2" target="_blank">Uriah Smith: State of the Dead</a>
+        <a href="https://m.egwwritings.org/en/book/1167.2" target="_blank">J.H. Waggoner: Modern Spiritualism</a>
+      </div>
+      <h2>Further Study & Exegesis</h2>
+      <p>Explore the original Hebrew and Greek words for <span class="tooltip">Sleep<span class="tooltiptext">Greek: Koimaō. The biblical term for death, implying an awakening.</span></span>, <span class="tooltip">Soul<span class="tooltiptext">Hebrew: Nephesh. A living being. Result of Body + Breath.</span></span>, and <span class="tooltip">Spirit<span class="tooltiptext">Hebrew: Ruach. Wind or breath. The spark of life from God.</span></span> in the context of the KJV translation.</p>
+      <p>For a polemical defense, see the <a class="source-link" href="/mythbusters.html">Mythbusters</a> project and the <a class="source-link" href="/all-studies.html">All Studies</a> page for more resources.</p>
+      <section style="margin-top:2.5em;">
+        <h2>Did You Know?</h2>
+        <ul style="background:#f3f0fa;color:#222;border-radius:12px;padding:1.5em 2em;box-shadow:0 2px 12px #2575fc11;list-style:square inside;">
+          <li>The phrase "soul sleep" is not found in the Bible, but the concept is taught throughout Scripture.</li>
+          <li>More than 50 times, the Bible describes death as "sleep."</li>
+          <li>Early Christian writers like Justin Martyr and Irenaeus rejected the idea of the immortal soul.</li>
+          <li>Modern Spiritualism began in 1848 with the Fox sisters in New York, sparking a global movement.</li>
+          <li>Ecclesiastes 9:5 is one of the most direct statements about the state of the dead: "The dead know not any thing."</li>
+          <li>Jesus raised Lazarus from the dead after four days, calling him from "sleep." (John 11)</li>
+          <li>The doctrine of eternal torment was imported from pagan Greek philosophy, not the Hebrew Scriptures.</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

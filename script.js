@@ -5,6 +5,7 @@ const container = document.getElementById('stories-container');
 let storiesData = [];
 
 async function loadAndRender(filter = '') {
+    if (!container) return;
     try {
         const response = await fetch('commandments.json');
         storiesData = await response.json();
@@ -16,6 +17,7 @@ async function loadAndRender(filter = '') {
 }
 
 function renderStories(filter) {
+    if (!container) return;
     container.innerHTML = '';
     const normalized = filter.trim().toLowerCase();
     const list = storiesData.filter(s =>
@@ -34,12 +36,18 @@ function renderStories(filter) {
         let videoEmbed;
         if (story.playbackId) {
             videoEmbed = `<mux-player
-                                playback-id="${story.playbackId}"
-                                style="border-radius:8px;--accent-color:${story.brandColor||'#ff0055'};"
-                                metadata-video-title="${story.title}">
-                                <div slot="play-button">${story.playEmoji||''}</div>
-                                <div slot="pause-button">${story.pauseEmoji||''}</div>
-                            </mux-player>`;
+                playback-id="${story.playbackId}"
+                style="border-radius:8px;--accent-color:${story.brandColor||'#ff0055'};"
+                metadata-video-title="${story.title}"
+                preload="auto"
+                autoplay
+                muted
+                playsinline
+                ${story.poster ? `poster='${story.poster}'` : ''}
+            >
+                <div slot="play-button">${story.playEmoji||''}</div>
+                <div slot="pause-button">${story.pauseEmoji||''}</div>
+            </mux-player>`;
         } else if (story.videoUrl) {
             videoEmbed = `<iframe src="${story.videoUrl}" frameborder="0" allowfullscreen></iframe>`;
         } else {
@@ -95,7 +103,18 @@ ${JSON.stringify({
                 </div>
             </div>
         `;
+
+        // Insert card and pause mux-player until user clicks (autoplay muted, but pause immediately)
         container.insertAdjacentHTML('beforeend', card);
+        if (story.playbackId) {
+            setTimeout(() => {
+                const mux = container.querySelectorAll('mux-player');
+                if (mux && mux.length > 0) {
+                    const player = mux[mux.length-1];
+                    player.addEventListener('canplay', () => { player.pause(); }, { once: true });
+                }
+            }, 0);
+        }
 
         if (index === 2) {
             container.insertAdjacentHTML('beforeend',
@@ -755,11 +774,4 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => loadAndRender());
 } else {
     loadAndRender();
-}
-
-// initialize when DOM ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', displayStories);
-} else {
-    displayStories();
 }

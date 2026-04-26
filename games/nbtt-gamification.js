@@ -1,7 +1,7 @@
-/**
+﻿/**
  * ═══════════════════════════════════════════════════════════
  * NBTT Gamification Engine
- * NothingButTheTRUTH — Shared game module
+ * LightLine — Shared game module
  * ═══════════════════════════════════════════════════════════
  *
  * Features:

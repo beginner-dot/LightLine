@@ -1,20 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Updates &amp; Announcements — NothingButTheTRUTH</title>
-    <meta name="description" content="Stay updated on what's new at NothingButTheTRUTH. See our plans, progress, and the vision behind this Bible-based ministry platform.">
+    <title>Updates &amp; Announcements — LightLine</title>
+    <meta name="description" content="Stay updated on what's new at LightLine. See our plans, progress, and the vision behind this Bible-based ministry platform.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://NothingButTheTRUTH.web.app/notifications.html">
-    <meta property="og:title" content="Updates &amp; Announcements — NothingButTheTRUTH">
-    <meta property="og:description" content="Stay updated on what's new at NothingButTheTRUTH — plans, progress, and the ministry vision.">
+    <link rel="canonical" href="https://LightLine.web.app/notifications.html">
+    <meta property="og:title" content="Updates &amp; Announcements — LightLine">
+    <meta property="og:description" content="Stay updated on what's new at LightLine — plans, progress, and the ministry vision.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://NothingButTheTRUTH.web.app/notifications.html">
+    <meta property="og:url" content="https://LightLine.web.app/notifications.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="https://unpkg.com/@mux/mux-player"></script>
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -51,6 +52,21 @@
 
         /* UPDATE CARD */
         .update-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;margin-bottom:1rem;position:relative;overflow:hidden}
+        .update-card{
+            background: linear-gradient(135deg, #23272f 0%, #3a3f47 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 32px 0 rgba(60,60,120,0.13), 0 1.5px 8px 0 rgba(168,85,247,0.08);
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+        .update-card:hover {
+            box-shadow: 0 12px 36px 0 rgba(60,60,120,0.18), 0 4px 16px 0 rgba(168,85,247,0.13);
+            background: linear-gradient(135deg, #2d313a 0%, #484e58 100%);
+        }
         .update-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--gold),var(--blue))}
         .update-card h3{color:var(--txt2);font-size:1rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
         .update-card h3 i{color:var(--gold);font-size:0.85rem}
@@ -88,7 +104,7 @@
 <body>
 
 <nav class="topbar">
-    <div class="logo"><span>✝️</span> NothingButTheTRUTH</div>
+    <div class="logo"><span>✝️</span> LightLine</div>
     <a href="index.html" class="home-link"><i class="fas fa-home"></i> Home</a>
     <a href="progress-report.html" class="home-link"><i class="fas fa-chart-line"></i> Dashboard</a>
 </nav>
@@ -102,13 +118,52 @@
         <p>What's happening, what's planned, and the heart behind this ministry.</p>
     </div>
 
-    <!-- CURRENT STATUS -->
+        <!-- RECENT VIDEOS -->
+        <section class="section" style="margin-bottom:2.5rem;">
+            <div class="section-label"><i class="fas fa-video"></i> Recent Videos</div>
+            <div style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;">
+                <div style="flex:1 1 320px;max-width:400px;min-width:260px;">
+                    <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" style="width:100%;aspect-ratio:16/9;min-height:180px;border-radius:12px;border:none;box-shadow:0 4px 24px #0002;" stream-type="on-demand"></mux-player>
+                    <div style="font-weight:600;margin-top:0.5em;">What is the forbidden fruit Really? <span style="display:block;font-weight:400;font-size:0.95em;margin-top:0.2em;"><a href='Devotions/forbidden_fruit_malum.html' style='color:#ffd700;text-decoration:underline;'>Read the new devotional</a></span></div>
+                </div>
+            </div>
+        </section>
+        <!-- CURRENT STATUS -->
     <div class="section">
+        <div class="update-card">
+                    <div class="update-card">
+                        <h3><i class="fas fa-video"></i> New MythBuster Video Series: Is the Bible God's Word to Humanity? (PART 1 of 2) & Is the Bible Facts or Fiction? (PART 2 of 2)</h3>
+                        <p><strong>Both parts of the new MythBuster video series are now live!</strong> <br>
+                        <b>PART 1:</b> Evidence, inspiration, and reliability of the Bible as God's message to all people.<br>
+                        <b>PART 2:</b> Archaeology, manuscript evidence, and fulfilled prophecy—fact or fiction?<br>
+                        <a href="video-updates.html" style="color:#a855f7;text-decoration:underline;">Watch both videos in the Video Updates Library</a>.</p>
+                        <div class="date">March 11, 2026</div>
+                    </div>
+            <h3><i class="fas fa-video"></i> New MythBuster Video: Forbidden Fruit</h3>
+            <p><strong>What is the forbidden fruit Really?</strong> — A new MythBuster video explores the real meaning behind the "forbidden fruit" in Eden, the Latin pun "malum," and the true test of obedience. <a href="Devotions/forbidden_fruit_malum.html" style="color:#ffd700;text-decoration:underline;">Read the companion devotional</a> for deeper insight.</p>
+            <div class="date">March 10, 2026</div>
+        </div>
+        <div class="update-card">
+            <h3><i class="fas fa-book-open"></i> New Devotional: The Forbidden Fruit</h3>
+            <p><strong>The Forbidden Fruit: Malum, Apple, and Obedience</strong> — Discover the biblical and historical background of the forbidden fruit, the Latin wordplay, and why the real issue was obedience, not the fruit itself. <a href="Devotions/forbidden_fruit_malum.html" style="color:#ffd700;text-decoration:underline;">Read now</a>.</p>
+            <div class="date">March 10, 2026</div>
+        </div>
+        <div class="update-card">
         <span class="section-label"><i class="fas fa-signal"></i> Current Status</span>
         <div class="update-card">
             <h3><i class="fas fa-check-circle" style="color:#22c55e"></i> Site Is Live &amp; Stable</h3>
-            <p>NothingButTheTRUTH is fully deployed and accessible. All core features — Bible studies, devotions, interactive games, the Ten Commandments video series, MythBusters, and the spiritual growth courses hub — are live and working. The site is <strong>permanent</strong> and will continue to grow.</p>
+            <p>LightLine is fully deployed and accessible. All core features — Bible studies, devotions, interactive games, the Ten Commandments video series, MythBusters, and the spiritual growth courses hub — are live and working. The site is <strong>permanent</strong> and will continue to grow.</p>
             <div class="date">March 6, 2026</div>
+        </div>
+        <div class="update-card">
+            <h3><i class="fas fa-video"></i> New MythBuster Video: Forbidden Fruit</h3>
+            <p><strong>What is the forbidden fruit Really?</strong> — A new MythBuster video explores the real meaning behind the "forbidden fruit" in Eden, the Latin pun "malum," and the true test of obedience. <a href="Devotions/forbidden_fruit_malum.html" style="color:#ffd700;text-decoration:underline;">Read the companion devotional</a> for deeper insight.</p>
+            <div class="date">March 10, 2026</div>
+        </div>
+        <div class="update-card">
+            <h3><i class="fas fa-book-open"></i> New Devotional: The Forbidden Fruit</h3>
+            <p><strong>The Forbidden Fruit: Malum, Apple, and Obedience</strong> — Discover the biblical and historical background of the forbidden fruit, the Latin wordplay, and why the real issue was obedience, not the fruit itself. <a href="Devotions/forbidden_fruit_malum.html" style="color:#ffd700;text-decoration:underline;">Read now</a>.</p>
+            <div class="date">March 10, 2026</div>
         </div>
         <div class="update-card">
             <h3><i class="fas fa-wrench"></i> Some Features Are Still In Progress</h3>
@@ -137,7 +192,7 @@
             </li>
             <li class="plan-item">
                 <div class="plan-icon done">✓</div>
-                <div class="plan-text"><strong>18 Devotions</strong> — daily readings for spiritual growth.</div>
+                <div class="plan-text"><strong>19 Devotions</strong> — daily readings for spiritual growth.</div>
             </li>
             <li class="plan-item">
                 <div class="plan-icon done">✓</div>
@@ -184,7 +239,7 @@
         <div class="vision-card">
             <div class="cross">✝️</div>
             <h2>The Beginning of a Beautiful Ministry</h2>
-            <p>NothingButTheTRUTH is not just a website. It is the beginning of a ministry built to share the unchanged, unfiltered Word of God as it is written in the Holy Bible. Every study, every devotion, every game, every video — it all points to one truth: <strong>Jesus Christ is the Way, the Truth, and the Life.</strong></p>
+            <p>LightLine is not just a website. It is the beginning of a ministry built to share the unchanged, unfiltered Word of God as it is written in the Holy Bible. Every study, every devotion, every game, every video — it all points to one truth: <strong>Jesus Christ is the Way, the Truth, and the Life.</strong></p>
             <p style="margin-top:1rem">This platform exists to help people understand Scripture clearly, strengthen their daily walk with God, and grow in the knowledge of His will. It is freely given because the Gospel is freely given. No paywalls. No gimmicks. Just the Word.</p>
             <p style="margin-top:1rem">We build slowly, we build faithfully, and we build in the name of <strong>Jesus Christ, the eternal Son of God</strong>. Everything here is a labor of love, and by His grace, it will reach every soul He intends it to reach.</p>
             <div class="verse">

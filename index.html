@@ -1,28 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ===== PRIMARY SEO META ===== -->
-    <title>NothingButTheTRUTH — Bible Studies, Devotions, Games &amp; Videos</title>
-                <meta name="description" content="Free Bible studies, daily devotions, interactive Scripture games, MythBusters, and video resources. Sharing the unfiltered Word of God — NothingButTheTRUTH.">
-                <meta name="keywords" content="Bible study, Christian devotion, Scripture, NothingButTheTRUTH, NothingButTheTRUTH, bible, studies, devotions, videos">
-                <meta name="author" content="NothingButTheTRUTH">
+    <title>LightLine — Bible Studies, Devotions, Games &amp; Videos</title>
+                <meta name="description" content="Free Bible studies, daily devotions, interactive Scripture games, MythBusters, and video resources. Sharing the unfiltered Word of God — LightLine.">
+                <meta name="keywords" content="Bible study, Christian devotion, Scripture, LightLine, LightLine, bible, studies, devotions, videos">
+                <meta name="author" content="LightLine">
                 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-                <link rel="canonical" href="https://NothingButTheTRUTH.web.app/">
+                <link rel="canonical" href="https://LightLine.web.app/">
 
     <!-- ===== OPEN GRAPH (Facebook, LinkedIn, Discord) ===== -->
-                <meta property="og:site_name" content="NothingButTheTRUTH">
-                <meta property="og:title" content="NothingButTheTRUTH — Bible Studies, Devotions, Games &amp; Videos">
+                <meta property="og:site_name" content="LightLine">
+                <meta property="og:title" content="LightLine — Bible Studies, Devotions, Games &amp; Videos">
                 <meta property="og:description" content="Free Bible studies, daily devotions, interactive Scripture games, MythBusters, and video resources. Sharing the unfiltered Word of God.">
                 <meta property="og:type" content="website">
-                <meta property="og:url" content="https://NothingButTheTRUTH.web.app/">
+                <meta property="og:url" content="https://LightLine.web.app/">
                 <meta property="og:locale" content="en_US">
 
     <!-- ===== TWITTER CARD ===== -->
                 <meta name="twitter:card" content="summary_large_image">
-                <meta name="twitter:title" content="NothingButTheTRUTH — Bible Studies, Devotions, Games &amp; Videos">
+                <meta name="twitter:title" content="LightLine — Bible Studies, Devotions, Games &amp; Videos">
                 <meta name="twitter:description" content="Free Bible studies, daily devotions, interactive Scripture games, MythBusters, and video resources. Sharing the unfiltered Word of God.">
 
     <!-- ===== FONTS — preconnect for speed ===== -->
@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="Indexstyles.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ledger-styles.css">
 
     <!-- ===== STRUCTURED DATA — Organization + WebSite ===== -->
     <script type="application/ld+json">
@@ -42,26 +43,26 @@
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": "https://NothingButTheTRUTH.web.app/#website",
-          "url": "https://NothingButTheTRUTH.web.app/",
-          "name": "NothingButTheTRUTH",
+          "@id": "https://LightLine.web.app/#website",
+          "url": "https://LightLine.web.app/",
+          "name": "LightLine",
           "description": "Sharing the unchanged Gospel as written in the Holy Bible. Bible studies, devotions, videos, and interactive games.",
           "inLanguage": "en-US"
         },
         {
           "@type": "Organization",
-          "@id": "https://NothingButTheTRUTH.web.app/#organization",
-          "name": "NothingButTheTRUTH",
-          "url": "https://NothingButTheTRUTH.web.app/",
+          "@id": "https://LightLine.web.app/#organization",
+          "name": "LightLine",
+          "url": "https://LightLine.web.app/",
           "description": "A Christian platform sharing the unfiltered Word of God through Bible studies, devotions, videos, and interactive games."
         },
         {
           "@type": "WebPage",
-          "@id": "https://NothingButTheTRUTH.web.app/#homepage",
-          "url": "https://NothingButTheTRUTH.web.app/",
-          "name": "NothingButTheTRUTH — Bible Studies, Devotions, Videos & Interactive Games",
-          "isPartOf": { "@id": "https://NothingButTheTRUTH.web.app/#website" },
-          "about": { "@id": "https://NothingButTheTRUTH.web.app/#organization" },
+          "@id": "https://LightLine.web.app/#homepage",
+          "url": "https://LightLine.web.app/",
+          "name": "LightLine — Bible Studies, Devotions, Videos & Interactive Games",
+          "isPartOf": { "@id": "https://LightLine.web.app/#website" },
+          "about": { "@id": "https://LightLine.web.app/#organization" },
           "description": "Explore the unfiltered Word of God. Free Bible studies, daily devotions, interactive scripture games, and the Ten Commandments video series.",
           "inLanguage": "en-US"
         }
@@ -71,18 +72,80 @@
     <script>
     (function () {
       document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.classList.add("page-transition-enabled");
+      let isBackForward = false;
+      try {
+        const navEntry = performance.getEntriesByType("navigation")[0];
+        isBackForward = navEntry?.type === "back_forward";
+      } catch {}
+      if (!isBackForward) {
+        document.documentElement.classList.add("page-loading");
+      }
     })();
     </script>
 
   <script defer src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script defer src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-              <meta property="og:image" content="https://NothingButTheTRUTH.web.app/seo-default-image.jpg">
-              <meta name="twitter:image" content="https://NothingButTheTRUTH.web.app/seo-default-image.jpg">
+              <meta property="og:image" content="https://LightLine.web.app/seo-default-image.jpg">
+              <meta name="twitter:image" content="https://LightLine.web.app/seo-default-image.jpg">
 </head>
 <body>
     <!-- Skip to main content — accessibility + SEO -->
-    <a href="#hero-viewport" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:8px 16px;background:#a855f7;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;" onfocus="this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';" onblur="this.style.left='-9999px';this.style.width='1px';this.style.height='1px';">Skip to main content</a>
+
+    <a href="#hero-viewport" class="skip-link">Skip to main content</a>
+
+    <div class="ll-onboard-backdrop" id="llOnboardBackdrop" aria-hidden="true">
+      <section class="ll-onboard-modal" role="dialog" aria-modal="true" aria-labelledby="llOnboardTitle" aria-describedby="llOnboardDesc">
+        <button class="ll-onboard-close" id="llOnboardClose" aria-label="Close guide">&times;</button>
+        <div class="ll-onboard-shell">
+          <aside class="ll-onboard-intro" aria-hidden="true">
+            <p class="ll-onboard-eyebrow">Quick Start</p>
+            <h2 id="llOnboardTitle">Where should we begin today?</h2>
+            <p id="llOnboardDesc">Choose one clear starting point. You can always switch later.</p>
+            <ul class="ll-onboard-points">
+              <li>Three focused options</li>
+              <li>Best path for new visitors</li>
+              <li>Opens the right page immediately</li>
+            </ul>
+          </aside>
+
+          <div class="ll-onboard-main">
+            <div class="ll-onboard-grid" role="list" aria-label="Start options">
+              <button class="ll-onboard-card" data-guide-target="all-studies.html" role="listitem">
+                <span class="ll-lane-top"><span class="ll-lane-index">01</span><span class="ll-lane-note">Recommended</span></span>
+                <span class="ll-onboard-label">Learn Scripture with clarity</span>
+                <small>Start with focused studies and a strong biblical foundation.</small>
+                <span class="ll-lane-meta">Best first stop</span>
+                <span class="ll-lane-cta">Start with Studies</span>
+              </button>
+              <button class="ll-onboard-card" data-guide-target="vod.html" role="listitem">
+                <span class="ll-lane-top"><span class="ll-lane-index">02</span><span class="ll-lane-note">Encouragement</span></span>
+                <span class="ll-onboard-label">Grow daily with devotions</span>
+                <small>Short reflections for prayer, focus, and consistency.</small>
+                <span class="ll-lane-meta">Daily rhythm</span>
+                <span class="ll-lane-cta">Open Devotions</span>
+              </button>
+              <button class="ll-onboard-card" data-guide-target="all-videos.html" role="listitem">
+                <span class="ll-lane-top"><span class="ll-lane-index">03</span><span class="ll-lane-note">Watch</span></span>
+                <span class="ll-onboard-label">Watch teaching videos</span>
+                <small>Go straight to the full video library and latest releases.</small>
+                <span class="ll-lane-meta">Visual learning</span>
+                <span class="ll-lane-cta">Open Videos</span>
+              </button>
+            </div>
+
+            <div class="ll-onboard-actions">
+              <label class="ll-onboard-checkbox">
+                <input type="checkbox" id="llOnboardNeverAgain">
+                <span>Do not show this again</span>
+              </label>
+              <button class="ll-onboard-skip" id="llOnboardSkip">Skip for now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <header role="banner">
         <nav class="navbar scroll-fade" aria-label="Primary navigation">
@@ -151,14 +214,19 @@
                     <li><a href="#games"><i class="fas fa-gamepad" aria-hidden="true"></i> Games</a></li>
                     <li><a href="#courses"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Courses</a></li>
                     <li><a href="all-videos.html"><i class="fas fa-video" aria-hidden="true"></i> Videos</a></li>
+                    <li><a href="video-updates.html"><i class="fas fa-bolt" aria-hidden="true"></i> Video Updates</a></li>
                     <li><a href="notifications.html"><i class="fas fa-bell" aria-hidden="true"></i> Updates</a></li>
                   <li><a href="about-us.html"><i class="fas fa-circle-info" aria-hidden="true"></i> About</a></li>
+                  <li><a href="#" id="ed-drawer-trigger"><i class="fas fa-newspaper" aria-hidden="true"></i> Newsroom</a></li>
+                  <li><a href="#evidence-desk"><i class="fas fa-chart-line" aria-hidden="true"></i> Headlines</a></li>
                 </ul>
                 </div>
             </div>
               <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
         </nav>
     </header>
+
+    <!-- Removed duplicate/top-of-page MythBusters Shorts widget, Did You Know bubble, and their popup/script -->
 
     <!-- ═══════════════════════════════════════════════════
          AUTH MODAL — Sign In / Sign Up / Forgot Password
@@ -401,86 +469,86 @@
 
 
 <main>
-<section class="hero-viewport" id="hero-viewport" role="region" aria-label="Welcome to NothingButTheTRUTH — Bible studies, devotions, videos and games">
+<section class="hero-viewport" id="hero-viewport" role="region" aria-label="Welcome to LightLine — Bible studies, devotions, videos and games">
     <div class="matrix-overlay" aria-hidden="true"></div>
     <!-- Ambient glow behind glass card -->
     <div class="ambient-glow" aria-hidden="true"></div>
     
     <div class="parallax-layer" id="icon-layer" aria-hidden="true">
         <!-- Dove emojis – varied sizes -->
-        <span class="float-icon emoji-reactive" style="top:2%; left:3%; animation-delay:0.3s; font-size:2.2em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:8%; left:18%; animation-delay:1.1s; font-size:1.4em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:5%; left:38%; animation-delay:2.0s; font-size:1.8em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:12%; left:55%; animation-delay:0.7s; font-size:1.0em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:3%; left:72%; animation-delay:3.2s; font-size:2.0em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:9%; left:90%; animation-delay:1.6s; font-size:1.2em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:20%; left:8%; animation-delay:2.4s; font-size:0.9em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:28%; left:30%; animation-delay:4.0s; font-size:1.6em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:35%; left:65%; animation-delay:3.5s; font-size:1.3em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:18%; left:82%; animation-delay:0.9s; font-size:2.4em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:45%; left:5%; animation-delay:5.0s; font-size:1.1em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:55%; left:20%; animation-delay:2.8s; font-size:0.8em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:60%; left:45%; animation-delay:6.1s; font-size:1.5em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:50%; left:78%; animation-delay:1.4s; font-size:1.9em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:68%; left:92%; animation-delay:3.8s; font-size:1.0em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:72%; left:60%; animation-delay:4.5s; font-size:0.7em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:80%; left:35%; animation-delay:5.5s; font-size:1.7em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:88%; left:12%; animation-delay:7.0s; font-size:1.2em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:85%; left:75%; animation-delay:6.5s; font-size:0.9em;">🕊️</span>
-        <span class="float-icon emoji-reactive" style="top:92%; left:50%; animation-delay:4.8s; font-size:2.1em;">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-1">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-2">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-3">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-4">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-5">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-6">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-7">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-8">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-9">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-10">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-11">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-12">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-13">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-14">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-15">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-16">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-17">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-18">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-19">🕊️</span>
+        <span class="float-icon emoji-reactive emoji-float-20">🕊️</span>
 
         <!-- Prayer / worship emojis -->
-        <span class="float-icon emoji-reactive" style="top:4%; left:10%; animation-delay:0.5s; font-size:1.6em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:15%; left:25%; animation-delay:1.8s; font-size:2.0em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:7%; left:48%; animation-delay:3.0s; font-size:1.2em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:22%; left:70%; animation-delay:2.3s; font-size:1.8em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:30%; left:88%; animation-delay:4.2s; font-size:1.0em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:40%; left:15%; animation-delay:5.2s; font-size:1.4em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:52%; left:55%; animation-delay:3.6s; font-size:2.2em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:65%; left:80%; animation-delay:1.2s; font-size:0.9em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:75%; left:42%; animation-delay:6.3s; font-size:1.5em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:90%; left:25%; animation-delay:5.8s; font-size:1.1em;">🙏</span>
-        <span class="float-icon emoji-reactive" style="top:38%; left:52%; animation-delay:2.6s; font-size:1.7em;">🤲</span>
-        <span class="float-icon emoji-reactive" style="top:58%; left:10%; animation-delay:4.7s; font-size:1.3em;">🤲</span>
-        <span class="float-icon emoji-reactive" style="top:78%; left:85%; animation-delay:7.2s; font-size:1.6em;">🤲</span>
-        <span class="float-icon emoji-reactive" style="top:14%; left:42%; animation-delay:3.9s; font-size:1.1em;">🛐</span>
-        <span class="float-icon emoji-reactive" style="top:48%; left:70%; animation-delay:5.4s; font-size:1.8em;">🛐</span>
-        <span class="float-icon emoji-reactive" style="top:82%; left:55%; animation-delay:6.8s; font-size:1.0em;">🛐</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-1">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-2">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-3">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-4">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-5">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-6">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-7">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-8">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-9">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-10">🙏</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-11">🤲</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-12">🤲</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-13">🤲</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-14">🛐</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-15">🛐</span>
+        <span class="float-icon emoji-reactive emoji-float-pray-16">🛐</span>
 
         <!-- Bible / scroll emojis -->
-        <span class="float-icon emoji-reactive" style="top:6%; left:22%; animation-delay:1.3s; font-size:1.5em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:11%; left:60%; animation-delay:2.5s; font-size:1.8em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:25%; left:5%; animation-delay:3.7s; font-size:1.2em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:33%; left:40%; animation-delay:4.3s; font-size:2.0em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:42%; left:75%; animation-delay:1.9s; font-size:0.9em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:56%; left:30%; animation-delay:5.6s; font-size:1.6em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:66%; left:88%; animation-delay:6.2s; font-size:1.3em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:76%; left:15%; animation-delay:7.5s; font-size:1.0em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:86%; left:65%; animation-delay:4.1s; font-size:1.7em;">📖</span>
-        <span class="float-icon emoji-reactive" style="top:10%; left:80%; animation-delay:2.1s; font-size:1.4em;">📜</span>
-        <span class="float-icon emoji-reactive" style="top:26%; left:50%; animation-delay:3.3s; font-size:1.1em;">📜</span>
-        <span class="float-icon emoji-reactive" style="top:44%; left:25%; animation-delay:5.1s; font-size:1.9em;">📜</span>
-        <span class="float-icon emoji-reactive" style="top:62%; left:58%; animation-delay:6.7s; font-size:0.8em;">📜</span>
-        <span class="float-icon emoji-reactive" style="top:84%; left:40%; animation-delay:7.8s; font-size:1.5em;">📜</span>
-        <span class="float-icon emoji-reactive" style="top:16%; left:95%; animation-delay:1.5s; font-size:1.2em;">📚</span>
-        <span class="float-icon emoji-reactive" style="top:36%; left:12%; animation-delay:4.6s; font-size:1.6em;">📚</span>
-        <span class="float-icon emoji-reactive" style="top:54%; left:85%; animation-delay:5.9s; font-size:1.0em;">📚</span>
-        <span class="float-icon emoji-reactive" style="top:70%; left:48%; animation-delay:7.1s; font-size:1.3em;">📚</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-1">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-2">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-3">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-4">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-5">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-6">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-7">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-8">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-bible-9">📖</span>
+        <span class="float-icon emoji-reactive emoji-float-scroll-1">📜</span>
+        <span class="float-icon emoji-reactive emoji-float-scroll-2">📜</span>
+        <span class="float-icon emoji-reactive emoji-float-scroll-3">📜</span>
+        <span class="float-icon emoji-reactive emoji-float-scroll-4">📜</span>
+        <span class="float-icon emoji-reactive emoji-float-scroll-5">📜</span>
+        <span class="float-icon emoji-reactive emoji-float-book-1">📚</span>
+        <span class="float-icon emoji-reactive emoji-float-book-2">📚</span>
+        <span class="float-icon emoji-reactive emoji-float-book-3">📚</span>
+        <span class="float-icon emoji-reactive emoji-float-book-4">📚</span>
 
         <!-- Cross, crown, nature extras -->
-        <span class="float-icon emoji-reactive" style="top:1%; left:50%; animation-delay:0.2s; font-size:1.8em;">✝️</span>
-        <span class="float-icon emoji-reactive" style="top:19%; left:62%; animation-delay:2.7s; font-size:1.3em;">✝️</span>
-        <span class="float-icon emoji-reactive" style="top:47%; left:38%; animation-delay:5.3s; font-size:2.0em;">✝️</span>
-        <span class="float-icon emoji-reactive" style="top:73%; left:8%; animation-delay:6.4s; font-size:1.1em;">✝️</span>
-        <span class="float-icon emoji-reactive" style="top:91%; left:82%; animation-delay:7.6s; font-size:1.5em;">✝️</span>
-        <span class="float-icon emoji-reactive" style="top:8%; left:85%; animation-delay:1.7s; font-size:1.4em;">👑</span>
-        <span class="float-icon emoji-reactive" style="top:34%; left:72%; animation-delay:3.4s; font-size:1.0em;">👑</span>
-        <span class="float-icon emoji-reactive" style="top:64%; left:18%; animation-delay:5.7s; font-size:1.7em;">👑</span>
-        <span class="float-icon emoji-reactive" style="top:88%; left:38%; animation-delay:7.3s; font-size:1.2em;">👑</span>
-        <span class="float-icon emoji-reactive" style="top:23%; left:15%; animation-delay:2.9s; font-size:1.5em;">💧</span>
-        <span class="float-icon emoji-reactive" style="top:57%; left:68%; animation-delay:4.4s; font-size:1.8em;">🌍</span>
-        <span class="float-icon emoji-reactive" style="top:41%; left:92%; animation-delay:6.0s; font-size:1.1em;">🌸</span>
-        <span class="float-icon emoji-reactive" style="top:79%; left:28%; animation-delay:7.7s; font-size:1.6em;">🌳</span>
+        <span class="float-icon emoji-reactive emoji-float-cross-1">✝️</span>
+        <span class="float-icon emoji-reactive emoji-float-cross-2">✝️</span>
+        <span class="float-icon emoji-reactive emoji-float-cross-3">✝️</span>
+        <span class="float-icon emoji-reactive emoji-float-cross-4">✝️</span>
+        <span class="float-icon emoji-reactive emoji-float-cross-5">✝️</span>
+        <span class="float-icon emoji-reactive emoji-float-crown-1">👑</span>
+        <span class="float-icon emoji-reactive emoji-float-crown-2">👑</span>
+        <span class="float-icon emoji-reactive emoji-float-crown-3">👑</span>
+        <span class="float-icon emoji-reactive emoji-float-crown-4">👑</span>
+        <span class="float-icon emoji-reactive emoji-float-water">💧</span>
+        <span class="float-icon emoji-reactive emoji-float-earth">🌍</span>
+        <span class="float-icon emoji-reactive emoji-float-flower">🌸</span>
+        <span class="float-icon emoji-reactive emoji-float-tree">🌳</span>
 
         <!-- Extra density fill emojis -->
         <span class="float-icon emoji-reactive" style="top:3%; left:30%; animation-delay:0.8s; font-size:1.9em;">🕊️</span>
@@ -517,48 +585,59 @@
 
     <div class="hero-container" id="hero-card">
         <div class="glass-card">
-            <h1 class="hero-title" id="main-title" data-text="NothingButTheTRUTH" style="opacity:0;">NothingButTheTRUTH</h1>
-            
-            <p class="hero-subtitle hero-stagger">
-              <span aria-hidden="true">📖</span> Understand Scripture clearly, strengthen your daily walk, and grow with <strong>Bible truth made practical</strong> through studies, devotions, videos, and interactive faith tools.
-            </p>
+            <div class="hero-copy hero-stagger">
+              <h1 class="hero-title" id="main-title" data-text="Learn the Bible clearly. Live it daily.">Learn the Bible clearly. Live it daily.</h1>
+              <div class="hero-subtitle-wrap">
+                <p class="hero-subtitle">
+                  <span aria-hidden="true">📖</span> Start with one clear next step: watch, study, or devotion. Scripture-first teaching built to move you from information to transformation.
+                </p>
+              </div>
+            </div>
 
-            <nav class="button-group hero-stagger" aria-label="Quick access">
-                <a href="all-videos.html" class="blade-btn btn-main" title="Watch Bible-based video messages and the Ten Commandments series"><span aria-hidden="true">🎥</span> Watch Videos</a>
+            <nav class="button-group hero-cta-row hero-stagger" aria-label="Quick access">
+                <button type="button" class="blade-btn btn-main" id="llStartHereBtn" title="Open the quick-start guide"><span aria-hidden="true">🧭</span> Start Here</button>
                 <a href="all-studies.html" class="blade-btn" title="Browse free in-depth Bible studies on faith, baptism, angels, and more"><span aria-hidden="true">📚</span> Explore Studies</a>
-              <a href="spiritual-growth-courses.html" class="blade-btn" title="Start short spiritual growth courses designed for practical discipleship"><span aria-hidden="true">🧠</span> Spiritual Growth Courses</a>
             </nav>
         </div>
 
         <nav class="stats-hud hero-stagger" aria-label="Content overview">
             <a href="all-games.html" class="hud-card" title="Play interactive Bible games — Bingo, Taboo, Relay Race and more">
-                <span class="hud-val" data-target="20" aria-label="20 games available">00</span>
-                <span class="hud-lab">Games</span>
+              <span class="hud-val" data-target="20" aria-label="20 games available">00</span>
+              <span class="hud-lab">Games</span>
             </a>
             <a href="all-studies.html" class="hud-card" title="Read 23 in-depth Bible studies">
-                <span class="hud-val" data-target="23" aria-label="23 studies available">00</span>
-                <span class="hud-lab">Studies</span>
+              <span class="hud-val" data-target="23" aria-label="23 studies available">00</span>
+              <span class="hud-lab">Studies</span>
             </a>
             <a href="vod.html" class="hud-card" title="Read daily devotions — Anchor of Hope, Faith Under Fire, and more">
               <span class="hud-val" data-target="19" aria-label="19 devotions available">00</span>
-                <span class="hud-lab">Devotions</span>
+              <span class="hud-lab">Devotions</span>
             </a>
-            <a href="all-videos.html" class="hud-card" title="Watch scripture-based video series including the Ten Commandments">
-              <span class="hud-val" data-target="11" aria-label="11 videos available">00</span>
-                <span class="hud-lab">Videos</span>
+            <a href="all-videos.html" class="hud-card" title="Watch all scripture-based video series including the Ten Commandments">
+              <span class="hud-val" data-target="14" aria-label="14 videos available">00</span>
+              <span class="hud-lab">Videos</span>
             </a>
         </nav>
     </div>
 </section>
 
+<button class="ll-guide-fab" id="llGuideFab" type="button" aria-label="Open quick guide">
+  <span class="ll-guide-fab-orb" aria-hidden="true">🧭</span>
+  <span class="ll-guide-fab-copy">
+    <span class="ll-guide-fab-title">Quick Guide</span>
+    <span class="ll-guide-fab-sub">Find your best lane</span>
+  </span>
+  <span class="ll-guide-fab-arrow" aria-hidden="true">-&gt;</span>
+</button>
+
 <!-- ═══ Notification Banner ═══ -->
 <div class="nbtt-notification-bar" id="nbttNotifBar">
   <div class="nbtt-notif-icon"><i class="fas fa-bell" style="color:#ffd700"></i></div>
   <div class="nbtt-notif-body">
-    <p><strong>NothingButTheTRUTH is live &amp; growing.</strong> Some features are still being built — videos, courses, and more are in active production. This site is permanent and here to stay.</p>
+    <p><strong>LightLine is live &amp; growing.</strong> Some features are still being built — videos, courses, and more are in active production. This site is permanent and here to stay.</p>
   </div>
-  <a href="notifications.html" class="nbtt-notif-link"><i class="fas fa-arrow-right"></i> View All Updates</a>
-  <button class="nbtt-notif-dismiss" onclick="this.closest('.nbtt-notification-bar').style.display='none'" aria-label="Dismiss notification">&times;</button>
+  <a href="video-updates.html" class="nbtt-notif-link"><i class="fas fa-bolt"></i> View Video Updates</a>
+  <button class="nbtt-notif-dismiss" id="nbttNotifDismiss" aria-label="Dismiss notification">&times;</button>
 </div>
 
 
@@ -570,23 +649,33 @@
     const iconLayer = document.getElementById('icon-layer');
     const heroViewport = document.getElementById('hero-viewport');
 
-    // Magnetic float — card subtly drifts toward the mouse
-    document.addEventListener('mousemove', (e) => {
-        const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
-        const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
-        if (iconLayer) iconLayer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    // Magnetic float — throttled with rAF for smoother performance
+    let heroMouseX = 0;
+    let heroMouseY = 0;
+    let heroMoveRaf = null;
+    function applyHeroMouseEffects() {
+      heroMoveRaf = null;
+      const moveX = (heroMouseX - window.innerWidth / 2) * 0.02;
+      const moveY = (heroMouseY - window.innerHeight / 2) * 0.02;
+      if (iconLayer) iconLayer.style.transform = `translate(${moveX}px, ${moveY}px)`;
 
-        // Magnetic float on glass card (replaces tilt)
-        if (heroCard && heroViewport) {
-            const rect = heroViewport.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const dx = (e.clientX - cx) / rect.width;
-            const dy = (e.clientY - cy) / rect.height;
-            const floatX = dx * 12; // max 12px drift
-            const floatY = dy * 8;  // max 8px drift
-            heroCard.style.transform = `translate(${floatX}px, ${floatY}px)`;
-        }
+      if (heroCard && heroViewport) {
+        const rect = heroViewport.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = (heroMouseX - cx) / rect.width;
+        const dy = (heroMouseY - cy) / rect.height;
+        const floatX = dx * 12;
+        const floatY = dy * 8;
+        heroCard.style.transform = `translate(${floatX}px, ${floatY}px)`;
+      }
+    }
+    document.addEventListener('mousemove', (e) => {
+      heroMouseX = e.clientX;
+      heroMouseY = e.clientY;
+      if (!heroMoveRaf) {
+        heroMoveRaf = requestAnimationFrame(applyHeroMouseEffects);
+      }
     });
     // Reset float when mouse leaves
     if (heroViewport) {
@@ -599,26 +688,51 @@
     // TOUCH-REACTIVE EMOJIS (only touched one glows)
     // ============================
     function initReactiveEmojis() {
-        const emojis = document.querySelectorAll('.emoji-reactive');
-        
-        // Mouse proximity — only nearby emojis react
+        // Limit reactive scope to the first set of emojis for consistent performance
+        const emojis = Array.from(document.querySelectorAll('.emoji-reactive')).slice(0, 24);
+        let emojiRects = [];
+        let emojiPointerX = 0;
+        let emojiPointerY = 0;
+        let emojiMoveRaf = null;
+
+        function cacheEmojiRects() {
+          emojiRects = emojis.map((em) => {
+            const r = em.getBoundingClientRect();
+            return {
+              el: em,
+              x: r.left + r.width / 2,
+              y: r.top + r.height / 2
+            };
+          });
+        }
+
+        function applyEmojiProximity() {
+          emojiMoveRaf = null;
+          emojiRects.forEach((entry) => {
+            const dist = Math.hypot(emojiPointerX - entry.x, emojiPointerY - entry.y);
+            if (dist < 100) {
+              const scale = 1 + (1 - dist / 100) * 0.6;
+              entry.el.style.transform = `scale(${scale})`;
+              entry.el.style.filter = `drop-shadow(0 0 ${10 + (1 - dist/100) * 18}px rgba(168, 85, 247, ${0.4 + (1 - dist/100) * 0.5}))`;
+              entry.el.style.zIndex = '5';
+            } else {
+              entry.el.style.transform = '';
+              entry.el.style.filter = '';
+              entry.el.style.zIndex = '';
+            }
+          });
+        }
+
+        cacheEmojiRects();
+        window.addEventListener('resize', cacheEmojiRects);
+        window.addEventListener('scroll', cacheEmojiRects, { passive: true });
+
         document.addEventListener('mousemove', (e) => {
-            emojis.forEach(em => {
-                const r = em.getBoundingClientRect();
-                const ex = r.left + r.width / 2;
-                const ey = r.top + r.height / 2;
-                const dist = Math.hypot(e.clientX - ex, e.clientY - ey);
-                if (dist < 100) {
-                    const scale = 1 + (1 - dist / 100) * 0.6;
-                    em.style.transform = `scale(${scale})`;
-                    em.style.filter = `drop-shadow(0 0 ${10 + (1 - dist/100) * 18}px rgba(168, 85, 247, ${0.4 + (1 - dist/100) * 0.5}))`;
-                    em.style.zIndex = '5';
-                } else {
-                    em.style.transform = '';
-                    em.style.filter = '';
-                    em.style.zIndex = '';
-                }
-            });
+          emojiPointerX = e.clientX;
+          emojiPointerY = e.clientY;
+          if (!emojiMoveRaf) {
+            emojiMoveRaf = requestAnimationFrame(applyEmojiProximity);
+          }
         });
 
         // Touch — ONLY the touched emoji reacts with a RANDOM animation
@@ -691,21 +805,10 @@
     // RESPONSIVE SCALING
     // ============================
     function fitTitle() {
-        const title = document.getElementById('main-title');
-        if (!title) return;
-        const container = title.closest('.glass-card') || title.parentElement;
-        title.style.transform = '';
-        const range = document.createRange();
-        range.selectNodeContents(title);
-        let titleWidth = range.getBoundingClientRect().width;
-        const containerWidth = container.getBoundingClientRect().width;
-        let ratio = (containerWidth * 0.95) / titleWidth;
-        // Scale up or down to fill the container width
-        if (ratio !== 1 && titleWidth > 0) {
-            const clampedRatio = Math.min(ratio, 2.5);
-            title.style.transform = `scale(${clampedRatio})`;
-            title.style.transformOrigin = 'center center';
-        }
+      const title = document.getElementById('main-title');
+      if (!title) return;
+      // Keep title flow natural so multiline placement remains stable across breakpoints.
+      title.style.transform = '';
     }
 
     async function performFit() {
@@ -716,28 +819,61 @@
     }
 
     // ============================
-    // BALLOON POP TITLE — letters pop in one by one with bounce
+    // HERO TITLE INIT — render immediately for first paint clarity
     // ============================
-    function balloonPopTitle() {
+    let heroTypingTimer = null;
+
+    function initHeroTitle() {
         const title = document.getElementById('main-title');
         if (!title) return;
         const text = title.getAttribute('data-text') || '';
-        title.innerHTML = '';
+      title.textContent = text;
         title.style.opacity = '1';
-        const letters = text.split('');
-        letters.forEach((char, i) => {
-            const span = document.createElement('span');
-            span.className = 'balloon-letter';
-            span.textContent = char === ' ' ? '\u00A0' : char;
-            span.style.animationDelay = `${i * 55}ms`;
-            // Position each letter within the continuous white→gold gradient
-            const pct = letters.length > 1 ? (i / (letters.length - 1)) * 100 : 0;
-            span.style.backgroundPosition = `${pct}% 0`;
-            title.appendChild(span);
-        });
-        // Fit title after all letters have popped
-        const totalPop = letters.length * 55 + 500;
-        setTimeout(() => requestAnimationFrame(() => performFit()), totalPop);
+      requestAnimationFrame(() => performFit());
+    }
+
+    function runHeroTitleTypewriter() {
+      const title = document.getElementById('main-title');
+      if (!title) return;
+
+      const text = title.getAttribute('data-text') || '';
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      clearInterval(heroTypingTimer);
+
+      if (prefersReducedMotion || !text) {
+        title.textContent = text;
+        title.style.opacity = '1';
+        requestAnimationFrame(() => performFit());
+        return;
+      }
+
+      let index = 0;
+      title.textContent = '';
+      title.style.opacity = '1';
+
+      heroTypingTimer = setInterval(() => {
+        index += 1;
+        title.textContent = text.slice(0, index);
+        if (index >= text.length) {
+          clearInterval(heroTypingTimer);
+          requestAnimationFrame(() => performFit());
+        }
+      }, 28);
+    }
+
+    function setupHudCounterObserver() {
+      const hud = document.querySelector('.stats-hud');
+      if (!hud || !window.IntersectionObserver) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries.some((entry) => entry.isIntersecting);
+        if (!visible) return;
+        animateCounters();
+        observer.disconnect();
+      }, { threshold: 0.2 });
+
+      observer.observe(hud);
     }
 
     // ============================
@@ -746,6 +882,14 @@
     document.addEventListener('DOMContentLoaded', () => {
         // JS has loaded — cancel CSS fallback animations
         document.body.classList.add('js-hero-ready');
+
+        const notifDismissBtn = document.getElementById('nbttNotifDismiss');
+        if (notifDismissBtn) {
+          notifDismissBtn.addEventListener('click', () => {
+            const banner = notifDismissBtn.closest('.nbtt-notification-bar');
+            if (banner) banner.style.display = 'none';
+          });
+        }
 
         // Step 0: Immediately show navbar (prevent scroll-fade invisible flash)
         const navbar = document.querySelector('.navbar.scroll-fade');
@@ -760,7 +904,7 @@
         // On back-navigation: skip all hero animations, show everything instantly
         if (window.__nbttWasBack) {
             document.body.classList.add('js-hero-ready');
-            // Show title instantly without balloon pop
+            // Show title instantly
             if (title) {
                 const text = title.getAttribute('data-text') || '';
                 title.textContent = text;
@@ -795,11 +939,13 @@
             window.addEventListener('resize', performFit);
             window.addEventListener('orientationchange', performFit);
             initReactiveEmojis();
+            initQuickGuide();
             return; // Skip all animation sequences
         }
 
-        // Step 1: Start balloon-pop title IMMEDIATELY (no delay)
-        balloonPopTitle();
+        // Step 1: Render title and animate typing for a living hero feel
+        initHeroTitle();
+        setTimeout(runHeroTitleTypewriter, 140);
 
         // Setup resize observers after kick-off (non-blocking)
         if (title && container && window.ResizeObserver) {
@@ -811,52 +957,64 @@
         window.addEventListener('orientationchange', performFit);
         initReactiveEmojis();
 
-        // Step 2: Calculate balloon-pop total duration for sequencing
-        const titleText = title ? (title.getAttribute('data-text') || '') : '';
-        const popDuration = titleText.length * 55 + 500;
-
-        // Stagger items & HUD cards are hidden by CSS rules (no FOUC)
+        // Step 2: Premium reveal without basic stagger ladders
         const staggerItems = document.querySelectorAll('.hero-stagger');
         const hudCards = document.querySelectorAll('.hud-card');
 
-        // Step 3: After title pops in, fade in subtitle
-        setTimeout(() => {
-            if (staggerItems[0]) {
-                staggerItems[0].style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                staggerItems[0].style.opacity = '1';
-                staggerItems[0].style.transform = 'translateY(0)';
-            }
-        }, popDuration + 100);
-
-        // Step 4: Buttons
-        setTimeout(() => {
-            if (staggerItems[1]) {
-                staggerItems[1].style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                staggerItems[1].style.opacity = '1';
-                staggerItems[1].style.transform = 'translateY(0)';
-            }
-        }, popDuration + 400);
-
-        // Step 5: HUD container
-        setTimeout(() => {
-            if (staggerItems[2]) {
-                staggerItems[2].style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
-                staggerItems[2].style.opacity = '1';
-                staggerItems[2].style.transform = 'translateY(0)';
-            }
-        }, popDuration + 650);
-
-        // Step 6: HUD cards pop in one by one
-        hudCards.forEach((card, i) => {
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.35s ease-out, transform 0.35s ease-out';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, popDuration + 800 + i * 120);
+        staggerItems.forEach((item) => {
+          item.style.transition = 'opacity 0.55s cubic-bezier(0.2, 0.85, 0.2, 1), transform 0.55s cubic-bezier(0.2, 0.85, 0.2, 1), filter 0.55s ease';
         });
 
-        // Step 7: Trigger counter animation after HUD is visible
-        setTimeout(animateCounters, popDuration + 1400);
+        requestAnimationFrame(() => {
+          staggerItems.forEach((item) => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+            item.style.filter = 'none';
+          });
+
+          hudCards.forEach((card) => {
+            card.style.transition = 'opacity 0.45s ease-out, transform 0.45s ease-out';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        });
+
+        // Step 3: Trigger counters after reveal settles.
+        setTimeout(animateCounters, 700);
+        setupHudCounterObserver();
+        window.addEventListener('resize', animateCounters, { passive: true });
+        window.addEventListener('load', animateCounters, { once: true });
+
+        initQuickGuide();
+
+        // Hero safety net: force ready state if any animation path stalls.
+        const forceHeroReady = () => {
+          if (!title) return;
+          const finalText = title.getAttribute('data-text') || title.textContent || '';
+          if (!title.textContent || title.textContent.length < finalText.length) {
+            title.textContent = finalText;
+          }
+          title.style.opacity = '1';
+
+          document.querySelectorAll('.hero-stagger').forEach((el) => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            el.style.filter = 'none';
+          });
+
+          document.querySelectorAll('.hud-card').forEach((el) => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          });
+
+          document.documentElement.classList.remove('page-loading');
+          document.documentElement.classList.add('page-loaded');
+          requestAnimationFrame(() => performFit());
+        };
+
+        setTimeout(forceHeroReady, 1400);
+        window.addEventListener('pageshow', forceHeroReady, { once: true });
+        window.addEventListener('load', forceHeroReady, { once: true });
     });
 
     // dynamically refresh HUD numbers based on page content
@@ -865,11 +1023,77 @@
         /* Homepage shows 7 preview items; HUD reflects total content available */
         const studies = 23;
         const devotions = 19;
+        const videos = 14;
         const vals = document.querySelectorAll('.stats-hud .hud-card .hud-val');
         if (vals[0]) vals[0].setAttribute('data-target', String(games || 20));
         if (vals[1]) vals[1].setAttribute('data-target', String(studies));
         if (vals[2]) vals[2].setAttribute('data-target', String(devotions));
+        if (vals[3]) vals[3].setAttribute('data-target', String(videos));
     }
+
+      function initQuickGuide() {
+        const guideKey = 'll_quick_guide_seen';
+        const guideLastKey = 'll_quick_guide_last';
+        const backdrop = document.getElementById('llOnboardBackdrop');
+        const closeBtn = document.getElementById('llOnboardClose');
+        const skipBtn = document.getElementById('llOnboardSkip');
+        const neverAgain = document.getElementById('llOnboardNeverAgain');
+        const startBtn = document.getElementById('llStartHereBtn');
+        const fabBtn = document.getElementById('llGuideFab');
+        const optionBtns = document.querySelectorAll('.ll-onboard-card[data-guide-target]');
+
+        if (!backdrop) return;
+
+        function persistPreference() {
+          if (neverAgain && neverAgain.checked) {
+            localStorage.setItem(guideKey, '1');
+          }
+        }
+
+        function openGuide() {
+          backdrop.classList.add('active');
+          backdrop.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('ll-guide-open');
+        }
+
+        function closeGuide() {
+          persistPreference();
+          backdrop.classList.remove('active');
+          backdrop.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('ll-guide-open');
+        }
+
+        const alreadySeen = localStorage.getItem(guideKey) === '1';
+        if (!alreadySeen && !window.__nbttWasBack) {
+          setTimeout(openGuide, 850);
+        }
+
+        if (startBtn) startBtn.addEventListener('click', openGuide);
+        if (fabBtn) fabBtn.addEventListener('click', openGuide);
+        if (closeBtn) closeBtn.addEventListener('click', closeGuide);
+        if (skipBtn) skipBtn.addEventListener('click', closeGuide);
+
+        backdrop.addEventListener('click', (event) => {
+          if (event.target === backdrop) closeGuide();
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && backdrop.classList.contains('active')) {
+            closeGuide();
+          }
+        });
+
+        optionBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-guide-target');
+            persistPreference();
+            if (target) {
+              localStorage.setItem(guideLastKey, target);
+              window.location.href = target;
+            }
+          });
+        });
+      }
 </script>
 
 
@@ -1007,14 +1231,14 @@
             <blockquote class="verse-text-social" id="verseText"></blockquote>
             <div class="verse-meta">
               <span class="verse-ref-social" id="verseRef"></span>
-              <span class="verse-counter" id="verseCounter">1 of 5</span>
+              <span class="verse-counter" id="verseCounter">Today's verse only</span>
             </div>
+            <div class="verse-post-time" id="versePostTime"></div>
           </div>
 
           <!-- Post Stats -->
           <div class="post-stats">
-            <span class="stat-item"><i class="fas fa-heart"></i> <span id="likeCount">247</span> Likes</span>
-            <span class="stat-item"><i class="fas fa-share"></i> <span id="shareCount">89</span> Shares</span>
+            <span class="stat-item"><i class="fas fa-heart"></i> <span id="likeCount">0</span> Likes</span>
           </div>
 
           <!-- Post Actions -->
@@ -1023,50 +1247,29 @@
               <i class="far fa-heart"></i>
               <span>Like</span>
             </button>
-            <button class="action-btn" onclick="toggleDevotion()">
+            <button class="action-btn devotion-action-btn" id="devotionActionBtn" type="button">
               <i class="fas fa-book"></i>
               <span>Devotion</span>
             </button>
-            <button class="action-btn" onclick="copyToClipboard()">
-              <i class="fas fa-copy"></i>
-              <span>Copy</span>
+            <button class="action-btn" onclick="shareTodayVerse()">
+              <i class="fas fa-share"></i>
+              <span>Share</span>
             </button>
-            <button class="action-btn" onclick="saveVerse()">
+            <button class="action-btn" id="saveVerseBtn" onclick="saveVerse()">
               <i class="far fa-bookmark"></i>
               <span>Save</span>
             </button>
+            <button class="action-btn" onclick="toggleSubscribeInline()">
+              <i class="fas fa-bell"></i>
+              <span>Subscribe</span>
+            </button>
           </div>
 
-          <!-- Social Media Share -->
-          <div class="social-share-section">
-            <p class="share-text">Share this verse:</p>
-            <div class="social-buttons">
-              <button class="social-btn facebook" onclick="shareOnFacebook()" title="Share on Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-              <button class="social-btn twitter" onclick="shareOnTwitter()" title="Share on Twitter">
-                <i class="fab fa-twitter"></i>
-              </button>
-              <button class="social-btn whatsapp" onclick="shareOnWhatsApp()" title="Share on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-              </button>
-              <button class="social-btn telegram" onclick="shareOnTelegram()" title="Share on Telegram">
-                <i class="fab fa-telegram-plane"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Navigation -->
-          <div class="verse-navigation">
-            <button class="nav-btn prev-verse" onclick="previousVerse()">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="verse-counter-visual">
-              <div id="verseProgress" class="progress-bar"></div>
-            </div>
-            <button class="nav-btn next-verse" onclick="nextVerse()">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+          <!-- Inline Subscribe Box -->
+          <div id="subscribeInline" style="display:none; padding:12px 0;">
+            <input type="email" id="subscriberEmailInput" placeholder="Enter your email" style="padding:8px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); color:#fff; width:100%; box-sizing:border-box; margin-bottom:8px;" />
+            <button onclick="submitVerseSubscription()" style="width:100%; padding:9px; border-radius:8px; background:linear-gradient(135deg,#6ac9ff,#9370db); color:#fff; border:none; cursor:pointer; font-weight:600;">Subscribe to Daily Verse</button>
+            <p id="subscribeMessage" style="font-size:0.82em; margin-top:6px; color:#6ac9ff;"></p>
           </div>
         </div>
       </div>
@@ -1078,14 +1281,13 @@
     <span id="closeDevotion" class="close-button">&times;</span>
     <div class="devotion-content">
       <h3>Daily Devotion</h3>
-      <p id="devotionText"></p>
+      <p id="devotionAnchor"></p>
+      <div id="devotionBody"></div>
+      <p id="devotionReflection"></p>
+      <p id="devotionYourTurn"></p>
     </div>
   </div>
 </div>
-
-<script>
-  // Your existing JS here (with updateVerseOfTheDay, updateDevotionOfTheDay, toggleDevotion, etc.)
-</script>
 
 
 
@@ -1436,7 +1638,7 @@
               <span class="nx-course-icon nx-icon-royal"><i class="fas fa-cross"></i></span>
             </div>
             <h3>The Christianity of Christ</h3>
-            <p>A systematic reconstruction of biblical Christianity — terminal-style theological audit using KJV, Ellen White, and pioneer logs. Rediscover the faith once delivered to the saints.</p>
+            <p>A systematic reconstruction of biblical Christianity — terminal-style theological audit using KJV and historic source logs. Rediscover the faith once delivered to the saints.</p>
             <span class="nx-course-cta nx-cta-royal">Enter the Course <i class="fas fa-arrow-right"></i></span>
           </a>
 
@@ -1468,99 +1670,84 @@
          MYTHBUSTERS SECTION — Debunk Spiritual Myths
     ═══════════════════════════════════════════ -->
     <section class="nx-section nx-mythbusters-section scroll-fade" id="mythbusters">
-      <!-- Floating Embers -->
-      <div class="nx-embers-container">
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
-        <span class="nx-ember"></span>
+
+      <!-- ── Section header ── -->
+      <div class="mb-section-header">
+        <span class="mb-section-badge"><i class="fas fa-fire" aria-hidden="true"></i> MythBusters</span>
+        <h2 class="mb-section-title">Common Myths Corrected by Scripture</h2>
+        <p class="mb-section-sub">Every card below is one myth — watch the short, then read the full study. Both are in one place.</p>
       </div>
-      <div class="nx-section-inner">
 
-        <!-- Section Header -->
-        <div class="nx-section-header">
-          <span class="nx-section-badge nx-badge-flame"><i class="fas fa-fire"></i> Debunk</span>
-          <h2 class="nx-section-title">Bible MythBusters</h2>
-          <p class="nx-section-sub">Separating spiritual lies from biblical truth — powered by Scripture, Spirit of Prophecy &amp; The Great Controversy.</p>
-          <div class="nx-header-line" style="background:rgba(255,107,53,0.4);"></div>
-        </div>
+      <!-- ── Unified myth grid ── -->
+      <div class="mb-unified-grid">
 
-        <!-- Feature Card -->
-        <a href="mythbusters.html" class="nx-mb-feature">
-          <div class="nx-mb-feature-inner">
-            <div class="nx-mb-icon">🔥</div>
-            <div class="nx-mb-content">
-              <h3>Myth vs Truth — Interactive Experience</h3>
-              <p>Common spiritual myths debunked with evidence from the Bible, Ellen G. White's writings, The Great Controversy, and Steps to Christ. Swipe through myths, explore multiple sources, and discover the truth.</p>
-              <div class="nx-mb-tags">
-                <span class="nx-mb-tag">7 Myths</span>
-                <span class="nx-mb-tag">4 Sources Each</span>
-                <span class="nx-mb-tag">Video Shorts Coming</span>
-              </div>
-              <div class="nx-mb-cta">
-                <span>Start Busting Myths</span>
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
+        <!-- Myth 1 -->
+        <article class="mb-myth-card">
+          <div class="mb-myth-video-wrap">
+            <mux-player class="mb-myth-player" playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the Forbidden Fruit Really?" preload="none" playsinline></mux-player>
           </div>
-        </a>
+          <div class="mb-myth-body">
+            <div class="mb-myth-number">Myth 1</div>
+            <h3 class="mb-myth-title">The Forbidden Fruit Was an Apple</h3>
+            <p class="mb-myth-lie"><span class="mb-lie-label">The Lie</span> Genesis says Adam and Eve ate an apple — everyone knows that.</p>
+            <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> The word "apple" is nowhere in Genesis. The Hebrew says only <em>pĕrî</em> — fruit, unspecified. The "apple" entered tradition through a 4th-century Latin pun in Jerome's Vulgate (<em>malum</em> = both "evil" and "apple") — not the Hebrew original. The Holy Spirit never named the fruit because the fruit was never the point. Satan's first four words were "Yea, hath God said?" — and the apple myth still does exactly that: it replaces Scripture with tradition.</p>
+            <p class="mb-myth-source"><strong>Bible:</strong> Gen. 2:17; Gen. 3:1-6 &nbsp;|&nbsp; <strong>History:</strong> Jerome's Latin Vulgate tradition</p>
+            <a href="Devotions/forbidden_fruit_malum.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
 
+        <!-- Myth 2 -->
+        <article class="mb-myth-card">
+          <div class="mb-myth-video-wrap">
+            <mux-player class="mb-myth-player" playback-id="fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es" metadata-video-title="Is the Bible God's Word to Humanity?" preload="none" playsinline></mux-player>
+          </div>
+          <div class="mb-myth-body">
+            <div class="mb-myth-number">Myth 2</div>
+            <h3 class="mb-myth-title">Noah's Ark Is Too Impossible to Be Real</h3>
+            <p class="mb-myth-lie"><span class="mb-lie-label">The Lie</span> The ark is a symbolic children's story — no rational person takes it as literal history.</p>
+            <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> God gave Noah precise engineering specifications: 300 × 50 × 30 cubits (~1.4 million cubic feet). Naval engineers confirm those proportions are structurally seaworthy. Jesus cited the flood as literal history (Matt. 24:37-39), Hebrews 11:7 names Noah as a hero of faith — not fiction — and flood accounts exist independently in over 200 cultures.</p>
+            <p class="mb-myth-source"><strong>Bible:</strong> Gen. 6:14-16; Matt. 24:37-39; Heb. 11:7 &nbsp;|&nbsp; <strong>Research:</strong> comparative flood traditions</p>
+            <a href="Studies/facts_or_fiction.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <!-- Myth 3 -->
+        <article class="mb-myth-card">
+          <div class="mb-myth-video-wrap">
+            <mux-player class="mb-myth-player" playback-id="IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw" metadata-video-title="Is the Bible Facts or Fiction?" preload="none" playsinline></mux-player>
+          </div>
+          <div class="mb-myth-body">
+            <div class="mb-myth-number">Myth 3</div>
+            <h3 class="mb-myth-title">Science Has Disproved the Bible</h3>
+            <p class="mb-myth-lie"><span class="mb-lie-label">The Lie</span> Science and the Bible are enemies — choosing faith means rejecting honest evidence.</p>
+            <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> The Bible repeatedly invites honest investigation: Isaiah 1:18 says, "Come now, and let us reason together." Scripture includes observations often highlighted by later science, including the earth suspended in space (Job 26:7) and practical health isolation principles (Leviticus 13). Real science and biblical faith both pursue truth.</p>
+            <p class="mb-myth-source"><strong>Bible:</strong> Isa. 1:18; Isa. 40:22; Job 26:7 &nbsp;|&nbsp; <strong>Theme:</strong> faith and reason together</p>
+            <a href="Studies/why_the_bible_is_expanded.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <!-- Myth 4 -->
+        <article class="mb-myth-card">
+          <div class="mb-myth-video-wrap">
+            <mux-player class="mb-myth-player" playback-id="t00Gqgwlm3OM02Qm02wPaYMk5qyw4oy47TpPzejEjBWqN8" metadata-video-title="State of the Dead - The 6,000-Year Lie" preload="none" playsinline></mux-player>
+          </div>
+          <div class="mb-myth-body">
+            <div class="mb-myth-number">Myth 4</div>
+            <h3 class="mb-myth-title">The Dead Are Already Conscious in Heaven or Hell</h3>
+            <p class="mb-myth-lie"><span class="mb-lie-label">The Lie</span> People remain conscious immediately after death and can communicate with the living.</p>
+            <p class="mb-myth-truth"><span class="mb-truth-label">The Truth</span> Scripture describes death as an unconscious sleep until resurrection: "the dead know not any thing" (Eccl. 9:5), and "many ... shall awake" at the end (Dan. 12:2). Hope is not in disembodied survival, but in Christ's return and the resurrection of the dead.</p>
+            <p class="mb-myth-source"><strong>Bible:</strong> Eccl. 9:5; John 11:11-14; 1 Thess. 4:16-17 &nbsp;|&nbsp; <strong>Theme:</strong> resurrection hope</p>
+            <a href="New_Sections/non-live/state-of-the-dead-study.html" class="mb-myth-link">Read the full study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+      </div><!-- /mb-unified-grid -->
+
+      <div class="mb-section-cta">
+        <a href="mythbusters.html" class="mb-cta-btn"><i class="fas fa-fire" aria-hidden="true"></i> See All MythBusters</a>
       </div>
+
     </section>
-
-
-<!-- 10 Commandments mini-series -->
-<section id="stories-section" class="stories-section">
-    <!-- decorative cubes container -->
-    <div class="cubes-wrapper">
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <div class="cube"></div>
-      <!-- additional smaller cubes/emojis -->
-      <div class="cube small size-s1 front"></div>
-      <div class="cube small size-s2"></div>
-      <div class="cube small size-s3 front"></div>
-      <div class="cube small size-s4"></div>
-      <div class="cube small size-s5 front"></div>
-      <div class="cube small size-s6"></div>
-      <div class="cube small size-s7"></div>
-      <div class="cube small size-s8 front"></div>
-      <div class="cube small size-s9"></div>
-      <div class="cube small size-s10 front"></div>
-      <!-- 10 more varied small cubes -->
-      <div class="cube small size-s11"></div>
-      <div class="cube small size-s12 front"></div>
-      <div class="cube small size-s13"></div>
-      <div class="cube small size-s14 front"></div>
-      <div class="cube small size-s15"></div>
-      <div class="cube small size-s16 front"></div>
-      <div class="cube small size-s17"></div>
-      <div class="cube small size-s18 front"></div>
-      <div class="cube small size-s19"></div>
-      <div class="cube small size-s20 front"></div>
-      <div class="emoji" style="font-size:24px;">📜</div>
-      <div class="emoji" style="font-size:30px;">📖</div>
-      <div class="emoji" style="font-size:20px;">✝️</div>
-    </div>
-    <header>
-      <h2>10 Commandments Mini-Series</h2>
-      <p>Short video episodes outlining the Ten Commandments.</p>
-      <div class="series-top-note">
-        <span class="series-top-note-label">📚 Recommended readings:</span>
-        <a href="the-ten-commandments.html">The Ten Commandments</a>
-      </div>
-      <input type="text" id="search-bar" placeholder="Search episodes..." />
-    </header>
-    <div id="stories-container" class="stories-container"></div>
-</section>
 
 
 
@@ -2208,14 +2395,14 @@
     <!-- Videos & MythBuster Shorts — Coming Soon Placeholder -->
     <div class="video-coming-soon-placeholder">
       <div class="vcs-icon">🎬</div>
-      <h3 class="vcs-title">Videos &amp; MythBuster Shorts — Coming Soon</h3>
-      <p class="vcs-text">We are actively producing Bible-based video content and MythBuster short-form episodes. This section will feature powerful teachings, myth debunking clips, and more — all rooted in Scripture.</p>
+      <h3 class="vcs-title">Videos &amp; MythBuster Shorts — Now Live!</h3>
+      <p class="vcs-text">Bible-based video content and MythBuster short-form episodes are now available! Watch powerful teachings, myth debunking clips, and more — all rooted in Scripture.</p>
       <div class="vcs-badges">
         <span class="vcs-badge"><i class="fas fa-video"></i> Video Series</span>
         <span class="vcs-badge"><i class="fas fa-fire"></i> MythBuster Shorts</span>
-        <span class="vcs-badge"><i class="fas fa-tools"></i> In Production</span>
+        <span class="vcs-badge" style="background:#22c55e;color:#fff;"><i class="fas fa-check"></i> Now Live</span>
       </div>
-      <p class="vcs-sub">Stay tuned — glory to God.</p>
+      <p class="vcs-sub">Glory to God for new video resources!</p>
     </div>
 
     <!-- COMMANDMENTS PREVIEW ON HOMEPAGE -->
@@ -2254,28 +2441,37 @@
       <span class="recent-videos-badge"><i class="fas fa-clock"></i> Staged Section</span>
       <h2><i class="fas fa-photo-film"></i> Recent Videos Hub</h2>
       <p>Latest video additions for internal preview before public launch.</p>
+      <h3 class="recent-mythbusters-heading"><i class="fas fa-fire" aria-hidden="true"></i> MythBusters Shorts</h3>
     </div>
 
     <div class="recent-videos-grid">
-      <article class="recent-video-card">
-        <span class="recent-video-tag">Historical</span>
-        <h3>History and Formation of the Christian Church</h3>
-        <p>A historical walkthrough of the church's formation, growth, trials, and witness.</p>
+      <article class="recent-video-card recent-video-card-myth">
+        <span class="recent-video-tag recent-video-tag-myth">MythBusters</span>
+        <mux-player class="recent-mux-player" playback-id="fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es" metadata-video-title="Is the Bible God's Word to Humanity? (PART 1)" preload="auto" muted playsinline></mux-player>
+        <h3>Is the Bible God's Word to Humanity? (PART 1)</h3>
+        <p>PART 1 of the MythBuster study: Evidence, inspiration, and reliability of the Bible as God's message to all people.</p>
         <a href="all-videos.html" class="recent-video-btn">Watch in Video Library</a>
       </article>
-
-      <article class="recent-video-card">
-        <span class="recent-video-tag">Commandments</span>
-        <h3>10th Commandment</h3>
-        <p>Final episode in the commandments sequence with practical faith focus.</p>
+      <article class="recent-video-card recent-video-card-myth">
+        <span class="recent-video-tag recent-video-tag-myth">MythBusters</span>
+        <mux-player class="recent-mux-player" playback-id="IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw" metadata-video-title="Is the Bible Facts or Fiction? (PART 2)" preload="auto" muted playsinline></mux-player>
+        <h3>Is the Bible Facts or Fiction? (PART 2)</h3>
+        <p>PART 2 of 2: Archaeology, manuscript evidence, and fulfilled prophecy—fact or fiction?</p>
         <a href="all-videos.html" class="recent-video-btn">Watch in Video Library</a>
       </article>
-
-      <article class="recent-video-card">
-        <span class="recent-video-tag">Commandments</span>
-        <h3>9th Commandment - Do not covet</h3>
-        <p>A message on contentment, gratitude, and trusting God's provision.</p>
+      <article class="recent-video-card recent-video-card-myth">
+        <span class="recent-video-tag recent-video-tag-myth">MythBusters</span>
+        <mux-player class="recent-mux-player" playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" preload="auto" muted playsinline></mux-player>
+        <h3>What is the forbidden fruit Really?</h3>
+        <p>Explore the real meaning behind the forbidden fruit, the Latin pun 'malum', and why obedience matters more than the fruit itself.</p>
         <a href="all-videos.html" class="recent-video-btn">Watch in Video Library</a>
+      </article>
+      <article class="recent-video-card recent-video-card-myth">
+        <span class="recent-video-tag recent-video-tag-myth">MythBusters</span>
+        <mux-player class="recent-mux-player" playback-id="t00Gqgwlm3OM02Qm02wPaYMk5qyw4oy47TpPzejEjBWqN8" metadata-video-title="State of the Dead - The 6,000-Year Lie" preload="auto" muted playsinline></mux-player>
+        <h3>State of the Dead - The 6,000-Year Lie</h3>
+        <p>A direct Bible study on what happens at death, why Scripture describes death as sleep, and how resurrection hope answers fear and spiritual confusion.</p>
+        <a href="New_Sections/non-live/state-of-the-dead-study.html" class="recent-video-btn">Watch + Read Full Study</a>
       </article>
     </div>
   </div>
@@ -2303,28 +2499,100 @@ function openFullscreen(button) {
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof createMuxExperience !== 'function') return;
 
-  const homeVideos = [
-    {id:'home-history-1', play:'vyyX1iWsXBo647NDltev45sx5JKMA8Wb8lqIktQ02Yb8', color:'#8b5cf6', playEmoji:'🏛️', pauseEmoji:'⏸️', title:'History and Formation of the Christian Church', desc:'A historical teaching on how the Christian church formed, expanded, and endured through biblical history.'}
-  ];
+  // Helper to create a mux-player with all required attributes
+  function createCustomMuxPlayer({playbackId, color, playEmoji, pauseEmoji, poster, title, container}) {
+    const player = document.createElement('mux-player');
+    player.setAttribute('playback-id', playbackId);
+    player.setAttribute('preload', 'auto');
+    player.setAttribute('autoplay', '');
+    player.setAttribute('muted', '');
+    player.setAttribute('playsinline', '');
+    if (poster) player.setAttribute('poster', poster);
+    player.setAttribute('metadata-video-title', title || '');
+    player.style.setProperty('--accent-color', color || '#a855f7');
+    player.style.borderRadius = '24px';
+    player.style.boxShadow = `0 8px 20px rgba(139,92,246,0.3)`;
+    // Add custom play/pause emojis
+    const playBtn = document.createElement('div');
+    playBtn.setAttribute('slot', 'play-button');
+    playBtn.innerText = playEmoji || '▶️';
+    const pauseBtn = document.createElement('div');
+    pauseBtn.setAttribute('slot', 'pause-button');
+    pauseBtn.innerText = pauseEmoji || '⏸️';
+    player.appendChild(playBtn);
+    player.appendChild(pauseBtn);
+    // Pause video until user clicks (autoplay muted, but pause immediately)
+    player.addEventListener('canplay', () => { player.pause(); }, { once: true });
+    container.appendChild(player);
+    return player;
+  }
 
-  homeVideos.forEach(v => {
-    const container = document.getElementById(v.id);
-    if (!container) return;
-
-    createMuxExperience(v.play, v.color, v.playEmoji, v.pauseEmoji, container);
+  // Homepage main video
+  const homeHistory = {
+    id: 'home-history-1',
+    play: 'vyyX1iWsXBo647NDltev45sx5JKMA8Wb8lqIktQ02Yb8',
+    color: '#8b5cf6',
+    playEmoji: '🏛️',
+    pauseEmoji: '⏸️',
+    title: 'History and Formation of the Christian Church',
+    desc: 'A historical teaching on how the Christian church formed, expanded, and endured through biblical history.',
+    poster: '' // Add poster URL if available
+  };
+  const container = document.getElementById(homeHistory.id);
+  if (container) {
+    createCustomMuxPlayer({
+      playbackId: homeHistory.play,
+      color: homeHistory.color,
+      playEmoji: homeHistory.playEmoji,
+      pauseEmoji: homeHistory.pauseEmoji,
+      poster: homeHistory.poster,
+      title: homeHistory.title,
+      container
+    });
+    // Add JSON-LD structured data
     const ld = {
-      "@context":"http://schema.org",
-      "@type":"VideoObject",
-      name:v.title,
-      description:v.desc,
-      contentUrl:`https://stream.mux.com/${v.play}.m3u8`,
-      embedUrl:`https://mux.com/embed/${v.play}`
+      "@context": "http://schema.org",
+      "@type": "VideoObject",
+      name: homeHistory.title,
+      description: homeHistory.desc,
+      contentUrl: `https://stream.mux.com/${homeHistory.play}.m3u8`,
+      embedUrl: `https://mux.com/embed/${homeHistory.play}`
     };
     const scr = document.createElement('script');
-    scr.type='application/ld+json';
+    scr.type = 'application/ld+json';
     scr.textContent = JSON.stringify(ld);
     document.body.appendChild(scr);
-  });
+  }
+
+  // MythBusters Shorts Widget videos (if any)
+  const mythbusters = [
+    {id: null, playbackId: 'fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es', color: '#a855f7', playEmoji: '🔥', pauseEmoji: '⏸️', title: "Is the Bible God's Word to Humanity? (PART 1)", poster: ''},
+    {id: null, playbackId: 'IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw', color: '#a855f7', playEmoji: '🔥', pauseEmoji: '⏸️', title: "Is the Bible Facts or Fiction? (PART 2)", poster: ''},
+    {id: null, playbackId: 'QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ', color: '#a855f7', playEmoji: '🔥', pauseEmoji: '⏸️', title: "What is the forbidden fruit Really?", poster: ''},
+    {id: null, playbackId: 't00Gqgwlm3OM02Qm02wPaYMk5qyw4oy47TpPzejEjBWqN8', color: '#a855f7', playEmoji: '🔥', pauseEmoji: '⏸️', title: "State of the Dead - The 6,000-Year Lie", poster: ''}
+  ];
+  // Replace all <mux-player> in #mythbustersShortsWidget with custom ones
+  const widget = document.getElementById('mythbustersShortsWidget');
+  if (widget) {
+    const players = widget.querySelectorAll('mux-player');
+    players.forEach((el, i) => {
+      const parent = el.parentElement;
+      if (!parent) return;
+      const mb = mythbusters[i];
+      if (!mb) return;
+      const newPlayer = document.createElement('div');
+      createCustomMuxPlayer({
+        playbackId: mb.playbackId,
+        color: mb.color,
+        playEmoji: mb.playEmoji,
+        pauseEmoji: mb.pauseEmoji,
+        poster: mb.poster,
+        title: mb.title,
+        container: newPlayer
+      });
+      parent.replaceChild(newPlayer, el);
+    });
+  }
 });
 </script>
 
@@ -2374,10 +2642,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+<!-- ═══════════════════════════════════════════════════
+     WHERE ARE WE NOW IN PROPHETIC TIME? — News Desk
+     ═══════════════════════════════════════════════════ -->
+<section class="wl-section scroll-fade" id="evidence-desk" aria-label="The Evidence Desk">
+  <div class="wl-section-inner">
+    <div class="wl-header">
+      <span class="wl-header-tag"><i class="fas fa-newspaper"></i> The Evidence Desk</span>
+      <h2>Recent Stories In Prophetic Time</h2>
+      <p>Professional reporting on current events, linked realistically to Scripture with disciplined prophetic analysis.</p>
+    </div>
+    <div class="wl-news-ticker" id="wl-news-ticker" aria-label="Latest prophetic briefings"></div>
+    <div class="wl-grid" id="evidence-grid">
+      <!-- Cards loaded from newsroom.json by ledger.js -->
+    </div>
+  </div>
+</section>
+
     
 </main>
     <footer class="footer scroll-fade" role="contentinfo">
-        <p>&copy; 2025 NothingButTheTRUTH. All rights reserved.</p>
+        <p>&copy; 2025 LightLine. All rights reserved.</p>
         <p>
             <i class="fas fa-share-alt" style="color:#ffd803" aria-hidden="true"></i> Follow us on:
         </p>
@@ -2385,6 +2670,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="about-us.html" style="color:#ffd803;text-decoration:none;font-weight:600;">About Us</a>
       </p>
     </footer>
+
+    <!-- Watchman's Ledger Drawer -->
+    <div class="wl-drawer-backdrop" id="ed-drawer-backdrop" aria-hidden="true"></div>
+    <aside class="wl-drawer" id="ed-drawer" role="dialog" aria-label="Trending Reports" aria-hidden="true">
+      <div class="wl-drawer-header">
+        <h3 class="wl-drawer-title"><i class="fas fa-chart-line"></i> Trending Reports</h3>
+        <button class="wl-drawer-close" id="ed-drawer-close" aria-label="Close drawer"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="wl-drawer-body" id="ed-drawer-body"></div>
+    </aside>
+    <script src="ledger.js"></script>
 
     <script>
         // Slideshow functionality
@@ -2506,9 +2802,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Watch new nx-card and nx-devo-card elements
     document.querySelectorAll('.nx-card, .nx-devo-card').forEach(card => observer.observe(card));
-    
-    // Also watch your general "scroll-fade" elements (like the slideshow)
-    document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
 });
 </script>
 
@@ -2642,9 +2935,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const firebaseConfig = {
     apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-    authDomain: "NothingButTheTRUTH-1cd23.firebaseapp.com",
-    projectId: "NothingButTheTRUTH-1cd23",
-    storageBucket: "NothingButTheTRUTH-1cd23.appspot.com",
+    authDomain: "LightLine-1cd23.firebaseapp.com",
+    projectId: "LightLine-1cd23",
+    storageBucket: "LightLine-1cd23.appspot.com",
     messagingSenderId: "253692400115",
     appId: "1:253692400115:web:7eb36acdf69382d28d0286",
     measurementId: "G-LXVCQNJ6VJ"
@@ -2947,9 +3240,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Firebase Config
   const firebaseConfig = {
     apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-    authDomain: "NothingButTheTRUTH-1cd23.firebaseapp.com",
-    projectId: "NothingButTheTRUTH-1cd23",
-    storageBucket: "NothingButTheTRUTH-1cd23.appspot.com",
+    authDomain: "LightLine-1cd23.firebaseapp.com",
+    projectId: "LightLine-1cd23",
+    storageBucket: "LightLine-1cd23.appspot.com",
     messagingSenderId: "253692400115",
     appId: "1:253692400115:web:7eb36acdf69382d28d0286",
     measurementId: "G-LXVCQNJ6VJ"
@@ -3560,349 +3853,272 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// weekly verse + devotion share functionality
+<script type="module">
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { addDoc, collection, doc, onSnapshot, serverTimestamp, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-<script>
-  function shareVerse() {
-  const verseText = `"Let your light shine before others..." - Matthew 5:16`;
-  const shareData = {
-    title: "Verse of the Week - NothingButTheTRUTH",
-    text: verseText,
-    url: window.location.href
+const SITE_URL = "https://lightline.web.app";
+const seedVerses = [
+  { ref: "Matthew 5:16", text: "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven." },
+  { ref: "Proverbs 3:5", text: "Trust in the LORD with all thine heart; and lean not unto thine own understanding." },
+  { ref: "Philippians 4:13", text: "I can do all things through Christ which strengtheneth me." },
+  { ref: "Psalm 46:10", text: "Be still, and know that I am God." },
+  { ref: "Psalm 119:105", text: "Thy word is a lamp unto my feet, and a light unto my path." },
+  { ref: "1 Peter 5:7", text: "Casting all your care upon him; for he careth for you." },
+  { ref: "Psalm 23:1", text: "The LORD is my shepherd; I shall not want." }
+];
+
+const expandedVerses = [
+  { ref: "Isaiah 41:10", text: "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness." },
+  { ref: "Jeremiah 29:11", text: "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end." },
+  { ref: "Romans 8:28", text: "And we know that all things work together for good to them that love God, to them who are the called according to his purpose." },
+  { ref: "John 14:27", text: "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid." },
+  { ref: "Lamentations 3:22-23", text: "It is of the LORD'S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness." },
+  { ref: "Hebrews 11:1", text: "Now faith is the substance of things hoped for, the evidence of things not seen." },
+  { ref: "Joshua 1:9", text: "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest." },
+  { ref: "Psalm 34:8", text: "O taste and see that the LORD is good: blessed is the man that trusteth in him." },
+  { ref: "James 1:5", text: "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him." },
+  { ref: "Romans 12:2", text: "And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God." },
+  { ref: "2 Corinthians 5:7", text: "For we walk by faith, not by sight." },
+  { ref: "Galatians 6:9", text: "And let us not be weary in well doing: for in due season we shall reap, if we faint not." },
+  { ref: "Micah 6:8", text: "He hath shewed thee, O man, what is good; and what doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?" },
+  { ref: "Matthew 11:28", text: "Come unto me, all ye that labour and are heavy laden, and I will give you rest." },
+  { ref: "John 15:5", text: "I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing." },
+  { ref: "Ephesians 2:8", text: "For by grace are ye saved through faith; and that not of yourselves: it is the gift of God." },
+  { ref: "1 Thessalonians 5:16-18", text: "Rejoice evermore. Pray without ceasing. In every thing give thanks: for this is the will of God in Christ Jesus concerning you." },
+  { ref: "Isaiah 26:3", text: "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee." },
+  { ref: "Matthew 6:33", text: "But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you." },
+  { ref: "Hebrews 12:1", text: "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us." },
+  { ref: "Psalm 37:5", text: "Commit thy way unto the LORD; trust also in him; and he shall bring it to pass." },
+  { ref: "Romans 15:13", text: "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost." },
+  { ref: "Revelation 14:12", text: "Here is the patience of the saints: here are they that keep the commandments of God, and the faith of Jesus." }
+];
+
+const verses = [...seedVerses, ...expandedVerses];
+
+const seedDevotions = [
+  { anchorReference: "Matthew 5:16 (KJV)", anchorText: "Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.", body: ["Jesus calls your faith a light. Light does not fight to be noticed. It simply shines, and darkness has to move. Your daily choices can quietly point people to God.", "This verse does not ask you to perform for people. It asks you to live close to Christ so your actions become honest, kind, and dependable. That is what a Christ-shaped life looks like.", "Biblical obedience grows out of love, not fear. God is not asking you to impress Him. He is inviting you to walk with Him so His character becomes visible through you.", "Today your witness may be one conversation, one kind response, or one brave choice to do what is right. Small acts done with Jesus can carry eternal weight."], reflectionQuestion: "Where is God inviting me to shine quietly but clearly today?", yourTurn: "Talk to God directly right now in your own words about one place in your day where you want His light to be seen through you." },
+  { anchorReference: "Proverbs 3:5 (KJV)", anchorText: "Trust in the LORD with all thine heart; and lean not unto thine own understanding.", body: ["Trust is personal. It is not pretending you have no questions. It is choosing who you will lean on while questions still remain.", "We all build quick plans based on what we can see. This verse gently interrupts that habit and points us back to God. His view is wider than ours every time.", "Biblical faith holds that God leads through Scripture, prayer, and the quiet conviction of the Spirit. He is not distant from your decisions. He is involved and faithful.", "When you release control to God, peace grows. You are no longer carrying tomorrow alone. You are walking with the One who already knows the path."], reflectionQuestion: "What decision am I still trying to control instead of trusting God with?", yourTurn: "Speak honestly to God about the choice that feels heavy. Ask Him for wisdom, then listen and move in faith one step at a time." },
+  { anchorReference: "Philippians 4:13 (KJV)", anchorText: "I can do all things through Christ which strengtheneth me.", body: ["Paul wrote this from hardship, not comfort. So this promise is not a slogan for easy wins. It is strength for real life when your own energy runs out.", "Christ does not always remove the challenge first. Often He gives strength inside the challenge. That means you are never abandoned in pressure.", "Believers grow through practical discipleship: daily prayer, Scripture, surrender, and obedience. These are not rituals to earn favor. They are channels where Christ gives strength.", "If today feels too much, this verse reminds you that your source is not your mood, your past, or your willpower. Your source is Jesus Himself."], reflectionQuestion: "Where do I need Christ's strength today instead of my own effort?", yourTurn: "Tell God exactly where you feel weak. Ask Jesus for strength you cannot produce, then take one faithful step in that strength." },
+  { anchorReference: "Psalm 46:10 (KJV)", anchorText: "Be still, and know that I am God.", body: ["Stillness is not laziness. It is holy focus. In a noisy world, this verse calls your heart back to who God is before you react to everything around you.", "You can be busy on the outside and still anchored on the inside. Knowing God is more than facts. It is confidence in His character when life is uncertain.", "The rhythm of Sabbath rest reflects this invitation: stop, remember, worship, and trust. God restores people who pause in His presence.", "When fear rises, stillness becomes a spiritual decision. You tell your soul the truth: God is still God, and He is still near."], reflectionQuestion: "What noise do I need to silence so I can hear God clearly today?", yourTurn: "Take a quiet minute and speak to God from your heart. No script needed. Just tell Him what is weighing on you and listen for His peace." },
+  { anchorReference: "Psalm 119:105 (KJV)", anchorText: "Thy word is a lamp unto my feet, and a light unto my path.", body: ["A lamp gives enough light for the next step, not the whole road. God often guides this way so we learn daily trust instead of independent control.", "Scripture is not just information. It is direction. A single verse obeyed can protect your choices, relationships, and priorities today.", "Biblical faith treats the Bible as the final authority for faith and life. That means truth is not built from trends. It is formed by God's Word.", "If you feel uncertain, open Scripture before you open your opinions. God still leads ordinary people through His living Word."], reflectionQuestion: "Which next step in my day needs the light of Scripture before I act?", yourTurn: "Tell God you want to follow His Word today. Ask Him to make one truth clear and give you courage to obey it." },
+  { anchorReference: "1 Peter 5:7 (KJV)", anchorText: "Casting all your care upon him; for he careth for you.", body: ["This verse is an invitation, not a command barked at a distance. God knows your anxiety and asks you to hand it to Him because He cares deeply for you.", "Casting care is active trust. You name the burden, release it, and return to that choice when worry comes back. It is a daily rhythm, not a one-time feeling.", "Believers look to Christ's present ministry as assurance that we are not forgotten. Jesus intercedes for us with full compassion.", "You are not weak for needing help. You are wise for bringing your whole heart to God. He can carry what crushes you."], reflectionQuestion: "What specific care do I keep holding instead of giving to God?", yourTurn: "Say the burden to God by name. Tell Him where it hurts, and ask Him to hold what you cannot carry." },
+  { anchorReference: "Psalm 23:1 (KJV)", anchorText: "The LORD is my shepherd; I shall not want.", body: ["A shepherd leads, feeds, and protects. David does not describe God as distant power but as personal care. This is relationship language.", "To say 'I shall not want' does not mean life has no needs. It means God is faithful to provide what is truly needed for your salvation and growth.", "Christ remains the center as Shepherd and Saviour. He guides His people by the Word, by His Spirit, and by His steady love through every season.", "When your future feels unclear, this verse steadies your heart. You belong to the Shepherd. He knows where to lead you next."], reflectionQuestion: "Where do I need to trust the Shepherd's care instead of my own fear?", yourTurn: "Talk with God as your Shepherd. Share your need plainly, then thank Him for leading you one day at a time." }
+];
+
+function buildExpandedDevotion(verse) {
+  return {
+    anchorReference: `${verse.ref} (KJV)`,
+    anchorText: verse.text,
+    body: [
+      `This promise in ${verse.ref} shows that God meets real life with real grace. He is not absent from your ordinary day; He is present and active.`,
+      "Faith grows when you return to Scripture before reacting to pressure. The Word of God steadies your mind and helps you choose obedience over fear.",
+      "Christian discipleship is practical and daily: prayer, surrender, trust, and faithful action. Jesus forms character in small decisions that honor Him.",
+      "Today, receive this verse as a personal invitation. Walk with God one step at a time and let His truth shape your attitude, words, and direction."
+    ],
+    reflectionQuestion: `How can I live out ${verse.ref} in one clear action today?`,
+    yourTurn: "Speak honestly to God right now. Ask for the Holy Spirit's help to obey this verse with a willing heart today."
   };
-
-  if (navigator.share) {
-    navigator.share(shareData)
-      .then(() => console.log('Verse shared successfully'))
-      .catch(err => console.error('Sharing failed', err));
-  } else {
-    // Fallback: copy to clipboard
-    navigator.clipboard.writeText(`${verseText} - ${window.location.href}`);
-    alert("Verse copied to clipboard! You can now share it anywhere.");
-  }
 }
 
-</script>
+const fullDevotions = verses.map((verse, index) => seedDevotions[index] || buildExpandedDevotion(verse));
 
+let currentUser = null;
+let unsubscribeLikeListener = null;
+const getDayOfYear = (d = new Date()) => Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 86400000);
+const toDateId = (d = new Date()) => d.toISOString().slice(0, 10);
+const getTodayVerse = () => verses[(getDayOfYear() - 1) % verses.length];
+const getTodayDevotion = () => fullDevotions[(getDayOfYear() - 1) % fullDevotions.length];
+const getFirebaseCtx = () => window.lightlineFirebase?.auth && window.lightlineFirebase?.db ? window.lightlineFirebase : null;
 
-
-
-
-
-<script>
-  function toggleDevotion() {
-    const modal = document.getElementById('devotionModal');
-    modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
-  }
-</script>
-
-
-
-
-
-
-
-<script>
-// === Your verses and devotions arrays ===
-const verses = [
-  { text: "Let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven.", ref: "Matthew 5:16", theme: "Witness" },
-  { text: "Trust in the Lord with all your heart and do not lean on your own understanding.", ref: "Proverbs 3:5", theme: "Trust" },
-  { text: "I can do all things through Christ who strengthens me.", ref: "Philippians 4:13", theme: "Strength" },
-  { text: "Be still, and know that I am God.", ref: "Psalm 46:10", theme: "Peace" },
-  { text: "Your word is a lamp to my feet and a light to my path.", ref: "Psalm 119:105", theme: "Guidance" },
-  { text: "Cast all your anxiety on Him because He cares for you.", ref: "1 Peter 5:7", theme: "Comfort" },
-  { text: "The Lord is my shepherd; I shall not want.", ref: "Psalm 23:1", theme: "Care" },
-  { text: "If we confess our sins, He is faithful and just to forgive us our sins.", ref: "1 John 1:9", theme: "Grace" },
-  { text: "Seek first the kingdom of God and His righteousness.", ref: "Matthew 6:33", theme: "Priority" },
-  { text: "My grace is sufficient for you, for My power is made perfect in weakness.", ref: "2 Corinthians 12:9", theme: "Grace" },
-  { text: "The joy of the Lord is your strength.", ref: "Nehemiah 8:10", theme: "Joy" },
-  { text: "In all your ways acknowledge Him, and He will make straight your paths.", ref: "Proverbs 3:6", theme: "Direction" }
-];
-
-const devotions = [
-  "Reflect on one way to let Christ’s light shine through your words today.",
-  "Surrender one decision to God in prayer before you act.",
-  "Face one challenge with confidence that Christ strengthens you.",
-  "Take a quiet minute with God and release hurry and fear.",
-  "Read the verse aloud and ask God to guide one step today.",
-  "Name one burden and deliberately place it in God’s hands.",
-  "Thank God for one way He has shepherded you recently.",
-  "Receive forgiveness and extend that same grace to someone else.",
-  "Reorder one part of your day so God comes first.",
-  "In weakness, ask for Christ’s power instead of self-reliance.",
-  "Practice joy by thanking God for three specific blessings.",
-  "Before acting, pause and acknowledge God in prayer."
-];
-
-// === Helper to get current day index in cycle ===
-function getDailyIndex() {
-  const startDate = new Date("2025-01-01");
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
-  const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
-  const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-  let hash = 0;
-  for (let i = 0; i < dateKey.length; i++) {
-    hash = (hash * 31 + dateKey.charCodeAt(i)) % 100000;
-  }
-  return (Math.abs(diffDays) + dayOfYear + hash) % verses.length;
+function setLikeUi(likeCount, didLike) {
+  document.getElementById("likeCount").textContent = String(likeCount);
+  const likeBtn = document.getElementById("likeBtn");
+  likeBtn.innerHTML = didLike ? '<i class="fas fa-heart"></i><span>Liked</span>' : '<i class="far fa-heart"></i><span>Like</span>';
+  likeBtn.classList.toggle("active", didLike);
 }
 
-// Current verse index for manual navigation
-let currentVerseIndex = getDailyIndex();
-
-// === Update verse and devotion on page ===
-function updateVerseOfTheDay() {
-  const verseTextEl = document.getElementById("verseText");
-  const verseRefEl = document.getElementById("verseRef");
-  const verseCounterEl = document.getElementById("verseCounter");
-  const progressBar = document.getElementById("verseProgress");
-  const versePostTime = document.getElementById("versePostTime");
-  const selectedVerse = verses[currentVerseIndex];
-
-  if (verseTextEl && verseRefEl && selectedVerse) {
-    verseTextEl.textContent = `“${selectedVerse.text}”`;
-    verseRefEl.textContent = selectedVerse.ref;
-    
-    // Update counter
-    if (verseCounterEl) {
-      verseCounterEl.textContent = `${currentVerseIndex + 1} of ${verses.length}`;
-    }
-    
-    // Update progress bar
-    if (progressBar) {
-      const progress = ((currentVerseIndex + 1) / verses.length) * 100;
-      progressBar.style.width = progress + '%';
-    }
-
-    if (versePostTime) {
-      const now = new Date();
-      const stamp = now.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
-      versePostTime.textContent = `Updated daily • ${stamp}`;
-    }
-
-    // Reset like button state
-    const likeBtn = document.getElementById('likeBtn');
-    const likeCount = document.getElementById('likeCount');
-    if (likeBtn) {
-      likeBtn.classList.remove('active');
-      likeBtn.innerHTML = '<i class="far fa-heart"></i><span>Like</span>';
-    }
-  }
+function renderTodayVerse() {
+  const verse = getTodayVerse();
+  document.getElementById("verseText").textContent = `"${verse.text}"`;
+  document.getElementById("verseRef").textContent = `${verse.ref} (KJV)`;
+  document.getElementById("verseCounter").textContent = "Today's verse only";
+  document.getElementById("versePostTime").textContent = `Updated daily \u2022 ${new Date().toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" })}`;
 }
 
-function updateDevotionOfTheDay() {
-  const devotionTextEl = document.getElementById("devotionText");
-  if (devotionTextEl) {
-    devotionTextEl.textContent = devotions[currentVerseIndex];
-  }
+function renderTodayDevotion() {
+  const devotion = getTodayDevotion();
+  const anchor = document.getElementById("devotionAnchor");
+  const body = document.getElementById("devotionBody");
+  const reflection = document.getElementById("devotionReflection");
+  const yourTurn = document.getElementById("devotionYourTurn");
+  anchor.innerHTML = `<strong>KJV Anchor:</strong> ${devotion.anchorReference} \u2014 "${devotion.anchorText}"`;
+  body.innerHTML = devotion.body.map((p) => `<p class="devotion-reveal">${p}</p>`).join("");
+  reflection.innerHTML = `<strong>Reflection:</strong> ${devotion.reflectionQuestion}`;
+  yourTurn.innerHTML = `<strong>Your Turn:</strong> ${devotion.yourTurn}`;
+  anchor.classList.add("devotion-reveal");
+  reflection.classList.add("devotion-reveal");
+  yourTurn.classList.add("devotion-reveal");
 }
 
-// === Navigate to next verse ===
-function nextVerse() {
-  currentVerseIndex = (currentVerseIndex + 1) % verses.length;
-  updateVerseOfTheDay();
-  
-  // Add animation
-  const verseText = document.querySelector('.verse-text-social');
-  if (verseText) {
-    verseText.style.animation = 'none';
-    setTimeout(() => {
-      verseText.style.animation = 'fadeInUp 0.6s ease-out 0.2s both';
-    }, 10);
-  }
-}
-
-// === Navigate to previous verse ===
-function previousVerse() {
-  currentVerseIndex = (currentVerseIndex - 1 + verses.length) % verses.length;
-  updateVerseOfTheDay();
-  
-  // Add animation
-  const verseText = document.querySelector('.verse-text-social');
-  if (verseText) {
-    verseText.style.animation = 'none';
-    setTimeout(() => {
-      verseText.style.animation = 'fadeInUp 0.6s ease-out 0.2s both';
-    }, 10);
-  }
-}
-
-// === Toggle like button ===
-function toggleLike() {
-  const likeBtn = document.getElementById('likeBtn');
-  const likeCount = document.getElementById('likeCount');
-  
-  if (likeBtn.classList.contains('active')) {
-    likeBtn.classList.remove('active');
-    likeBtn.innerHTML = '<i class="far fa-heart"></i><span>Like</span>';
-    if (likeCount) likeCount.textContent = parseInt(likeCount.textContent) - 1;
-  } else {
-    likeBtn.classList.add('active');
-    likeBtn.innerHTML = '<i class="fas fa-heart"></i><span>Liked</span>';
-    if (likeCount) likeCount.textContent = parseInt(likeCount.textContent) + 1;
-  }
-}
-
-// === Copy verse to clipboard ===
-function copyToClipboard() {
-  const verseText = document.getElementById('verseText').textContent;
-  const verseRef = document.getElementById('verseRef').textContent;
-  const fullText = `"${verseText}" - ${verseRef}`;
-  
-  navigator.clipboard.writeText(fullText).then(() => {
-    const copyBtn = event.target.closest('.action-btn');
-    if (copyBtn) {
-      const originalHTML = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
-      setTimeout(() => {
-        copyBtn.innerHTML = originalHTML;
-      }, 2000);
-    }
-  }).catch(err => console.error('Copy failed:', err));
-}
-
-// === Social Media Share Functions ===
-function shareOnFacebook() {
-  const verseText = document.getElementById('verseText').textContent;
-  const verseRef = document.getElementById('verseRef').textContent;
-  const fullText = `"${verseText}" - ${verseRef}`;
-  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(fullText)}`;
-  window.open(url, '_blank', 'width=600,height=400');
-}
-
-function shareOnTwitter() {
-  const verseText = document.getElementById('verseText').textContent;
-  const verseRef = document.getElementById('verseRef').textContent;
-  const text = `"${verseText}" - ${verseRef}`;
-  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
-  window.open(url, '_blank', 'width=600,height=300');
-}
-
-function shareOnWhatsApp() {
-  const verseText = document.getElementById('verseText').textContent;
-  const verseRef = document.getElementById('verseRef').textContent;
-  const text = `"${verseText}" - ${verseRef}`;
-  const url = `https://wa.me/?text=${encodeURIComponent(text + ' ' + window.location.href)}`;
-  window.open(url, '_blank');
-}
-
-function shareOnTelegram() {
-  const verseText = document.getElementById('verseText').textContent;
-  const verseRef = document.getElementById('verseRef').textContent;
-  const text = `"${verseText}" - ${verseRef}`;
-  const url = `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
-}
-
-// === Poll Social Share Functions ===
-function sharePollOnFacebook() {
-  const pollText = "How do you deepen your spiritual connection? Join the weekly poll";
-  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(pollText)}`;
-  window.open(url, '_blank', 'width=600,height=400');
-}
-
-function sharePollOnTwitter() {
-  const pollText = "How do you deepen your spiritual connection? Share your thoughts in our weekly poll 🙏";
-  const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(pollText)}&url=${encodeURIComponent(window.location.href)}`;
-  window.open(url, '_blank', 'width=600,height=300');
-}
-
-function sharePollOnWhatsApp() {
-  const pollText = "How do you deepen your spiritual connection? Join this weekly poll and vote 🙏";
-  const url = `https://wa.me/?text=${encodeURIComponent(pollText + ' ' + window.location.href)}`;
-  window.open(url, '_blank');
-}
-
-function sharePollOnTelegram() {
-  const pollText = "How do you deepen your spiritual connection? Join the weekly poll";
-  const url = `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(pollText)}`;
-  window.open(url, '_blank');
-}
-
-// === Save verse to local storage ===
-function saveVerse() {
-  let saved = JSON.parse(localStorage.getItem('savedVerses')) || [];
-  const currentVerse = verses[currentVerseIndex];
-  
-  const alreadySaved = saved.some(v => v.ref === currentVerse.ref);
-  
-  if (alreadySaved) {
-    saved = saved.filter(v => v.ref !== currentVerse.ref);
-  } else {
-    saved.push(currentVerse);
-  }
-  
-  localStorage.setItem('savedVerses', JSON.stringify(saved));
-  
-  const saveBtn = document.querySelector('.action-btn:has(i.fa-bookmark)');
-  if (saveBtn) {
-    if (alreadySaved) {
-      saveBtn.innerHTML = '<i class="far fa-bookmark"></i><span>Save</span>';
-    } else {
-      saveBtn.innerHTML = '<i class="fas fa-bookmark"></i><span>Saved</span>';
-    }
-  }
-}
-
-// === Toggle verse menu ===
-function toggleVerseMenu() {
-  // Can add more functionality later (share, report, etc.)
-  console.log('Menu clicked');
-}
-
-// === Show devotion modal popup ===
-function toggleDevotion() {
-  const modal = document.getElementById('devotionModal');
-  if (!modal) return;
-  
-  if (modal.style.display === 'block') {
-    modal.style.display = 'none';
-  } else {
-    updateDevotionOfTheDay();
-    modal.style.display = 'block';
-  }
-}
-
-// === Close devotion modal when clicking outside or on close button ===
-document.addEventListener("DOMContentLoaded", () => {
-  currentVerseIndex = getDailyIndex();
-  updateVerseOfTheDay();
-  
-  // Auto-update verse at midnight
-  function scheduleNextUpdate() {
-    const now = new Date();
-    const tomorrow = new Date(now);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(0, 0, 0, 0);
-    
-    const timeUntilMidnight = tomorrow - now;
-    
-    setTimeout(() => {
-      currentVerseIndex = getDailyIndex();
-      updateVerseOfTheDay();
-      scheduleNextUpdate(); // Recursively schedule the next update
-    }, timeUntilMidnight);
-  }
-  
-  scheduleNextUpdate();
-
-  const modal = document.getElementById('devotionModal');
-  const closeBtn = document.getElementById('closeDevotion');
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  }
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
+function animateDevotionReveal() {
+  const revealItems = [
+    document.getElementById("devotionAnchor"),
+    ...Array.from(document.querySelectorAll("#devotionBody p")),
+    document.getElementById("devotionReflection"),
+    document.getElementById("devotionYourTurn")
+  ].filter(Boolean);
+  revealItems.forEach((el, index) => {
+    el.classList.remove("reveal-in");
+    el.style.setProperty("--reveal-delay", `${110 + index * 85}ms`);
   });
+  requestAnimationFrame(() => {
+    revealItems.forEach((el) => el.classList.add("reveal-in"));
+  });
+}
+
+function openDevotionModal() {
+  const modal = document.getElementById("devotionModal");
+  const card = modal?.querySelector(".modal-content");
+  if (!modal || !card) return;
+  renderTodayDevotion();
+  modal.style.display = "flex";
+  modal.setAttribute("aria-hidden", "false");
+  modal.classList.add("is-open");
+  card.classList.remove("is-closing");
+  card.classList.add("is-opening");
+  animateDevotionReveal();
+  setTimeout(() => card.classList.remove("is-opening"), 420);
+}
+
+function closeDevotionModal() {
+  const modal = document.getElementById("devotionModal");
+  const card = modal?.querySelector(".modal-content");
+  if (!modal || !card) return;
+  card.classList.remove("is-opening");
+  card.classList.add("is-closing");
+  modal.classList.remove("is-open");
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    card.classList.remove("is-closing");
+  }, 280);
+}
+
+function startLikeListener() {
+  const fb = getFirebaseCtx();
+  if (!fb) return;
+  if (unsubscribeLikeListener) unsubscribeLikeListener();
+  unsubscribeLikeListener = onSnapshot(doc(fb.db, "verseReactions", toDateId()), (snap) => {
+    const data = snap.exists() ? snap.data() : {};
+    const likeCount = Object.keys(data).filter((k) => data[k] === true).length;
+    const didLike = Boolean(currentUser?.uid && data[currentUser.uid] === true);
+    setLikeUi(likeCount, didLike);
+  });
+}
+
+function ensureAuthListener() {
+  const fb = getFirebaseCtx();
+  if (!fb) return setTimeout(ensureAuthListener, 250);
+  onAuthStateChanged(fb.auth, (user) => { currentUser = user; startLikeListener(); });
+}
+
+window.toggleLike = async function toggleLike() {
+  const fb = getFirebaseCtx();
+  if (!fb) return alert("Auth is still loading. Please try again.");
+  if (!currentUser?.uid) {
+    alert("Please log in to like today's verse.");
+    document.getElementById("navAuthBtn")?.click();
+    return;
+  }
+  await setDoc(doc(fb.db, "verseReactions", toDateId()), { [currentUser.uid]: true }, { merge: true });
+};
+
+window.shareTodayVerse = async function shareTodayVerse() {
+  const verse = getTodayVerse();
+  const text = `${verse.ref} (KJV)\n"${verse.text}"\n\nLightLine: ${SITE_URL}`;
+  if (navigator.share) {
+    try { await navigator.share({ title: "Verse of the Day \u2022 LightLine", text, url: SITE_URL }); return; } catch (e) { if (e?.name === "AbortError") return; }
+  }
+  await navigator.clipboard.writeText(text);
+  alert("Verse copied. You can now paste and share it anywhere.");
+};
+
+window.copyToClipboard = async function copyToClipboard(buttonEl) {
+  const verse = getTodayVerse();
+  await navigator.clipboard.writeText(`${verse.ref} (KJV)\n"${verse.text}"\n${SITE_URL}`);
+  if (buttonEl) {
+    const original = buttonEl.innerHTML;
+    buttonEl.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
+    setTimeout(() => { buttonEl.innerHTML = original; }, 1800);
+  }
+};
+
+window.saveVerse = function saveVerse() {
+  const verse = getTodayVerse();
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem("savedVerses") || "[]"); } catch {}
+  const alreadySaved = saved.some((item) => item.ref === verse.ref && item.text === verse.text);
+  const next = alreadySaved ? saved.filter((item) => !(item.ref === verse.ref && item.text === verse.text)) : [...saved, verse];
+  localStorage.setItem("savedVerses", JSON.stringify(next));
+  document.getElementById("saveVerseBtn").innerHTML = alreadySaved ? '<i class="far fa-bookmark"></i><span>Save</span>' : '<i class="fas fa-bookmark"></i><span>Saved</span>';
+};
+
+window.toggleVerseMenu = () => console.log("Verse menu clicked");
+window.toggleDevotion = function toggleDevotion() {
+  const modal = document.getElementById("devotionModal");
+  const isOpen = modal?.classList.contains("is-open");
+  if (isOpen) closeDevotionModal(); else openDevotionModal();
+};
+window.toggleSubscribeInline = function toggleSubscribeInline() {
+  const box = document.getElementById("subscribeInline");
+  const show = box.style.display !== "block";
+  box.style.display = show ? "block" : "none";
+  if (show) document.getElementById("subscribeMessage").textContent = "";
+};
+window.submitVerseSubscription = async function submitVerseSubscription() {
+  const fb = getFirebaseCtx();
+  const emailInput = document.getElementById("subscriberEmailInput");
+  const messageEl = document.getElementById("subscribeMessage");
+  const email = emailInput.value.trim().toLowerCase();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return (messageEl.textContent = "Please enter a valid email address.");
+  if (!fb) return (messageEl.textContent = "Still loading. Please try again.");
+  try {
+    await addDoc(collection(fb.db, "subscribers"), { email, subscribedAt: serverTimestamp(), source: "verseOfTheDay" });
+    emailInput.value = "";
+    messageEl.textContent = "You are subscribed. Thank you for joining the daily verse journey.";
+  } catch {
+    messageEl.textContent = "Could not save your subscription right now. Please try again.";
+  }
+};
+
+window.sharePollOnFacebook = function() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, "_blank", "width=600,height=400"); };
+window.sharePollOnTwitter = function() { window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}`, "_blank", "width=600,height=300"); };
+window.sharePollOnWhatsApp = function() { window.open(`https://wa.me/?text=${encodeURIComponent(window.location.href)}`, "_blank"); };
+window.sharePollOnTelegram = function() { window.open(`https://t.me/share/url?url=${encodeURIComponent(window.location.href)}`, "_blank"); };
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderTodayVerse();
+  renderTodayDevotion();
+  ensureAuthListener();
+  const devotionBtn = document.getElementById("devotionActionBtn");
+  devotionBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.toggleDevotion();
+  });
+  const modal = document.getElementById("devotionModal");
+  document.getElementById("closeDevotion")?.addEventListener("click", closeDevotionModal);
+  window.addEventListener("click", (e) => { if (e.target === modal) closeDevotionModal(); });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal?.classList.contains("is-open")) closeDevotionModal(); });
+  const scheduleNextUpdate = () => {
+    const now = new Date();
+    const nextMidnight = new Date(now); nextMidnight.setHours(24, 0, 0, 0);
+    setTimeout(() => { renderTodayVerse(); renderTodayDevotion(); startLikeListener(); scheduleNextUpdate(); }, nextMidnight - now);
+  };
+  scheduleNextUpdate();
 });
+
+
 </script>
 
 <script>
@@ -4008,6 +4224,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('spotlight-banner');
     const closeBtn = document.getElementById('close-spotlight');
 
+  if (!banner || !closeBtn) return;
+
     // Hide if already dismissed in this session
     if (sessionStorage.getItem('hidePulse')) {
         banner.style.display = 'none';
@@ -4083,6 +4301,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
 (function() {
   var KEY = 'nbtt_scrollY';
+  var PATH_KEY = 'nbtt_scrollPath';
   var BACK_KEY = 'nbtt_wasBack';
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
@@ -4092,10 +4311,14 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(_st);
     _st = setTimeout(function() {
       sessionStorage.setItem(KEY, String(window.scrollY || document.documentElement.scrollTop));
+      sessionStorage.setItem(PATH_KEY, window.location.pathname);
     }, 80);
   }, { passive: true });
 
-  function saveNow() { sessionStorage.setItem(KEY, String(window.scrollY || document.documentElement.scrollTop)); }
+  function saveNow() {
+    sessionStorage.setItem(KEY, String(window.scrollY || document.documentElement.scrollTop));
+    sessionStorage.setItem(PATH_KEY, window.location.pathname);
+  }
   window.addEventListener('beforeunload', saveNow);
   document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href]');
@@ -4141,6 +4364,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function restoreScroll() {
     var saved = sessionStorage.getItem(KEY);
     if (saved === null) return;
+    var savedPath = sessionStorage.getItem(PATH_KEY);
+    if (savedPath && savedPath !== window.location.pathname) return;
     var y = parseInt(saved, 10);
     if (isNaN(y) || y <= 0) return;
 
@@ -4191,8 +4416,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Expose wasBack flag globally for DOMContentLoaded handler
+  // Extra safety: if browser back detection is flaky, still recover last position on popstate.
+  window.addEventListener('popstate', function() {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    restoreScroll();
+  });
+
+  // Expose true browser back/forward only (avoid false positives on reload).
   window.__nbttWasBack = wasBack;
+})();
+</script>
+
+<script>
+(function () {
+  const root = document.documentElement;
+  let isBackForward = false;
+  try {
+    const navEntry = performance.getEntriesByType("navigation")[0];
+    isBackForward = navEntry?.type === "back_forward";
+  } catch {}
+
+  const releaseLoadState = () => {
+    requestAnimationFrame(() => {
+      root.classList.remove("page-loading");
+      root.classList.remove("page-leaving");
+      root.classList.add("page-loaded");
+    });
+  };
+
+  if (document.readyState === "complete") {
+    releaseLoadState();
+  } else {
+    document.addEventListener("DOMContentLoaded", releaseLoadState, { once: true });
+    window.addEventListener("load", releaseLoadState, { once: true });
+  }
+
+  // Safety net: never keep the page in loading fade if load events are delayed.
+  setTimeout(releaseLoadState, 1200);
+  window.addEventListener("pageshow", releaseLoadState);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") releaseLoadState();
+  });
+
+  window.addEventListener("beforeunload", () => {
+    if (isBackForward) return;
+    root.classList.add("page-leaving");
+  }, { capture: true });
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    if (!href || href.startsWith("#")) return;
+    if (link.target === "_blank") return;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (!isBackForward) root.classList.add("page-leaving");
+  }, { capture: true });
 })();
 </script>
 

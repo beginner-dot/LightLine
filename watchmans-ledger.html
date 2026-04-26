@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Evidence Desk | LightLine</title>
+  <meta name="description" content="The Evidence Desk: a professional news platform linking current events to Bible prophecy.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="ledger-styles.css">
+</head>
+<body class="wl-page">
+  <nav class="wl-topnav" role="navigation" aria-label="Evidence desk navigation">
+    <a href="index.html" class="wl-topnav-brand">
+      <i class="fas fa-cross"></i>
+      <span>LightLine</span>
+    </a>
+    <div class="wl-topnav-links">
+      <a href="index.html">Home</a>
+      <button class="wl-nav-ledger-btn" id="ed-drawer-trigger" aria-label="Open trending reports">
+        <i class="fas fa-chart-line"></i> Trending Reports
+      </button>
+    </div>
+  </nav>
+
+  <section class="wl-section" id="evidence-desk" aria-label="The Evidence Desk">
+    <div class="wl-section-inner">
+      <div class="wl-header">
+        <span class="wl-header-tag"><i class="fas fa-newspaper"></i> The Evidence Desk</span>
+        <h2>Recent Stories In Prophetic Time</h2>
+        <p>Premium publication format. Current events, clear reporting, and disciplined biblical analysis.</p>
+      </div>
+
+      <div class="wl-news-ticker" id="wl-news-ticker" aria-label="Latest headlines"></div>
+      <div class="wl-grid" id="evidence-grid"></div>
+    </div>
+  </section>
+
+  <footer class="wl-page-footer">
+    <p>&copy; 2025 LightLine. All rights reserved.</p>
+    <p class="wl-footer-disclaimer">Source: The Holy Bible (King James Version).</p>
+    <p class="wl-footer-back"><a href="index.html">&larr; Back to Main Site</a></p>
+  </footer>
+
+  <div class="wl-drawer-backdrop" id="ed-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="wl-drawer" id="ed-drawer" role="dialog" aria-label="Trending Reports" aria-hidden="true">
+    <div class="wl-drawer-header">
+      <h3 class="wl-drawer-title"><i class="fas fa-chart-line"></i> Trending Reports</h3>
+      <button class="wl-drawer-close" id="ed-drawer-close" aria-label="Close drawer"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="wl-drawer-body" id="ed-drawer-body"></div>
+  </aside>
+
+  <script src="ledger.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Nothing But The Truth: Educational Platform
+# LightLine — Bible Studies, Devotions, Games & Videos
 
 A full-stack, data-driven Single Page Application (SPA) designed for the structured delivery of high-volume educational and theological content.
 

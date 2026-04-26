@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MythBuster: Truth Shield | NothingButTheTRUTH</title>
-<meta name="description" content="Fast-paced SDA theology challenge: classify spiritual claims, debunk myths, and defend truth with Scripture.">
-<link rel="canonical" href="https://NothingButTheTRUTH.web.app/games/mythbuster-truth-shield/index.html">
+<title>MythBuster: Truth Shield | LightLine</title>
+<meta name="description" content="Fast-paced Bible theology challenge: classify spiritual claims, debunk myths, and defend truth with Scripture.">
+<link rel="canonical" href="https://LightLine.web.app/games/mythbuster-truth-shield/index.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -30,7 +30,7 @@
 
   <section id="start" class="panel">
     <h1>🔥 MythBuster: Truth Shield</h1>
-    <p>Classify spiritual claims, expose subtle error, and defend biblical truth with SDA doctrine clarity.</p>
+    <p>Classify spiritual claims, expose subtle error, and defend biblical truth with scriptural clarity.</p>
     <div class="modes" id="modes"><button class="on" data-m="disciple">Disciple (18s)</button><button data-m="watchman">Watchman (14s)</button><button data-m="reformer">Reformer (11s)</button></div>
     <button class="play" id="startBtn">Start Shield Run</button>
   </section>
@@ -63,14 +63,14 @@ const modeSec={disciple:18,watchman:14,reformer:11};let mode='disciple';
 const modes=document.getElementById('modes');modes.querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.m;modes.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');});
 const bank=[
 {q:'Claim: “The dead are conscious and guiding us now.”',o:['Truth','Myth'],a:1,l:'Biblically, death is a sleep until resurrection; this protects believers from spiritual deception.'},
-{q:'Claim: “Salvation is a free gift through grace by faith.”',o:['Truth','Myth'],a:0,l:'SDA doctrine affirms justification by grace through faith; obedience is fruit, not payment.'},
+{q:'Claim: “Salvation is a free gift through grace by faith.”',o:['Truth','Myth'],a:0,l:'Biblical teaching affirms justification by grace through faith; obedience is fruit, not payment.'},
 {q:'Claim: “Eternal torment proves God’s justice.”',o:['Truth','Myth'],a:1,l:'The final punishment is destruction (second death), revealing both justice and mercy.'},
 {q:'Claim: “Sabbath is still a covenant sign of loyalty to the Creator.”',o:['Truth','Myth'],a:0,l:'Sabbath remains a creation and redemption sign, central in end-time worship themes.'},
 {q:'Claim: “Once saved, always saved no matter later choices.”',o:['Truth','Myth'],a:1,l:'Scripture calls for endurance and abiding faith; perseverance matters.'},
 {q:'Claim: “The great controversy is a conflict over God’s character and law.”',o:['Truth','Myth'],a:0,l:'This framework helps believers interpret doctrine, mission, and final events.'},
 {q:'Claim: “Human tradition should override plain Scripture when convenient.”',o:['Truth','Myth'],a:1,l:'Sola Scriptura protects doctrine from drift and keeps Christ central.'},
 {q:'Claim: “Sanctification is Spirit-led growth, not self-powered perfection.”',o:['Truth','Myth'],a:0,l:'Transformation is real but dependent on Christ’s power, not human boasting.'},
-{q:'Claim: “Sunday law pressure has no prophetic relevance for SDA theology.”',o:['Truth','Myth'],a:1,l:'SDA eschatology sees worship-legislation pressure as prophetically significant.'},
+{q:'Claim: “Sunday law pressure has no prophetic relevance for Bible prophecy.”',o:['Truth','Myth'],a:1,l:'Biblical prophecy frameworks often treat worship-legislation pressure as significant.'},
 {q:'Claim: “Three angels’ messages are still mission-critical.”',o:['Truth','Myth'],a:0,l:'They frame final gospel proclamation: worship, warning, and faithful endurance.'},
 {q:'Claim: “Truth can be separated from love and still be Christian witness.”',o:['Truth','Myth'],a:1,l:'Biblical witness requires both truth and Christlike love.'},
 {q:'Claim: “Christ’s intercession in heaven is central to assurance and readiness.”',o:['Truth','Myth'],a:0,l:'Sanctuary-centered faith grounds assurance and mission urgency.'}

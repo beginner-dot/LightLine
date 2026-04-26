@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.cwd();
-const BASE_URL = 'https://nothingbutthetruth.web.app';
+const BASE_URL = 'https://lightline.web.app';
 const DEFAULT_IMAGE = `${BASE_URL}/seo-default-image.jpg`;
-const BRAND = 'NothingButTheTRUTH';
+const BRAND = 'LightLine';
 
 const SKIP_DIRS = new Set(['node_modules', '.git', 'tabby-cache', 'functions']);
 const SKIP_FILES = new Set(['public/index.html']);
@@ -121,7 +121,7 @@ function normalizeTitle(rawTitle, relPath) {
     title = defaultTitle;
   }
 
-  if (!title.toLowerCase().includes('nothingbutthetruth') && !title.toLowerCase().includes('nothingbutthetruth')) {
+  if (!title.toLowerCase().includes('lightline') && !title.toLowerCase().includes('lightline')) {
     title = `${title} | ${BRAND}`;
   }
 
@@ -152,7 +152,7 @@ function inferDescriptionFromContent(html, title, relPath) {
   const type = inferType(relPath);
 
   if (type === 'home') {
-    return 'Explore Bible studies, daily devotions, videos, and interactive faith resources on NothingButTheTRUTH.';
+    return 'Explore Bible studies, daily devotions, videos, and interactive faith resources on LightLine.';
   }
   if (type === 'hub') {
     return trimAtWord(`${heading || title} — Explore this Bible resource collection on ${BRAND} with studies, devotionals, videos, and practical faith tools.`, 158);
@@ -214,7 +214,7 @@ function inferKeywords(relPath, title) {
     'Bible study',
     'Christian devotion',
     'Scripture',
-    'NothingButTheTRUTH',
+    'LightLine',
   ];
 
   if (section === 'study') seed.push('in-depth Bible study', 'Christian theology');
@@ -409,7 +409,7 @@ function ensureHeadMeta(html, relPath) {
 
 function writeSeoImage() {
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="NothingButTheTRUTH">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LightLine">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f172a"/>
@@ -418,7 +418,7 @@ function writeSeoImage() {
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="600" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">NothingButTheTRUTH</text>
+  <text x="600" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">LightLine</text>
   <text x="600" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#e2e8f0">Truth documented and delivered for the modern seeker</text>
 </svg>`;
   fs.writeFileSync(path.join(ROOT, 'seo-default-image.jpg'), svg, 'utf8');

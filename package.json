@@ -1,5 +1,5 @@
-{
-  "name": "nothingbutthetruth",
+﻿{
+  "name": "lightline",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beginner-dot/nothingbutthetruth.git"
+    "url": "git+https://github.com/beginner-dot/lightline.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/beginner-dot/nothingbutthetruth/issues"
+    "url": "https://github.com/beginner-dot/lightline/issues"
   },
-  "homepage": "https://github.com/beginner-dot/nothingbutthetruth#readme",
+  "homepage": "https://github.com/beginner-dot/lightline#readme",
   "description": "",
   "dependencies": {
     "chart.js": "^4.5.0",

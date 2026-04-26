@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The State of the Dead – Anatomy of a Deception</title>
+  <meta name="description" content="A clear, interactive Bible study: The State of the Dead – Anatomy of a Deception. Discover the truth about life, death, and hope from Scripture.">
+  <!-- SEO and Social Meta Tags -->
+  <meta property="og:title" content="The State of the Dead – Anatomy of a Deception" />
+  <meta property="og:description" content="A clear, interactive Bible study: The State of the Dead – Anatomy of a Deception. Discover the truth about life, death, and hope from Scripture." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="LightLine" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The State of the Dead – Anatomy of a Deception" />
+  <meta name="twitter:description" content="A clear, interactive Bible study: The State of the Dead – Anatomy of a Deception. Discover the truth about life, death, and hope from Scripture." />
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>The State of the Dead – Anatomy of a Deception</h1>
+    <p class="subtitle">Unmasking the 6,000-Year Lie</p>
+  </header>
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>What really happens when we die? This study explores the Bible’s answers, exposing common misconceptions and revealing the hope found in God’s Word.</p>
+    </section>
+    <section id="bible-truth">
+      <h2>What Does the Bible Say?</h2>
+      <blockquote>
+        <p>"For the living know that they will die, but the dead know nothing..." <br><strong>Ecclesiastes 9:5</strong></p>
+      </blockquote>
+      <h3>Key Question</h3>
+      <p>Do people go to heaven or hell immediately after death?</p>
+      <div id="qa-section">
+        <label for="answer">Your answer:</label>
+        <input type="text" id="answer" name="answer" placeholder="Type your answer...">
+        <button onclick="checkAnswer()">Check</button>
+        <p id="feedback"></p>
+      </div>
+      <script>
+        function checkAnswer() {
+          const user = document.getElementById('answer').value.trim().toLowerCase();
+          const feedback = document.getElementById('feedback');
+          if (user.includes('nothing') || user.includes('sleep') || user.includes('unconscious')) {
+            feedback.textContent = 'Correct! The Bible teaches the dead know nothing and are asleep until the resurrection.';
+            feedback.style.color = 'green';
+          } else {
+            feedback.textContent = 'Not quite. Read Ecclesiastes 9:5 again and try to answer based on the text.';
+            feedback.style.color = 'red';
+          }
+        }
+      </script>
+    </section>
+    <!-- More interactive study content will go here -->
+    </main>
+  <footer>
+    <p>&copy; 2026 LightLine. All rights reserved.</p>
+  </footer>
+</body>
+</html>

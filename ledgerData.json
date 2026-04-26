@@ -1,0 +1,212 @@
+[
+  {
+    "id": "peace-brief-1",
+    "category": "Politics",
+    "icon": "fas fa-dove",
+    "title": "Peace Desk: Sudden Calm",
+    "readTime": "3 min read",
+    "storyStatus": "Lead Story",
+    "location": "Global Diplomacy",
+    "caption": "Leaders announce calm talks. The world exhales for a moment.",
+    "bibleVerse": "1 Thessalonians 5:3 (KJV)",
+    "bibleText": "For when they shall say, Peace and safety; then sudden destruction cometh upon them...",
+    "newsContent": "In April 2026, leaders held emergency meetings to cool active conflicts across multiple regions. News alerts framed the talks as a major stabilizing step, and markets briefly reflected that optimism. Yet intelligence briefings and field reports still pointed to unresolved border disputes, militia activity, and distrust between negotiating parties. This is the modern pattern: signatures can come quickly, but true peace takes moral repair, not only political paperwork.",
+    "egwContent": "Prophecy warns that peace without heart change is temporary. Scripture calls this false security: people feel safe, but foundations are weak. The watchman does not mock peace efforts; he simply refuses to worship them. We are called to stay awake, pray, and discern the times.",
+    "metaphor": "A paper lantern can glow beautifully, but one strong wind can put it out. Human peace is often like that lantern.",
+    "conclusion": "Watchman, pray for peace, but build your trust on Christ, not headlines.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/UN_General_Assembly_hall.jpg",
+      "alt": "United Nations General Assembly hall"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "peace-brief-2",
+    "category": "Politics",
+    "icon": "fas fa-handshake",
+    "title": "Ceasefire Watch",
+    "readTime": "3 min read",
+    "storyStatus": "Developing",
+    "location": "Conflict Corridors",
+    "caption": "A ceasefire was signed. Trust is still thin.",
+    "bibleVerse": "Matthew 24:6 (KJV)",
+    "bibleText": "And ye shall hear of wars and rumours of wars...",
+    "newsContent": "A short ceasefire framework was announced this week, and humanitarian routes reopened in selected zones. Hospitals and aid agencies reported temporary relief in some districts, but verified violations followed within days. Analysts noted the same old fracture points: command-chain confusion, retaliatory messaging, and local commanders acting faster than national negotiators. The world saw again how a public truce can exist while private hostility remains alive.",
+    "egwContent": "Prophecy does not tell us to panic. It tells us to discern. Surface calm can hide deeper unrest when hearts stay unconverted, and rumors of war can rise again in hours. The believer should be compassionate, practical, and spiritually awake at the same time.",
+    "metaphor": "It is like mending a torn net with one knot. It helps for now, but pressure exposes weak points.",
+    "conclusion": "Watchman, do works of mercy while the door is open, and keep your lamp burning.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/UN_Security_Council.jpg",
+      "alt": "UN Security Council meeting room"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "digital-id-brief",
+    "category": "Tech",
+    "icon": "fas fa-fingerprint",
+    "title": "Digital ID, Real Control",
+    "readTime": "3 min read",
+    "storyStatus": "Developing",
+    "location": "Digital Governance",
+    "caption": "Digital identity grows fast across nations.",
+    "bibleVerse": "Revelation 13:17 (KJV)",
+    "bibleText": "And that no man might buy or sell, save he that had the mark...",
+    "newsContent": "Government digital ID programs expanded in many regions during 2026, with pilots moving into broader public services. Officials emphasized fraud prevention, faster verification, and reduced identity theft. At the same time, policy observers flagged risk scenarios where identity, payments, travel permissions, and platform access are merged into one control layer. In centralized systems, a technical decision can quickly become a life decision for ordinary families.",
+    "egwContent": "Prophecy warns that systems touching buying and selling can become instruments of pressure in the final crisis. The issue is not technology itself; the issue is who holds final authority over conscience. Convenience is good, but worship and obedience belong to God alone.",
+    "metaphor": "A key that opens every door can also lock every door. Power is not neutral when concentrated.",
+    "conclusion": "Watchman, use tools wisely, but keep your conscience under Christ alone.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Biometric_fingerprint_scanner.jpg",
+      "alt": "Fingerprint scanner close-up"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "payments-brief",
+    "category": "Economy",
+    "icon": "fas fa-wallet",
+    "title": "Cash Fades, Tracking Rises",
+    "readTime": "3 min read",
+    "storyStatus": "Analysis",
+    "location": "Global Finance",
+    "caption": "Cashless systems expand. Convenience grows. So does traceability.",
+    "bibleVerse": "Revelation 13:16 (KJV)",
+    "bibleText": "And he causeth all, both small and great... to receive a mark...",
+    "newsContent": "Public and private payment rails moved further toward cashless options in 2026. Retail, transport, and utility sectors reported speed gains and lower handling costs. But this shift also concentrates transaction visibility, behavioral profiling, and account dependency in a few technical channels. When every purchase is logged, economic life becomes easier to monitor and, in pressure moments, easier to restrict.",
+    "egwContent": "Prophetic study reminds us that economic levers can be used to shape obedience when religious liberty is tested. Control of trade has always been a tool of power, from ancient empires to digital economies. Wise believers use systems without surrendering conscience.",
+    "metaphor": "A river canal helps boats move quickly, but whoever controls the gates controls the flow.",
+    "conclusion": "Watchman, do not fear the future, but do not sleep through it. Choose faithfulness over convenience.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Contactless_payment_terminal.jpg",
+      "alt": "Contactless card payment terminal"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "salt-pits",
+    "category": "Science",
+    "icon": "fas fa-flask",
+    "title": "The Salt Pits",
+    "readTime": "3 min read",
+    "storyStatus": "Analysis",
+    "location": "East Asia",
+    "caption": "Ancient salt reminds us: what preserves life must stay pure.",
+    "bibleVerse": "Matthew 5:13 (KJV)",
+    "bibleText": "Ye are the salt of the earth: but if the salt have lost his savour...",
+    "newsContent": "Archaeology reports in 2026 highlighted ancient salt production findings in East Asia, renewing interest in early food preservation networks. Parallel supply-chain disruptions also showed how quickly systems decay when key stabilizers fail. Historically, salt preserved food, enabled long-distance trade, and underwrote social resilience before modern refrigeration. The old lesson is still current: remove what preserves, and rot accelerates.",
+    "egwContent": "Prophecy teaches that God's people are called to preserve truth in an age of moral decay. Salt in Scripture is not decoration; it is a symbol of covenant faithfulness and moral preservation. If the church copies the world without discernment, it loses preserving power.",
+    "metaphor": "In cloud security, providers secure the platform, but users must guard the data. God gives grace; we must guard character. Corrupted data destroys trust. Compromised faith loses preserving power.",
+    "conclusion": "Watchman, keep your spiritual salt strong. Purity is not optional in the final hour.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Salt_pans.jpg",
+      "alt": "Salt pans under open sky"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "shipping-brief",
+    "category": "World Trade",
+    "icon": "fas fa-ship",
+    "title": "Narrow Seas, Wide Impact",
+    "readTime": "3 min read",
+    "storyStatus": "Developing",
+    "location": "Maritime Routes",
+    "caption": "Shipping chokepoints shook prices this month.",
+    "bibleVerse": "Revelation 18:17 (KJV)",
+    "bibleText": "For in one hour so great riches is come to nought...",
+    "newsContent": "Rerouting around high-risk sea corridors increased fuel time and freight costs in April 2026. Insurance premiums and delay penalties pushed costs higher across multiple shipping lanes. Modern logistics depends on precise handoffs, so one chokepoint delay can cascade into shortages, price pressure, and fragile inventory cycles. Small disruptions can produce large global effects in days, not months.",
+    "egwContent": "Prophecy shows that earthly trade systems are fragile. Wealth can vanish quickly when judgment winds begin to blow, and markets that look strong can turn in a single cycle. A wise church prepares spiritually and serves practically.",
+    "metaphor": "A single hinge can hold a great gate. When the hinge strains, the whole gate trembles.",
+    "conclusion": "Watchman, do not anchor your hope in markets that can swing in one day.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Container_ship_at_sea.jpg",
+      "alt": "Container ship at sea"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "quake-brief",
+    "category": "Science",
+    "icon": "fas fa-mountain",
+    "title": "Earth Under Strain",
+    "readTime": "3 min read",
+    "storyStatus": "Developing",
+    "location": "Seismic Belts",
+    "caption": "New quake swarms reminded cities to prepare.",
+    "bibleVerse": "Luke 21:11 (KJV)",
+    "bibleText": "And great earthquakes shall be in divers places...",
+    "newsContent": "Seismic agencies tracked active earthquake clusters in multiple regions this spring, prompting local authorities to review alerts and preparedness drills. Scientists noted that quake swarms can indicate stress transfer along connected faults, where pressure release in one area increases risk in another. Public messaging stayed clear: resilient infrastructure and readiness protocols save lives. The ground itself is reminding nations that stability is never guaranteed.",
+    "egwContent": "Believers read these signs with sober hope. Creation groans, and heaven's kingdom draws near. These warnings are not dates on a calendar; they are calls to repentance, preparedness, and compassionate witness.",
+    "metaphor": "Cracks in a wall do not create the weakness; they reveal it.",
+    "conclusion": "Watchman, strengthen your house on the Rock before the shaking grows.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Seismograph.jpg",
+      "alt": "Seismograph recording earthquake activity"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "volcano-brief",
+    "category": "Science",
+    "icon": "fas fa-fire",
+    "title": "Roaring Mountains",
+    "readTime": "2 min read",
+    "storyStatus": "Analysis",
+    "location": "Volcanic Arc Zones",
+    "caption": "Volcano alerts rose again this season.",
+    "bibleVerse": "Joel 2:30 (KJV)",
+    "bibleText": "And I will shew wonders in the heavens and in the earth, blood, and fire, and pillars of smoke.",
+    "newsContent": "Volcanic monitoring centers elevated alerts in several zones during 2026, and civil defense teams refreshed evacuation pathways. Scientists track seismic tremor, sulfur gas output, and ground uplift because eruptions are often preceded by measurable pressure changes. These systems reduce surprise, but they cannot remove uncertainty entirely. Communities near active belts live with the reality that quiet mountains can wake quickly.",
+    "egwContent": "Prophetic counsel points us to readiness of heart. Nature's alarms are mercy calls, not entertainment. When the earth warns, the soul should listen and the church should serve.",
+    "metaphor": "A mountain can look silent while fire moves beneath it.",
+    "conclusion": "Watchman, let outer warnings stir inner repentance.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Volcanic_eruption.jpg",
+      "alt": "Volcanic eruption with ash plume"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "deepfake-brief",
+    "category": "Media",
+    "icon": "fas fa-mask",
+    "title": "Deepfakes And Deception",
+    "readTime": "3 min read",
+    "storyStatus": "Developing",
+    "location": "Information Space",
+    "caption": "Synthetic media gets sharper, truth gets harder to see.",
+    "bibleVerse": "Matthew 24:24 (KJV)",
+    "bibleText": "For there shall arise false Christs, and false prophets... insomuch that, if it were possible, they shall deceive the very elect.",
+    "newsContent": "Election and crisis seasons in 2026 saw more warnings about AI-generated audio and video moving across social feeds in near real time. Verification teams urged the public to check origin, timestamp, and trusted confirmation before sharing. Deepfakes are improving in voice mimicry, facial sync, and narrative framing, so emotional impact now often outruns factual review. In this climate, speed of reaction can become a weapon against truth.",
+    "egwContent": "Prophecy stresses discernment in the last days. Deception will not always look dark; it may look polished and persuasive. Truth must be tested by the Word, not by production quality or viral momentum.",
+    "metaphor": "A clear mirror helps you see your face. A warped mirror can make lies look real.",
+    "conclusion": "Watchman, test every voice by Scripture, not by emotional impact.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Television_news_studio.jpg",
+      "alt": "Television studio with screens"
+    },
+    "datePublished": "2026-04-11"
+  },
+  {
+    "id": "religious-liberty-brief",
+    "category": "Faith And Law",
+    "icon": "fas fa-scale-balanced",
+    "title": "Liberty Under Review",
+    "readTime": "2 min read",
+    "storyStatus": "Analysis",
+    "location": "Courts And Policy",
+    "caption": "Religious freedom debates are increasing again.",
+    "bibleVerse": "Acts 5:29 (KJV)",
+    "bibleText": "We ought to obey God rather than men.",
+    "newsContent": "Recent legal and policy debates in several countries raised new questions about conscience rights and worship freedoms. Civil society groups called for vigilance, clear language, and respectful participation in public process. Legal history shows that rights are often narrowed in stages through administrative language before major enforcement appears. What begins as a technical amendment can become a moral test later.",
+    "egwContent": "Prophecy expects increasing pressure where conscience and civil power collide. We answer with firmness and Christlike spirit, speaking truth clearly while refusing hatred. The watchman must be both courageous and gentle.",
+    "metaphor": "A compass is most valuable in a storm, not on a sunny day.",
+    "conclusion": "Watchman, keep conscience tender, speech gracious, and obedience to God first.",
+    "image": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Courtroom.jpg",
+      "alt": "Courtroom interior"
+    },
+    "datePublished": "2026-04-11"
+  }
+]

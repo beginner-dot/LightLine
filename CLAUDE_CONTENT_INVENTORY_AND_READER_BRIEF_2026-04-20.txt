@@ -1,0 +1,262 @@
+﻿LightLine
+Claude Content Inventory + Reader Voice Brief
+Generated: 2026-04-20
+Scope: Repository content surfaces and reader-facing editorial guidance
+
+============================================================
+1) QUICK INVENTORY TOTALS
+============================================================
+Major content sections and counts:
+- Root-level standalone HTML pages: 18
+- Devotions folder total files: 25
+- Devotions HTML pages: 21
+- Studies folder total files: 27
+- Studies HTML pages: 24
+- Games folder total items: 23
+- Game directories (playable game projects): 20
+- Newsroom stories in newsroom.json: 5
+- Ledger report cards in ledgerData.json: 10
+- Ten Commandments entries in commandments.json: 10
+- Videos currently listed in all-videos.html: 15
+
+============================================================
+2) SECTION-BY-SECTION FILE COUNTS
+============================================================
+A) Root pages (18 HTML files)
+- about-us.html
+- account-options.html
+- all-games.html
+- all-studies.html
+- all-videos.html
+- index.html
+- ledger-post.html
+- mythbusters.html
+- new-model.html
+- notifications.html
+- progress-report.html
+- repository-summary-report.html
+- spiritual-growth-courses.html
+- ten-commandments-course.html
+- the-ten-commandments.html
+- video-updates.html
+- vod.html
+- watchmans-ledger.html
+
+B) Devotions section
+- Total files: 25
+- Devotion pages (21 HTML):
+  1. anchor_of_hope.html
+  2. a_tale_of_cities.html
+  3. because_god_himself_loves_you.html
+  4. called_to_shine.html
+  5. church_born_in_fire.html
+  6. danger_of_not_keeping_the_commandments.html
+  7. Do_it_for_God.html
+  8. facts_or_fiction_mythbuster_visuals.html
+  9. faith_under_fire.html
+  10. final_invitation.html
+  11. forbidden_fruit_malum.html
+  12. hannahs_devotion.html
+  13. how_the_ten_commandments_connect_us_with_god.html
+  14. importance_and_relevance_of_commandments.html
+  15. influence_speech_time_mind.html
+  16. love_that_saves.html
+  17. Take_up_The_Cross.html
+  18. the_mustard_seed.html
+  19. the_power_of_the_cross.html
+  20. unshackled_by_grace.html
+  21. walking_in_the_light.html
+- Support assets in Devotions folder (non-page files):
+  - devotions.css
+  - expanded_devotions.txt
+  - facts_or_fiction_mythbuster_script.txt
+  - magnifying_glass.png
+
+C) Studies section
+- Total files: 27
+- Study pages (24 HTML):
+  1. are_angels_real.html
+  2. armor-expanded.html
+  3. armor.html
+  4. a_tale_of_cities.html
+  5. christ_the_savior.html
+  6. exodus_sinai_law_of_love.html
+  7. facts_or_fiction.html
+  8. God_has_a_purpose_each_time_He_communicates.html
+  9. history_of_christian_faith.html
+  10. jesus_is_real.html
+  11. meaning_and_history_of_baptism.html
+  12. preparing_people_to_meet_God_pt_1.html
+  13. preparing_people_to_meet_God_pt_2.html
+  14. preparing_people_to_meet_God_pt_3.html
+  15. satan_the_accuser_christ_the_defender.html
+  16. archived doctrinal study (non-live)
+  17. the_childhood_of_jesus_christ.html
+  18. the_lamb_of_god.html
+  19. the_lords_supper.html
+  20. the_nature_of_sin_and_gods_law.html
+  21. the_word_made_flesh.html
+  22. where_is_jesus_right_now.html
+  23. why_the_bible_is_expanded.html
+  24. why_the_bible_is_God's_word.html
+- Study support styles:
+  - bible-gods-word-expanded.css
+  - exodus-sinai-lol.css
+  - study-style.css
+
+D) Games section
+- Total items in games folder: 23
+- Playable game directories (20):
+  1. ark-builder
+  2. bible-bingo
+  3. bible-connections
+  4. bible-memory-match
+  5. bible-sequence
+  6. Bible-taboo
+  7. bible-timeline
+  8. bible-word-search
+  9. fruit-catcher
+  10. kingdom-kids-adventure
+  11. mythbuster-truth-shield
+  12. prophecy-match
+  13. relay-race
+  14. revelation-letters-challenge
+  15. sanctuary-symbol-match
+  16. scripture-sprint
+  17. second-advent-quest
+  18. verse-hunt-live
+  19. walls-of-jericho
+  20. Who-said-it
+- Games support files:
+  - leaderboard.html
+  - nbtt-gamification.js
+
+E) Video section (all-videos.html listing)
+- Total currently listed video entries: 15
+- Ten Commandments mini-series videos (10):
+  1. 1st Commandment - No other Gods
+  2. 2nd Commandment - No Graven Images
+  3. 3rd Commandment - Respect the Sabbath
+  4. 4th Commandment - Honor your parents
+  5. 5th Commandment - Do not murder
+  6. 6th Commandment - No adultery
+  7. 7th Commandment - Do not steal
+  8. 8th Commandment - Do not lie
+  9. 9th Commandment - Do not covet
+  10. 10th Commandment
+- Historical/Doctrinal + MythBuster videos (4):
+  11. What is the forbidden fruit Really?
+  12. Is the Bible God's Word to Humanity? (PART 1)
+  14. Is the Bible Facts or Fiction? (PART 2)
+  15. History and Formation of the Christian Church
+- Kids videos section status: coming soon (no live cards listed)
+
+F) Newsroom and evidence sections
+- newsroom.json stories: 5
+- ledgerData.json report cards: 10
+
+============================================================
+3) WHAT IS STILL IN PROGRESS / STAGED / PLACEHOLDER
+============================================================
+Visible in-progress indicators from content/UI:
+1. Ten Commandments short course marked Coming Soon (homepage card and dedicated course placeholder page)
+2. ten-commandments-course.html is explicitly a placeholder page
+3. Recent Videos Hub on homepage is labeled Staged Section / internal preview before public launch
+4. Videos + MythBuster Shorts area has a "Coming Soon Placeholder" marker in homepage comments and placeholder block
+5. all-videos.html includes "Kids Videos" marked coming soon
+6. all-videos.html includes explicit correction notice for commandment sequence error (currently being fixed)
+7. spiritual-growth-courses.html contains a coming-soon/placeholder callout for Ten Commandments course path
+
+Working count summary:
+- Clearly marked in-progress/staged surfaces: 7
+- Fully content-populated major surfaces: studies, devotions, main game library, core video folders, newsroom/ledger data
+
+============================================================
+4) WHAT THE WEBSITE HAS FOR READERS (CLAUDE-READY)
+============================================================
+This website gives readers:
+- A full Bible-centered learning ecosystem (studies, devotionals, videos, games, newsroom framing)
+- Short daily devotional encouragement plus long-form doctrinal depth
+- End-times readiness themes presented as practical daily discipleship, not abstract theology only
+- Interactive reinforcement through games and quizzes to improve retention and engagement
+- A commandment-focused discipleship track connected to grace, obedience, worship, and character formation
+- Faith-and-current-events interpretation through newsroom/evidence desk style reporting
+- Cross-linked pathways so readers can move from topic to topic (study -> devotion -> video -> game)
+
+Reader outcomes this content pushes toward:
+- Spiritual clarity
+- Moral conviction
+- Practical obedience
+- Endurance under pressure
+- Hope anchored in Christ's return
+
+============================================================
+5) HOW YOU SPEAK TO YOUR READERS (VOICE PROFILE FOR CLAUDE)
+============================================================
+Your dominant voice pattern:
+- Direct and personal (frequent second-person language: you, your)
+- Urgent but hopeful
+- Convictional, not neutral
+- Scripture-first and commandment-conscious
+- Pastoral plus watchman tone (warning + encouragement)
+- Action-oriented (calls to pray, repent, obey, stand firm, prepare)
+- Emotionally charged but still instructional
+
+Your rhetorical blend:
+- Warning about deception and compromise
+- Assurance of grace, forgiveness, and restoration in Christ
+- Frequent "truth versus falsehood" framing
+- Repeated bridge between doctrine and everyday behavior
+
+Tone keywords to preserve when briefing Claude:
+- clear
+- uncompromising
+- practical
+- prophetic
+- compassionate
+- urgent hope
+
+============================================================
+6) WHAT ELSE TO MENTION TO CLAUDE (IMPORTANT)
+============================================================
+When you brief Claude, add these points explicitly:
+1. Audience profile
+- New believers, returning believers, and conviction-driven believers preparing for faithful living under pressure.
+
+2. Core ministry objective
+- Not entertainment-first. Transformation-first: repentance, obedience, faithfulness, and practical Christ-centered living.
+
+3. Non-negotiable theological emphasis
+- Scripture authority, grace through Christ, commandments as love in action, readiness for Christ's return.
+
+4. Voice constraints
+- Keep language clear and direct.
+- Avoid softening core convictions into vague motivation language.
+- Always connect teaching to practical next steps.
+
+5. Editorial consistency rules
+- Every major content piece should include:
+  - biblical anchor
+  - practical application
+  - reflective or prayerful response
+  - clear call to action
+
+6. UX/content reality
+- Distinguish live content from staged/preview content clearly in user-facing copy.
+
+7. Newsroom transparency
+- State that newsroom feed is curated local content, not live external wire ingestion.
+
+8. Quality focus areas for next phase
+- Stronger beginner pathways
+- Better progression loops between sections
+- Status labeling consistency (Live / Preview / Coming Soon)
+
+============================================================
+7) SUGGESTED CLAUDE PROMPT ADD-ON (COPY/PASTE)
+============================================================
+Use this as an add-on when briefing Claude:
+
+"Please preserve the ministry voice exactly: direct, Scripture-anchored, convictional, practical, and urgent with hope. Do not dilute doctrinal clarity. Keep content action-oriented, with clear prayer/reflection/application. Distinguish staged sections from live sections in plain language. Treat this platform as a discipleship ministry focused on truth, obedience, grace, and readiness for Christ's return."
+
+End of document.

@@ -1,11 +1,11 @@
-/* ═══════════════════════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════════════════════
    nbtt-features.js — Dark/Light Toggle, Search, Bookmarks,
    Reading Progress Tracker
    ═══════════════════════════════════════════════════════════ */
 (function () {
   "use strict";
-  const BRAND_TEXT = "NothingButTheTRUTH";
-  const BRAND_SUFFIX_RE = /\s[—-]\sNothingButTheTruth|\s[—-]\sNothingButTheTRUTH/g;
+  const BRAND_TEXT = "LightLine";
+  const BRAND_SUFFIX_RE = /\s[—-]\sLightLine|\s[—-]\sLightLine/g;
 
   /* ──────────────────────────────────────────────────────────
      1. DARK / LIGHT MODE TOGGLE
@@ -400,7 +400,7 @@
 
   function init() {
     document.querySelectorAll(".logo, .WebsiteName").forEach(function (el) {
-      if ((el.textContent || "").trim() === "NothingButTheTruth") {
+      if ((el.textContent || "").trim() === "LightLine") {
         el.textContent = BRAND_TEXT;
       }
     });

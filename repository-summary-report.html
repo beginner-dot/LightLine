@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LightLine Repository Report</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a32;
+      --panel-2: #182347;
+      --text: #e8eeff;
+      --muted: #b6c2e6;
+      --accent: #71b3ff;
+      --accent-2: #9effd1;
+      --border: #2b3a6b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at 10% 0%, #1b2b5d 0%, var(--bg) 45%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 94vw);
+      margin: 28px auto 40px;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .meta {
+      margin-top: 12px;
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .card {
+      grid-column: span 12;
+      background: rgba(18, 26, 50, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      margin: 0 0 10px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .two-col { grid-column: span 12; }
+
+    .badge {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      color: var(--accent-2);
+      background: rgba(14, 26, 55, 0.85);
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent);
+      background: rgba(16, 33, 72, 0.65);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    code {
+      background: rgba(10, 17, 37, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1px 6px;
+      color: #d5ecff;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9em;
+    }
+
+    @media (min-width: 900px) {
+      .two-col { grid-column: span 6; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>LightLine Repository Report</h1>
+      <p class="subtitle">Quick orientation document for people new to this codebase.</p>
+      <p class="meta">Generated: April 19, 2026</p>
+      <div>
+        <span class="badge">Static Site + Firebase</span>
+        <span class="badge">Games Platform</span>
+        <span class="badge">Newsroom / Evidence Desk</span>
+        <span class="badge">Nested Next.js Course App</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>1) Main Purpose</h2>
+        <p>
+          This repository powers a Christian educational content platform called <strong>LightLine</strong>.
+          It delivers Bible studies, devotions, interactive scripture games, video resources, and a current-events
+          reporting experience tied to biblical interpretation.
+        </p>
+        <p>
+          It is not just one app. It combines:
+        </p>
+        <ul>
+          <li>A large, production-style static website at the repository root.</li>
+          <li>A separate, modern Next.js course app inside <code>christianity-of-christ</code>.</li>
+          <li>An exported static build of that Next.js app under <code>systematic-reconstruction</code>.</li>
+        </ul>
+      </article>
+
+      <article class="card two-col">
+        <h2>2) Tech Stack and Frameworks</h2>
+        <ul>
+          <li><strong>Frontend (root site):</strong> HTML, CSS, Vanilla JavaScript.</li>
+          <li><strong>Backend services:</strong> Firebase Hosting, Firestore, Firebase Auth, Storage Rules, Functions scaffold.</li>
+          <li><strong>Visualization/media:</strong> Chart.js and Mux player embeds.</li>
+          <li><strong>Data model:</strong> JSON-driven content files (studies, newsroom, commandment/video content, etc.).</li>
+          <li><strong>Nested app stack:</strong> Next.js 15, React 19, TypeScript, Tailwind, Prisma, SQLite/PostgreSQL adapter, Vitest.</li>
+        </ul>
+      </article>
+
+      <article class="card two-col">
+        <h2>3) Major Folders and What They Hold</h2>
+        <ul>
+          <li><code>games</code>: Large set of standalone Bible games plus leaderboard and gamification logic.</li>
+          <li><code>Studies</code>: Long-form study pages (mostly standalone HTML).</li>
+          <li><code>Devotions</code>: Devotional content pages and related assets.</li>
+          <li><code>functions</code>: Firebase Functions directory (currently mostly starter scaffold).</li>
+          <li><code>christianity-of-christ</code>: Full Next.js TypeScript project for a structured interactive course.</li>
+          <li><code>systematic-reconstruction</code>: Static export output generated from the nested Next.js app.</li>
+          <li><code>New_Sections</code>: Experimental/new content pages and draft work.</li>
+          <li><code>public</code>: Firebase starter hosting page assets (not the primary public site entry).</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>4) Key Files to Understand First</h2>
+        <ul>
+          <li><code>index.html</code>: Main entry page and top-level navigation/sections.</li>
+          <li><code>Indexstyles.js</code>: Core homepage behavior (auth modal, account modes, Firebase auth wiring, UI controls).</li>
+          <li><code>nbtt-features.js</code>: Search index, bookmarks, theme logic, reading-progress features.</li>
+          <li><code>script.js</code>: Homepage commandment/video cards loaded from JSON, quiz modal behavior.</li>
+          <li><code>ledger.js</code>: Evidence Desk/Newsroom rendering from <code>newsroom.json</code>.</li>
+          <li><code>newsroom.json</code>: Structured content source for reports displayed in the newsroom.</li>
+          <li><code>firebase.json</code>: Hosting + Firestore + Functions + Storage configuration.</li>
+          <li><code>package.json</code> (root): build/sync/deploy scripts, including static deploy flow for nested app.</li>
+          <li><code>christianity-of-christ/README.md</code>: architecture and roadmap of the nested Next.js app.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>5) Current User Experience (What Visitors Can Do)</h2>
+        <ul>
+          <li>Browse homepage sections for studies, devotions, games, courses, videos, and newsroom reports.</li>
+          <li>Use sign-in options (public account, anonymous account, or limited no-sign-in mode).</li>
+          <li>Use search overlay to find studies/devotions/games quickly.</li>
+          <li>Open commandment video cards and in-page quiz popups.</li>
+          <li>Read newsroom report cards and open full report pages from Evidence Desk data.</li>
+          <li>Play numerous scripture-themed games and view leaderboard-related pages.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>6) Incomplete / In-Progress Signals</h2>
+        <ul>
+          <li>Some sections are explicitly marked as staged/internal preview and not fully public.</li>
+          <li>Several pages still display "Coming Soon" states (for example, course placeholders).</li>
+          <li>The nested Next.js app intentionally contains stubs (auth and admin endpoints) that need production hardening.</li>
+          <li>Firebase Functions code remains mostly starter-template level.</li>
+          <li>Audit documents show many fixes completed, but also identify a backlog of medium-priority game UX and architecture improvements.</li>
+        </ul>
+
+        <div class="note">
+          Practical interpretation: the platform is already broad and usable, but it is still evolving with an active migration path from a large static architecture toward more structured app modules.
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>7) Quick Conclusion</h2>
+        <p>
+          This repository is a multi-surface content ecosystem rather than a single monolithic app. The root static site appears to be the
+          primary active user surface today, while the nested Next.js project represents a more modern and structured direction for future course experiences.
+        </p>
+      </article>
+    </section>
+  </div>
+</body>
+</html>

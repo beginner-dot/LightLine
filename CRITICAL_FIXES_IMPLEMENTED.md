@@ -1,4 +1,4 @@
-# ✅ CRITICAL FIXES IMPLEMENTED - February 2, 2026
+﻿# ✅ CRITICAL FIXES IMPLEMENTED - February 2, 2026
 
 ## Summary
 All **CRITICAL** issues from the Games Audit Report have been successfully fixed. This document details what was implemented.
@@ -53,9 +53,9 @@ box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 ```javascript
 const firebaseConfig = {
   apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-  authDomain: "nothingbutthetruth-1cd23.firebaseapp.com",
-  projectId: "nothingbutthetruth-1cd23",
-  storageBucket: "nothingbutthetruth-1cd23.appspot.com",
+  authDomain: "lightline.firebaseapp.com",
+  projectId: "lightline",
+  storageBucket: "lightline.appspot.com",
   messagingSenderId: "253692400115",
   appId: "1:253692400115:web:7eb36acdf69382d28d0286"
 };

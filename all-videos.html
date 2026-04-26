@@ -1,17 +1,33 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Videos — Bible Video Library | NothingButTheTRUTH</title>
+  <title>All Videos — Bible Video Library | LightLine</title>
   <!-- social/SEO metadata -->
-              <meta property="og:title" content="All Videos — Bible Video Library | NothingButTheTRUTH">
-              <meta property="og:description" content="All Videos — Watch Bible-based video content on NothingButTheTRUTH including studies, devotionals, and practical faith resources.">
+              <meta property="og:title" content="All Videos — Bible Video Library | LightLine">
+              <meta property="og:description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
               <meta property="og:type" content="website">
-              <meta property="og:url" content="https://NothingButTheTRUTH.web.app/all-videos.html">
+              <meta property="og:url" content="https://LightLine.web.app/all-videos.html">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
+        @keyframes starRotateMorph {
+          0% { transform: rotate(0deg) scale(1); border-radius: 30%; }
+          10% { transform: rotate(0deg) scale(1.1); border-radius: 30%; }
+          20% { transform: rotate(90deg) scale(1.2); border-radius: 50%; }
+          30% { transform: rotate(180deg) scale(1.1); border-radius: 60%; }
+          40% { transform: rotate(270deg) scale(1.2); border-radius: 40%; }
+          50% { transform: rotate(360deg) scale(1); border-radius: 30%; }
+          100% { transform: rotate(360deg) scale(1); border-radius: 30%; }
+        }
+        .nbtt-star-animate {
+          display: inline-block;
+          transition: filter 0.2s;
+        }
+        .nbtt-star-animate.nbtt-star-rotating {
+          animation: starRotateMorph 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+        }
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -126,40 +142,245 @@
     .folder-header .arrow { transition: transform 0.3s ease; display: inline-block; }
     .folder.open .arrow { transform: rotate(90deg); }
     .folder-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .folder.open .folder-content { max-height: 2000px; }
+    .folder.open .folder-content { max-height: 10000px; }
     .empty-note { color: rgba(255,255,255,0.6); padding: 1rem; font-style: italic; }
+    .featured-shell {
+      max-width: 1200px;
+      margin: 0 auto 1.7rem;
+      border: 1px solid rgba(255,215,3,0.18);
+      border-radius: 18px;
+      background: linear-gradient(130deg, rgba(32,12,54,0.68), rgba(10,22,52,0.62));
+      box-shadow: 0 14px 42px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .featured-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 12% 15%, rgba(255,215,3,0.14), transparent 42%), radial-gradient(circle at 82% 20%, rgba(106,17,203,0.2), transparent 44%);
+      pointer-events: none;
+    }
+    .featured-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(8,8,20,0.45);
+    }
+    .featured-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffd803;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .featured-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .featured-grid {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 18px;
+    }
+    .featured-main {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+    }
+    .featured-main h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      color: #fff;
+    }
+    .featured-main p {
+      margin: 0 0 12px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+    .featured-links {
+      display: grid;
+      gap: 9px;
+    }
+    .featured-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.02);
+      color: #f0e7ff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    }
+    .featured-link:hover {
+      border-color: rgba(255,215,3,0.68);
+      transform: translateY(-2px);
+      background: rgba(255,215,3,0.08);
+    }
+    .featured-aside {
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .featured-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,215,3,0.38);
+      padding: 6px 10px;
+      color: #ffd803;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: fit-content;
+      background: rgba(8,8,20,0.5);
+    }
+    .featured-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,215,3,0.36);
+      color: #ffd803;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255,215,3,0.07);
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .featured-cta:hover {
+      background: rgba(255,215,3,0.14);
+      border-color: #ffd803;
+    }
+    @media (max-width: 900px) {
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+      @keyframes pointy-bounce {
+        0% { transform: translateY(-50%) scale(1) rotate(-10deg); }
+        50% { transform: translateY(-60%) scale(1.08) rotate(10deg); }
+        100% { transform: translateY(-50%) scale(1) rotate(-10deg); }
+      }
+      .pointy-finger {
+        display: inline-block;
+        animation: pointy-bounce 1.2s infinite alternate cubic-bezier(.5,1.5,.5,1);
+      }
   </style>
-              <meta name="description" content="All Videos — Watch Bible-based video content on NothingButTheTRUTH including studies, devotionals, and practical faith resources.">
+              <meta name="description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
               <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-              <link rel="canonical" href="https://NothingButTheTRUTH.web.app/all-videos.html">
-              <meta property="og:image" content="https://NothingButTheTRUTH.web.app/seo-default-image.jpg">
+              <link rel="canonical" href="https://LightLine.web.app/all-videos.html">
+              <meta property="og:image" content="https://LightLine.web.app/seo-default-image.jpg">
               <meta name="twitter:card" content="summary_large_image">
-              <meta name="twitter:title" content="All Videos — Bible Video Library | NothingButTheTRUTH">
-              <meta name="twitter:description" content="All Videos — Watch Bible-based video content on NothingButTheTRUTH including studies, devotionals, and practical faith resources.">
-              <meta name="twitter:image" content="https://NothingButTheTRUTH.web.app/seo-default-image.jpg">
+              <meta name="twitter:title" content="All Videos — Bible Video Library | LightLine">
+              <meta name="twitter:description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
+              <meta name="twitter:image" content="https://LightLine.web.app/seo-default-image.jpg">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"All Videos","description":"Watch Bible-based video content including studies, devotionals, and practical faith resources.","url":"https://NothingButTheTRUTH.web.app/all-videos.html","isPartOf":{"@type":"WebSite","name":"NothingButTheTRUTH","url":"https://NothingButTheTRUTH.web.app"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"All Videos","description":"Watch Bible-based video content including studies, devotionals, and practical faith resources.","url":"https://LightLine.web.app/all-videos.html","isPartOf":{"@type":"WebSite","name":"LightLine","url":"https://LightLine.web.app"}}
   </script>
-            <meta name="keywords" content="Bible study, Christian devotion, Scripture, NothingButTheTRUTH, Bible resources, study collection, video library, videos, bible, video, library, NothingButTheTRUTH">
-            <meta name="author" content="NothingButTheTRUTH">
-            <meta property="og:site_name" content="NothingButTheTRUTH">
+            <meta name="keywords" content="Bible study, Christian devotion, Scripture, LightLine, Bible resources, study collection, video library, videos, bible, video, library, LightLine">
+            <meta name="author" content="LightLine">
+            <meta property="og:site_name" content="LightLine">
             <meta property="og:locale" content="en_US">
 </head>
 <body>
   <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Home</a>
   <h1>🎥 All Videos</h1>
+    <section class="featured-shell" aria-label="Featured BibleProject videos">
+      <div class="featured-head">
+        <div class="featured-title"><i class="fas fa-star"></i> Featured</div>
+        <div class="featured-sub">BibleProject spotlight collection</div>
+      </div>
+      <div class="featured-grid">
+        <article class="featured-main">
+          <h3>The Creation — BibleProject Collection</h3>
+          <p>A curated creation-focused track sourced from BibleProject. This section highlights origin, heaven and earth, and the Tree of Life themes for doctrinal study flow.</p>
+          <div class="featured-links">
+            <a class="featured-link" href="https://bibleproject.com/explore/video/genesis-1-11/" target="_blank" rel="noopener noreferrer">
+              <span>Genesis 1-11 Overview</span><i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+            <a class="featured-link" href="https://bibleproject.com/explore/video/heaven-and-earth/" target="_blank" rel="noopener noreferrer">
+              <span>Heaven &amp; Earth</span><i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+            <a class="featured-link" href="https://bibleproject.com/explore/video/tree-of-life/" target="_blank" rel="noopener noreferrer">
+              <span>Tree of Life</span><i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
+        <aside class="featured-aside">
+          <span class="featured-pill"><i class="fas fa-shield"></i> External Source</span>
+          <p style="margin:0;color:rgba(255,255,255,0.75);font-size:0.9rem;line-height:1.6;">BibleProject media is opened from official sources to preserve attribution and avoid rehosting conflicts.</p>
+          <a class="featured-cta" href="https://www.youtube.com/@bibleproject/search?query=creation" target="_blank" rel="noopener noreferrer">Open Creation Playlist/Series</a>
+        </aside>
+      </div>
+    </section>
+    <div class="nbtt-recommend nbtt-newest-pill">
+      <div class="nbtt-recommend nbtt-newest-inner nbtt-rel-overflow">
+        <div class="nbtt-recommend-glass-overlay"></div>
+        <i class="fas fa-bolt"></i>
+        <div class="nbtt-newest-main">
+          <span class="nbtt-newest-title">There Is an error in the Commandments videos, One Commandment is missing, therefore the sequence of the commandments is incorrect.</span><br>
+          <span class="nbtt-newest-desc">Please forgive the Error, we are working to correct it.</span>
+        </div>
+      </div>
+    </div>
   <!-- folders containing video groups -->
-  <div class="folder open">
-    <div class="folder-header">Ten Commandments Mini-Series <span class="arrow">▶</span></div>
+  <div class="folder">
+    <div class="folder-header nbtt-folder-rel">Ten Commandments Mini-Series 
+      <span class="arrow">▶</span>
+      <span class="pointy-finger">
+        <i class="fas fa-hand-point-right"></i>
+      </span>
+    </div>
     <div class="folder-content">
       <div class="videos-container">
+        <!-- Ten Commandments Recommendation Pill -->
+        <div class="nbtt-recommend nbtt-cmd-pill">
+          <i class="fas fa-tablets nbtt-star-animate"></i>
+          <span>
+            <b>Explore the Ten Commandments:</b>
+            <a href="the-ten-commandments.html" class="nbtt-cmd-link">See All Commandments</a>
+          </span>
+        </div>
         <!-- dynamic containers filled by script -->
         <div class="video-card">
           <div class="video-wrapper" id="ep1"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd alt">Commandment Series</div>
           <h3>📽️ 1st Commandment - No other Gods</h3>
+          <div class="nbtt-date">2025-09-29</div>
           <p>Exclusive worship of the one true God.</p>
         </div>
         <div class="video-card">
@@ -167,7 +388,9 @@
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd">Commandment Series</div>
           <h3>📽️ 2nd Commandment - No Graven Images</h3>
+          <div class="nbtt-date">2025-10-06</div>
           <p>The prohibition against idols.</p>
         </div>
         <div class="video-card">
@@ -175,7 +398,9 @@
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 3rd Commandment - Respect the Sabbath</h3>
+          <div class="nbtt-date">2025-10-13</div>
           <p>Remember and keep holy the Sabbath day.</p>
         </div>
         <div class="video-card">
@@ -183,71 +408,145 @@
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 4th Commandment - Honor your parents</h3>
+          <div class="nbtt-date">2025-10-20</div>
           <p>Family obedience and respect.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/hannahs_devotion.html' style='color:#8bb4f8;text-decoration:underline;'>Hannah's Devotion</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep5"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 5th Commandment - Do not murder</h3>
+          <div class="nbtt-date">2025-10-27</div>
           <p>The sanctity of human life.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/faith_under_fire.html' style='color:#8bb4f8;text-decoration:underline;'>Faith Under Fire</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep6"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 6th Commandment - No adultery</h3>
+          <div class="nbtt-date">2025-11-03</div>
           <p>Faithfulness in marriage.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/love_that_saves.html' style='color:#2563eb;text-decoration:underline;'>Love That Saves</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep7"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 7th Commandment - Do not steal</h3>
+          <div class="nbtt-date">2025-11-10</div>
           <p>Honesty and respect for others’ property.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/walking_in_the_light.html' style='color:#2563eb;text-decoration:underline;'>Walking in the Light</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep8"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 8th Commandment - Do not lie</h3>
+          <div class="nbtt-date">2025-11-17</div>
           <p>The power and penalty of falsehood.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/the_power_of_the_cross.html' style='color:#2563eb;text-decoration:underline;'>The Power of the Cross</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep9"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#2563eb;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 9th Commandment - Do not covet</h3>
+          <div class="nbtt-date">2025-11-24</div>
           <p>Contentment and trust in God's provision.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/unshackled_by_grace.html' style='color:#2563eb;text-decoration:underline;'>Unshackled by Grace</a></span></div>
         </div>
         <div class="video-card">
           <div class="video-wrapper" id="ep10"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-cmd" style="background:#2563eb;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>
           <h3>📽️ 10th Commandment</h3>
+          <div class="nbtt-date">2025-12-01</div>
           <p>Final episode of the commandments series.</p>
+          <div class="nbtt-recommend nbtt-cmd-rec-alt"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/anchor_of_hope.html' style='color:#2563eb;text-decoration:underline;'>Anchor of Hope</a></span></div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="folder">
-    <div class="folder-header">Historical Videos <span class="arrow">▶</span></div>
+    <div class="folder-header">Historical & Doctrinal Videos <span class="arrow">▶</span></div>
     <div class="folder-content">
       <div class="videos-container">
+        <!-- New MythBuster Short: Forbidden Fruit -->
+        <div class="video-card">
+          <div class="video-wrapper" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
+          </div>
+          <div class="fullscreen-box">
+            <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
+          </div>
+          <div class="nbtt-badge nbtt-myth" style="background:#a855f7;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">MythBuster</div>
+          <h3>📽️ What is the forbidden fruit Really?</h3>
+          <div style="color:#ffd803;font-size:0.98em;font-weight:600;margin:0 15px 8px 15px;">2026-02-28</div>
+          <p>Explore the real meaning behind the forbidden fruit, the Latin pun 'malum', and why obedience matters more than the fruit itself.</p>
+          <div class="nbtt-recommend" style="background:linear-gradient(90deg,#a855f7 0%,#ffd803 100%);color:#222;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #ffd80333;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Devotion:</b> <a href='Devotions/forbidden_fruit_malum.html' style='color:#2563eb;text-decoration:underline;'>The Forbidden Fruit: Malum, Apple, and Obedience</a></span></div>
+        </div>
+        <!-- New MythBuster: Is the Bible God's Word to Humanity PART 1 -->
+        <div class="video-card">
+          <div class="video-wrapper" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <mux-player playback-id="fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es" metadata-video-title="Is the Bible God's Word to Humanity? (PART 1)" style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
+          </div>
+          <div class="fullscreen-box">
+            <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
+          </div>
+          <div class="nbtt-badge nbtt-myth" style="background:#a855f7;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">MythBuster</div>
+          <h3>📽️ Is the Bible God's Word to Humanity? (PART 1)</h3>
+          <div style="color:#ffd803;font-size:0.98em;font-weight:600;margin:0 15px 8px 15px;">2026-03-11</div>
+          <p>PART 1 of the MythBuster study: Evidence, inspiration, and reliability of the Bible as God's message to all people.</p>
+          <div class="nbtt-recommend" style="background:linear-gradient(90deg,#a855f7 0%,#ffd803 100%);color:#222;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #ffd80333;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Study:</b> <a href='Studies/why_the_bible_is_expanded.html' style='color:#2563eb;text-decoration:underline;'>Is the Bible God's Word to Humanity?</a></span></div>
+        </div>
+        <!-- New MythBuster: Is the Bible Facts or Fiction? -->
+        <div class="video-card">
+          <div class="video-wrapper" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <mux-player
+              playback-id="IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw"
+              metadata-video-title="Is the Bible Facts or Fiction? (PART 2)"
+              style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;border:none;box-shadow:0 4px 24px #0002;"
+              stream-type="on-demand"
+            ></mux-player>
+          </div>
+          <div class="fullscreen-box">
+            <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
+          </div>
+          <div class="nbtt-badge nbtt-myth" style="background:#a855f7;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">MythBuster</div>
+          <h3>📽️ Is the Bible Facts or Fiction? <b>(PART 2)</b></h3>
+          <div style="color:#ffd803;font-size:0.98em;font-weight:600;margin:0 15px 8px 15px;">2026-03-11</div>
+          <p>PART 2 of 2: Archaeology, manuscript evidence, and fulfilled prophecy—fact or fiction?</p>
+          <div class="nbtt-recommend" style="background:linear-gradient(90deg,#a855f7 0%,#ffd803 100%);color:#222;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #ffd80333;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class="fas fa-star nbtt-star-animate"></i> <span><b>Recommended Study:</b> <a href='Studies/why_the_bible_is_expanded.html' style='color:#2563eb;text-decoration:underline;'>Is the Bible God's Word to Humanity?</a></span></div>
+          <div style="margin-top:0.8em;text-align:center;">
+            <span style="font-size:0.98em;color:#a855f7;font-weight:600;">📖 Recommended:</span>
+            <a href="Studies/why_the_bible_is_expanded.html" style="color:#2563eb;font-weight:600;text-decoration:underline;margin-left:0.4em;">Is the Bible God's Word to Humanity? (Full Study & Video)</a>
+          </div>
+        </div>
         <div class="video-card">
           <div class="video-wrapper" id="hist1"></div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
           </div>
+          <div class="nbtt-badge nbtt-hist" style="background:#8b5cf6;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">History & Doctrinal</div>
           <h3>📽️ History and Formation of the Christian Church</h3>
+          <div style="color:#ffd803;font-size:0.98em;font-weight:600;margin:0 15px 8px 15px;">2026-01-15</div>
           <p>A historical walk through the church's formation, growth, trials, and mission in the world.</p>
         </div>
       </div>
@@ -269,6 +568,22 @@
   </div>
 
 <script>
+// Star animation interval logic
+function animateStars() {
+  const stars = document.querySelectorAll('.nbtt-star-animate');
+  stars.forEach(star => {
+    star.classList.remove('nbtt-star-rotating');
+    void star.offsetWidth;
+    setTimeout(() => {
+      star.classList.add('nbtt-star-rotating');
+    }, 10);
+  });
+}
+setInterval(animateStars, 3500); // Animate every 3.5s
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(animateStars, 1200);
+});
+<i class="fas fa-star nbtt-star-animate"></i>
 function openFullscreen(button) {
   const card = button.closest('.video-card');
   const player = card.querySelector('iframe, mux-player');
@@ -289,9 +604,18 @@ function openFullscreen(button) {
 
 <script>
 // folder accordion toggling
-document.querySelectorAll('.folder-header').forEach(h=>{
-  h.addEventListener('click',()=>{
+document.querySelectorAll('.folder-header').forEach(h => {
+  h.addEventListener('click', () => {
     h.parentElement.classList.toggle('open');
+    // Hide pointy finger if present when open, show when closed
+    const pf = h.querySelector('.pointy-finger');
+    if (pf) {
+      if (h.parentElement.classList.contains('open')) {
+        pf.style.display = 'none';
+      } else {
+        pf.style.display = 'inline-block';
+      }
+    }
   });
 });
 
@@ -369,7 +693,7 @@ muxVideos.forEach(v=>{
   font-family:'Poppins',sans-serif;
 ">
   <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:0 0 1rem;">
-    Explore more from NothingButTheTRUTH
+    Explore more from LightLine
   </p>
   <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
     <a href="all-studies.html" style="

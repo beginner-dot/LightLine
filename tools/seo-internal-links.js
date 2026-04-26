@@ -13,8 +13,8 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const BASE = 'https://nothingbutthetruth.web.app';
-const BRAND = 'NothingButTheTRUTH';
+const BASE = 'https://lightline.web.app';
+const BRAND = 'LightLine';
 
 /* ──────────────────────────────────────────────
    CONTENT REGISTRY — every linkable page

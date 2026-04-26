@@ -1,5 +1,5 @@
-/* ═══════════════════════════════════════════════════════════
-   Indexstyles.js — NothingButTheTruth Master JS
+﻿/* ═══════════════════════════════════════════════════════════
+   Indexstyles.js — LightLine Master JS
    All new JavaScript goes in this file.
    ═══════════════════════════════════════════════════════════ */
 
@@ -20,9 +20,9 @@ import { getFirestore, doc, setDoc, getDoc, updateDoc, serverTimestamp
 // ----------------------------------------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-  authDomain: "nothingbutthetruth-1cd23.firebaseapp.com",
-  projectId: "nothingbutthetruth-1cd23",
-  storageBucket: "nothingbutthetruth-1cd23.appspot.com",
+  authDomain: "lightline.firebaseapp.com",
+  projectId: "lightline",
+  storageBucket: "lightline.appspot.com",
   messagingSenderId: "253692400115",
   appId: "1:253692400115:web:7eb36acdf69382d28d0286",
   measurementId: "G-LXVCQNJ6VJ"
@@ -34,6 +34,8 @@ const db   = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const githubProvider = new GithubAuthProvider();
+
+window.lightlineFirebase = { app, auth, db };
 
 // ----------------------------------------------------------
 //  DOM References
@@ -621,7 +623,7 @@ ready(() => {
   function getCardShareTitle(card) {
     const heading = card.querySelector("h3, h2");
     if (heading?.textContent) return heading.textContent.trim();
-    return "Shared from NothingButTheTruth";
+    return "Shared from LightLine";
   }
 
   function attachShareButtons() {

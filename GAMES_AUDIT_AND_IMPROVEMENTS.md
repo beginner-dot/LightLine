@@ -1,4 +1,4 @@
-# 🎮 Bible Games Audit & Enhancement Report
+﻿# 🎮 Bible Games Audit & Enhancement Report
 **Date:** February 2, 2026  
 **Status:** Comprehensive Investigation Complete
 
@@ -167,8 +167,8 @@ const firebaseConfig = {
    // Replace with actual config from Firebase Console
    const firebaseConfig = {
      apiKey: "YOUR_ACTUAL_API_KEY",
-     authDomain: "nothingbutthetruth-1cd23.firebaseapp.com",
-     projectId: "nothingbutthetruth-1cd23",
+     authDomain: "lightline.firebaseapp.com",
+     projectId: "lightline",
      // ... use actual values
    };
    ```

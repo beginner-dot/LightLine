@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MythBuster Visual Lesson: Facts or Fiction?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(135deg, #f3f3f3 60%, #a855f7 100%); color: #23243a; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    .lesson-container { max-width: 1200px; margin: 2.5rem auto; background: rgba(255,255,255,0.98); border-radius: 22px; box-shadow: 0 4px 32px #0002; padding: 2.5rem 2rem 2rem 2rem; position: relative; }
+    .scene-title { font-size: 2.1rem; color: #a855f7; margin-bottom: 0.7rem; font-weight: 800; text-shadow: 0 2px 12px #fff8; letter-spacing: -0.02em; }
+    .scene-section { margin-bottom: 3.5rem; }
+    .whiteboard { background: #fff; color: #23243a; border-radius: 18px; box-shadow: 0 2px 12px #0001; padding: 2.5rem 2rem 2rem 2rem; margin-bottom: 2rem; position: relative; }
+    .sticky { display: inline-block; background: #fef08a; color: #23243a; border-radius: 8px; box-shadow: 2px 4px 12px #0001; padding: 1.2rem 1.5rem; margin: 0.5rem 1rem 1.5rem 0; font-size: 1.1rem; font-weight: 600; transform: rotate(-2deg); }
+    .sketch { display: block; margin: 1.5rem auto; max-width: 90%; border-radius: 12px; box-shadow: 0 2px 8px #0001; }
+    .chart-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: #fff; color: #23243a; border-radius: 10px; overflow: hidden; }
+    .chart-table th, .chart-table td { padding: 1rem; border-bottom: 1px solid #e5e7eb; text-align: center; }
+    .chart-table th { background: #a855f7; color: #fff; font-size: 1.1rem; }
+    .chart-table tr:last-child td { border-bottom: none; }
+    .pin { position: absolute; width: 32px; top: -18px; left: 24px; z-index: 2; }
+    .caption { color: #23243a; font-size: 1.05rem; margin-top: 0.5rem; text-align: center; }
+    .timeline { display: flex; align-items: flex-end; justify-content: space-between; margin: 2.5rem 0 1.5rem 0; position: relative; }
+    .timeline-step { background: #f3f3f3; color: #23243a; border-radius: 50%; width: 90px; height: 90px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 700; font-size: 1.08rem; box-shadow: 0 2px 8px #0001; border: 4px solid #a855f7; position: relative; z-index: 2; }
+    .timeline-bar { flex: 1; height: 8px; background: linear-gradient(90deg, #a855f7 60%, #60a5fa 100%); margin: 0 8px; border-radius: 3px; position: relative; z-index: 1; }
+    .note { background: #fca5a5; color: #23243a; border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0; font-size: 1.08rem; font-weight: 500; box-shadow: 0 2px 8px #0001; display: inline-block; }
+    .sketch-label { color: #a855f7; font-weight: 700; font-size: 1.1rem; margin-top: 0.5rem; text-align: center; }
+    .map-diagram { width: 100%; max-width: 700px; margin: 1.5rem auto; display: block; border-radius: 14px; box-shadow: 0 2px 12px #0001; }
+    .author-list { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.5rem 0; }
+    .author-card { background: #bae6fd; color: #23243a; border-radius: 8px; padding: 0.7rem 1.2rem; font-weight: 600; font-size: 1.08rem; box-shadow: 0 2px 8px #0001; }
+    .connection-arrow { width: 60px; height: 30px; display: inline-block; vertical-align: middle; }
+    .lesson-connection { color: #a855f7; font-weight: 700; font-size: 1.13rem; margin: 1.2rem 0 0.7rem 0; text-align: center; }
+    .whiteboard-diagram { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: flex-start; margin: 2rem 0; }
+    .diagram-box { background: #fff; color: #23243a; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 1.2rem 1.5rem; min-width: 220px; max-width: 320px; font-size: 1.08rem; font-weight: 600; position: relative; }
+    .diagram-title { color: #a855f7; font-weight: 700; font-size: 1.08rem; margin-bottom: 0.5rem; }
+    .lesson-step { background: #a855f7; color: #fff; border-radius: 8px; padding: 0.7rem 1.2rem; font-weight: 700; font-size: 1.13rem; margin: 1.2rem 0 0.7rem 0; display: inline-block; }
+    .lesson-link { color: #60a5fa; text-decoration: underline; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;color:#fff;margin-top:2rem;">MythBuster Visual Lesson: Facts or Fiction?</h1>
+  <p style="text-align:center;color:#a855f7;max-width:700px;margin:0 auto 2.5rem;">This interactive lesson uses beautiful diagrams, timelines, author cards, maps, and whiteboards. Connections and arrows show how each part fits together. Screenshot each section for your video, or use as a teaching tool!</p>
+  <div class="lesson-container">
+    <!-- Scene 1: Written by Many, Across Centuries -->
+    <div class="scene-section">
+      <div class="scene-title">1. The Bible: Written Across Centuries</div>
+      <div class="whiteboard">
+        <div class="lesson-step">Timeline of Authors</div>
+        <div class="timeline">
+          <div class="timeline-step">Moses<br><span style="font-size:0.9rem;">(Egypt, 1400 BC)</span></div>
+          <div class="timeline-bar"></div>
+          <div class="timeline-step">David<br><span style="font-size:0.9rem;">(Israel, 1000 BC)</span></div>
+          <div class="timeline-bar"></div>
+          <div class="timeline-step">Isaiah<br><span style="font-size:0.9rem;">(Jerusalem, 700 BC)</span></div>
+          <div class="timeline-bar"></div>
+          <div class="timeline-step">Daniel<br><span style="font-size:0.9rem;">(Babylon, 600 BC)</span></div>
+          <div class="timeline-bar"></div>
+          <div class="timeline-step">Matthew<br><span style="font-size:0.9rem;">(Israel, 50 AD)</span></div>
+          <div class="timeline-bar"></div>
+          <div class="timeline-step">Paul<br><span style="font-size:0.9rem;">(Rome, 60 AD)</span></div>
+        </div>
+        <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Authors from different eras and places</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+        <div class="author-list">
+          <div class="author-card">Moses (Egypt)</div>
+          <div class="author-card">David (Israel)</div>
+          <div class="author-card">Isaiah (Jerusalem)</div>
+          <div class="author-card">Daniel (Babylon)</div>
+          <div class="author-card">Ezra (Persia)</div>
+          <div class="author-card">Matthew (Israel)</div>
+          <div class="author-card">Luke (Antioch)</div>
+          <div class="author-card">Paul (Rome)</div>
+          <div class="author-card">Peter (Galilee)</div>
+          <div class="author-card">John (Ephesus)</div>
+        </div>
+        <div class="lesson-connection">Map: <span style="color:#60a5fa;">Arrows connect Egypt, Israel, Babylon, Persia, Greece, Rome, Antioch, Galilee, Ephesus</span></div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Ancient_Mediterranean_map.png" alt="Ancient Mediterranean Map" class="map-diagram" />
+        <div class="note">40+ authors, 1500 years, 3 continents, 3 languages</div>
+      </div>
+    </div>
+    <!-- Scene 2: The Big Question (with real red arrows) -->
+    <div class="scene-section">
+      <div class="scene-title">2. The Big Question</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:30px;position:relative;height:160px;">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="background:#fff0f0;color:#b91c1c;font-weight:800;font-size:1.5rem;padding:1.2rem 2.2rem;border-radius:12px;box-shadow:0 2px 8px #0002;">MYTH</div>
+          <div style="margin-top:12px;font-size:1.1rem;color:#23243a;font-weight:600;">“Just a book of legends?”</div>
+        </div>
+        <svg width="90" height="60" style="position:relative;z-index:2;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444" />
+            </marker>
+          </defs>
+          <line x1="0" y1="30" x2="90" y2="30" stroke="#ef4444" stroke-width="6" marker-end="url(#arrowhead)" />
+        </svg>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="background:#f3f3f3;color:#a855f7;font-weight:800;font-size:2.5rem;padding:0.5rem 1.2rem;border-radius:50%;box-shadow:0 2px 8px #0002;">?</div>
+        </div>
+        <svg width="90" height="60" style="position:relative;z-index:2;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444" />
+            </marker>
+          </defs>
+          <line x1="0" y1="30" x2="90" y2="30" stroke="#ef4444" stroke-width="6" marker-end="url(#arrowhead2)" />
+        </svg>
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="background:#e0e7ff;color:#1e293b;font-weight:800;font-size:1.5rem;padding:1.2rem 2.2rem;border-radius:12px;box-shadow:0 2px 8px #0002;">FACTS</div>
+          <div style="margin-top:12px;font-size:1.1rem;color:#23243a;font-weight:600;">Let’s look at the evidence!</div>
+        </div>
+      </div>
+      <div class="lesson-connection" style="margin-top:1.5rem;">Red arrows now visually connect MYTH to FACTS, with a question mark in the middle</div>
+    </div>
+    <!-- Scene 3: Truth Statement -->
+    <div class="scene-section">
+      <div class="scene-title">3. Truth Statement</div>
+      <div class="whiteboard-diagram">
+        <div class="diagram-box">
+          <div class="diagram-title">TRUTH</div>
+          <div style="font-size:1.2rem;">The Bible is a reliable, evidence-based book</div>
+        </div>
+        <img src="https://img.icons8.com/ios-filled/100/000000/open-book--v2.png" alt="Open Bible" style="width:80px;" />
+        <img src="https://img.icons8.com/ios-filled/100/000000/magnifying-glass.png" alt="Magnifying Glass" style="width:60px;" />
+        <img src="https://img.icons8.com/ios-filled/100/000000/checked-checkbox.png" alt="Checkmark" style="width:60px;" />
+      </div>
+      <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Connects to all evidence scenes below</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+    </div>
+    <!-- Scene 4: Archaeological Evidence -->
+    <div class="scene-section">
+      <div class="scene-title">4. Archaeological Evidence</div>
+      <div class="whiteboard-diagram">
+        <div class="diagram-box">
+          <div class="diagram-title">Moabite Stone</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Mesha_Stele_Louvre_AO5066.jpg" alt="Moabite Stone" class="sketch" style="width:120px;" />
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Cyrus Cylinder</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Cyrus_Cylinder.jpg" alt="Cyrus Cylinder" class="sketch" style="width:120px;" />
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Pool of Siloam</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Pool_of_Siloam_2005.jpg" alt="Pool of Siloam" class="sketch" style="width:120px;" />
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Dead Sea Scrolls</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Dead_Sea_Scrolls.jpg" alt="Dead Sea Scrolls" class="sketch" style="width:120px;" />
+        </div>
+      </div>
+      <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Sticky notes visually connect the archaeological evidence</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+    </div>
+    <!-- Scene 5: Manuscript Evidence -->
+    <div class="scene-section">
+      <div class="scene-title">5. Manuscript Evidence</div>
+      <div class="whiteboard">
+        <table class="chart-table">
+          <tr><th></th><th>Bible</th><th>Homer’s Iliad</th></tr>
+          <tr><td>Manuscripts</td><td>5,800+ Greek<br>Thousands more</td><td>~650</td></tr>
+          <tr><td>Earliest Copy Gap</td><td>30-50 years</td><td>400+ years</td></tr>
+        </table>
+        <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Chart visually connects manuscript evidence</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+      <div class="lesson-connection">Chart: The Bible’s manuscript evidence is unmatched</div>
+    </div>
+    <!-- Scene 6: Prophecy Fulfilled -->
+    <div class="scene-section">
+      <div class="scene-title">6. Prophecy Fulfilled</div>
+      <div class="whiteboard-diagram">
+        <div class="diagram-box">
+          <div class="diagram-title">Messiah Prophecies</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/star.png" alt="Star" style="width:60px;" />
+          <div style="font-size:1.05rem;">Born in Bethlehem, Suffered, Died for others</div>
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Empires</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/greek-pillar.png" alt="Empire" style="width:60px;" />
+          <div style="font-size:1.05rem;">Babylon, Persia, Greece, Rome</div>
+        </div>
+      </div>
+      <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Timeline visually connects prophecies and empires</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+    </div>
+    <!-- Scene 7: Changed Lives -->
+    <div class="scene-section">
+      <div class="scene-title">7. Changed Lives</div>
+      <div class="whiteboard-diagram">
+        <div class="diagram-box">
+          <div class="diagram-title">Hope</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/hope.png" alt="Hope" style="width:60px;" />
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Freedom</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/broken-chain.png" alt="Freedom" style="width:60px;" />
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">New Purpose</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/goal.png" alt="Purpose" style="width:60px;" />
+        </div>
+      </div>
+      <div class="lesson-connection" style="display:flex;align-items:center;justify-content:center;gap:18px;margin:1.2rem 0 0.7rem 0;">
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead)" /><defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+        <span style="color:#a855f7;font-weight:700;font-size:1.13rem;">Visuals connect changed lives: hope, freedom, purpose</span>
+        <svg width="60" height="30" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="15" x2="60" y2="15" stroke="#a855f7" stroke-width="6" marker-end="url(#arrowhead2)" /><defs><marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth"><polygon points="0 0, 10 3.5, 0 7" fill="#a855f7" /></marker></defs></svg>
+      </div>
+    </div>
+    <!-- Scene 8: Check the Evidence -->
+    <div class="scene-section">
+      <div class="scene-title">8. Check the Evidence</div>
+      <div class="whiteboard-diagram" style="justify-content:center;align-items:center;flex-direction:column;">
+        <div class="diagram-box">
+          <div class="diagram-title">Investigate</div>
+          <img src="magnifying_glass.png" alt="Magnifying Glass" style="width:120px;display:block;margin:0 auto 1rem auto;" />
+          <div style="font-size:1.05rem;">Search, question, explore</div>
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">Sticky Note</div>
+          <div style="font-size:1.05rem;">Check the evidence for yourself</div>
+        </div>
+      </div>
+    </div>
+    <!-- Scene 9: Call to Action -->
+    <div class="scene-section">
+      <div class="scene-title">9. Call to Action</div>
+      <div class="whiteboard-diagram">
+        <div class="diagram-box">
+          <div class="diagram-title">Want to know more?</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/open-book--v2.png" alt="Open Bible" style="width:60px;" />
+          <div style="font-size:1.05rem;">Explore the full study</div>
+        </div>
+        <div class="diagram-box">
+          <div class="diagram-title">See the evidence</div>
+          <img src="https://img.icons8.com/ios-filled/100/000000/checked-checkbox.png" alt="Checkmark" style="width:60px;" />
+        </div>
+      </div>
+      <div class="lesson-connection">Open Bible, rays of light, sticky: “See the evidence with your own eyes”</div>
+    </div>
+    <p class="caption">Screenshot each visual above for your video or use as a teaching lesson. Add your own images, icons, or effects for extra impact!</p>
+  </div>
+</body>
+</html>

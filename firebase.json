@@ -1,4 +1,4 @@
-{
+﻿{
   "firestore": {
     "database": "(default)",
     "location": "eur3",
@@ -22,12 +22,13 @@
     }
   ],
   "hosting": {
-    "site": "nothingbutthetruth",
+    "site": "lightline",
     "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
+      "New_Sections/non-live/**",
       "**/*.bat",
       "**/*.cmd",
       "**/*.exe",

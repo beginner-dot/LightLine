@@ -1,0 +1,296 @@
+﻿LightLine - Complete Single Repository Brief
+Date: April 19, 2026
+Purpose: One-file repository information pack (architecture + UX + SWOT + status)
+Format: Repo information only (no model instructions)
+
+====================================================================
+A) REPOSITORY IDENTITY
+====================================================================
+Repository name: LightLine
+Primary purpose: Christian educational content platform delivering Bible studies, devotions, videos, games, and curated current-events analysis with biblical framing.
+
+This is a hybrid repository with two parallel product surfaces:
+1) Root static platform (main user-facing site)
+2) Nested Next.js app (christianity-of-christ) with static export copied to systematic-reconstruction
+
+Current practical state:
+- Root static surface is broad and active.
+- Modern Next.js subsystem exists and is functional in many areas, but still contains explicit stubbed/transitional elements.
+
+====================================================================
+B) CORE TECH STACK
+====================================================================
+Root platform:
+- HTML, CSS, Vanilla JavaScript
+- Firebase Hosting
+- Firebase Auth + Firestore integrations in selected flows
+- Chart.js
+- Mux player embeds
+- JSON-driven content sources
+
+Nested app (christianity-of-christ):
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- SQLite default (adapter path for PostgreSQL)
+- Vitest
+
+Supporting tooling:
+- npm scripts at root for nested build/export/deploy chain
+- Firebase Functions package scaffold
+- GitHub Actions workflows for Firebase Hosting deploys
+
+====================================================================
+C) REPOSITORY COMPOSITION SNAPSHOT
+====================================================================
+High-volume file types observed:
+- HTML is dominant (large static site footprint)
+- MDX, JS, TS/TSX are substantial
+- JSON and CSS are heavily used
+
+Top concentration areas:
+- christianity-of-christ (largest app code concentration)
+- Studies, Devotions, games (high content/game volume)
+- systematic-reconstruction (generated export artifacts)
+
+Interpretation:
+- This repo is both a content publication system and an app codebase.
+
+====================================================================
+D) MAJOR FOLDERS AND WHAT THEY CONTAIN
+====================================================================
+Root-level content and pages:
+- Many standalone HTML pages (home, hubs, videos, notifications, about, ledger pages, etc.)
+
+games/
+- Large set of Bible-themed games and leaderboard/gamification support
+- Mixed maturity: many polished games, some still in improvement cycle per audit docs
+
+Studies/
+- Long-form theological study pages (standalone HTML-heavy structure)
+
+Devotions/
+- Daily/practical devotional pages and shared styling assets
+
+functions/
+- Firebase Functions package and starter index.js scaffold
+
+christianity-of-christ/
+- Modern Next.js app: app router, API routes, Prisma schema, tests, content modules, scripts, docs
+
+systematic-reconstruction/
+- Generated static export output from nested app
+- Deployment artifact surface, not primary source for feature authoring
+
+New_Sections/
+- Experimental or staged content pages
+
+public/
+- Firebase default starter page assets (not the main site experience)
+
+====================================================================
+E) KEY SOURCE-OF-TRUTH FILES (OPERATIONAL)
+====================================================================
+Homepage and platform behavior:
+- index.html: main shell and homepage section composition
+- Indexstyles.js: auth/account mode/sidebar/profile state logic
+- nbtt-features.js: global search index + bookmarks + utility UX
+- script.js: commandment/video cards + quiz modal behavior
+- ledger.js: Evidence Desk/Newsroom rendering pipeline
+
+Data sources:
+- newsroom.json: newsroom story records
+- commandments.json, biblestories.json, script.json, ledgerData.json
+
+Infra/config:
+- firebase.json
+- firestore.rules
+- storage.rules
+- package.json (root build/deploy scripts)
+
+Nested app source-of-truth:
+- christianity-of-christ/README.md
+- christianity-of-christ/src/app/*
+- christianity-of-christ/src/app/api/*
+- christianity-of-christ/prisma/schema.prisma
+
+====================================================================
+F) LIVE / LOCAL / STAGED STATUS
+====================================================================
+1) Live-active platform surfaces (broadly)
+- Root site pages, game pages, studies/devotions hubs, and major static navigation routes are active static surfaces.
+
+2) Newsroom status (important correction)
+- Newsroom is currently local-content-driven.
+- Content is fetched from local newsroom.json by ledger.js.
+- It is not a live external news-wire ingestion system.
+
+3) Explicit staged or not-live indicators in UI/content
+- Multiple sections/pages contain staged/preview/coming-soon markers.
+- Recent Videos Hub is labeled staged/internal preview in homepage markup.
+- Ten Commandments course placeholder pages indicate not-yet-live full experience.
+
+4) Backend and app transition status
+- Firebase Functions remain scaffold-level.
+- Nested app includes documented stubs/placeholders (auth/admin/community workflow areas).
+
+====================================================================
+G) HOMEPAGE USER EXPERIENCE (HIGH-LEVEL JOURNEY)
+====================================================================
+Typical user journey:
+1) Land on visually rich homepage with many content pathways.
+2) Choose navigation path (Studies, Devotions, Games, Videos, Newsroom, etc.).
+3) Optionally sign in (public/anonymous/limited mode behaviors exposed in UI).
+4) Use search overlay for rapid content discovery.
+5) Consume content via cards/pages, play games, watch videos, open report pages.
+
+UX profile summary:
+- Strong breadth and visual identity.
+- High optionality and depth.
+- Risk of first-visit overload due to many simultaneous choices.
+
+====================================================================
+H) SECTION-BY-SECTION UX SUMMARY (CONTAINS / STANDS OUT / LACKS)
+====================================================================
+1) Hero + Top Navigation + Auth + Search
+Contains:
+- Brand landing, sidebar navigation, sign-in mode choices, search trigger.
+Stands out:
+- Rich capability at entry point and broad discoverability.
+Lacks:
+- A single “start here” guided funnel for first-time users.
+
+2) Studies
+Contains:
+- Long-form doctrinal and theological study pages.
+Stands out:
+- Depth, volume, educational seriousness.
+Lacks:
+- Strong beginner-to-advanced progression map across studies.
+
+3) Devotions
+Contains:
+- Practical faith-focused devotional pages.
+Stands out:
+- Strong pastoral tone and direct application style.
+Lacks:
+- Strong continuity loops (clear next devotion pathway/streak mechanic).
+
+4) Games
+Contains:
+- Multiple scripture-themed interactive games + leaderboard surfaces.
+Stands out:
+- Engagement diversity and replay potential.
+Lacks:
+- Consistent polish and unified UX standards across all titles.
+
+5) Videos / MythBusters / Video Hub
+Contains:
+- Embedded/video-card content and related hub pages.
+Stands out:
+- Multi-format teaching beyond text.
+Lacks:
+- Clear user-facing separation between fully live and staged sections.
+
+6) Evidence Desk / Newsroom
+Contains:
+- Structured report cards and full report pages from local newsroom data.
+Stands out:
+- Distinctive faith + current-events framing model.
+Lacks:
+- Explicit user messaging that source is curated local feed, not live news-wire.
+
+====================================================================
+I) HOMEPAGE SWOT
+====================================================================
+Strengths:
+- Strong identity and thematic consistency
+- Broad content coverage and user pathways
+- Combination of study/devotional/interactive/video formats
+
+Weaknesses:
+- Dense information architecture for first-time users
+- Mixed readiness cues (live plus staged messaging in same experience)
+- Uneven UX parity across some modules
+
+Opportunities:
+- Add guided onboarding path
+- Clarify section status badges (Live / Preview / Coming Soon)
+- Improve cross-section progression and retention loops
+
+Threats:
+- New-user drop-off from choice overload
+- Trust friction if “newsroom” is interpreted as real-time live feed
+- Perceived inconsistency from mixed maturity components
+
+====================================================================
+J) WHOLE-REPO SWOT
+====================================================================
+Strengths:
+- Hybrid architecture supports both rapid content publishing and modern app evolution
+- Strong metadata/SEO patterns across many pages
+- Large content library + interactive engagement surfaces
+
+Weaknesses:
+- Dual-stack complexity (root static + nested app + generated output)
+- Some CI/build-contract ambiguity at root level
+- Backend serverless layer not fully productized
+
+Opportunities:
+- Define explicit source-of-truth and release-state governance
+- Unify quality standards across all sections/games
+- Strengthen deploy/test contracts and status reporting
+
+Threats:
+- Drift between authored source and generated deployment artifacts
+- Regression risk when editing at scale across many standalone pages
+- User expectation mismatch on live-vs-curated sections
+
+====================================================================
+K) DEPLOYMENT AND OPERATIONAL NOTES
+====================================================================
+Hosting/deploy:
+- Firebase Hosting workflows exist for PR preview and merge/live deploy.
+- Root scripts include nested app build/export sync to systematic-reconstruction.
+
+Watchpoints:
+- CI currently references root npm build path patterns that should remain aligned with root scripts.
+- Storage rules default to deny-all currently.
+- Firestore rules include scoped user/profile/challenge/score policy patterns.
+
+====================================================================
+L) CONTENT AND EDITORIAL STYLE PROFILE
+====================================================================
+Content voice:
+- Direct Christian instructional tone
+- Practical directives and moral framing
+- Frequent scripture anchoring
+- Structured report/story blocks for newsroom narratives
+
+UI style:
+- Gradient-rich, high-contrast sections
+- Icon and badge-heavy visual language
+- Dark-rich panels with accent highlights
+- Strong visual personality over minimalist style
+
+====================================================================
+M) CURRENT MATURITY ASSESSMENT
+====================================================================
+What is mature now:
+- Large static content architecture
+- Multi-surface navigation and discovery
+- Strong quantity of studies/devotions/games
+- SEO/metadata consistency in many pages
+
+What is still transitional:
+- Some homepage/video/course areas marked staged or coming soon
+- Newsroom is local curated data, not live external feed
+- Nested app has active stubs in specific modules
+- Functions package remains largely scaffold-level
+
+====================================================================
+N) FINAL SINGLE-PAGE INTERPRETATION
+====================================================================
+LightLine is an active, content-rich Christian platform with strong breadth and clear brand identity, built on a hybrid architecture. The root static site is the practical production surface today. The nested Next.js subsystem is an important modernization track with meaningful progress but visible transitional areas. Newsroom currently operates as a local curated editorial feed, not a live wire service. The largest product gains now are in clarifying live-vs-preview status, simplifying first-user journeys, and unifying quality across all interactive sections.

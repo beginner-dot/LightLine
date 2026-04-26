@@ -86,15 +86,51 @@ function ensureMuxGlassStyles() {
 
     const style = document.createElement('style');
     style.textContent = `
+/* Glassmorphic control bar, no purple highlight except play/pause and loading */
 mux-player::part(control) {
-    backdrop-filter: blur(10px) saturate(180%);
-    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(30,30,40,0.18);
     border-radius: 24px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    box-shadow: 0 2px 12px 0 rgba(80,80,120,0.10);
 }
 
-/* make the seek bar follow accent color */
+/* Seek bar buffer and progress use accent (purple), rest is glass */
 mux-player::part(seek-bar) {
-    background-color: var(--accent-color);
+    background: rgba(255,255,255,0.10);
+}
+mux-player::part(seek-bar-filled) {
+    background: var(--accent-color, #a259ff);
+}
+mux-player::part(seek-bar-buffer) {
+    background: var(--accent-color, #a259ff);
+    opacity: 0.5;
+}
+
+/* Play/Pause button uses accent color, rest are glass/white */
+mux-player::part(play-button),
+mux-player::part(pause-button) {
+    color: var(--accent-color, #a259ff);
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px 0 rgba(162,89,255,0.10);
+}
+mux-player::part(control-button) {
+    color: #fff;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+}
+
+/* Remove purple highlight from all other controls */
+mux-player::part(volume-range),
+mux-player::part(time-display),
+mux-player::part(settings-menu),
+mux-player::part(pip-button),
+mux-player::part(fullscreen-button) {
+    color: #fff;
+    background: rgba(255,255,255,0.10);
+    box-shadow: none !important;
+    border: none !important;
 }
 `;
     document.head.appendChild(style);

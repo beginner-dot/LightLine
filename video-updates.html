@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Updates — Latest Videos | LightLine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, rgba(15,5,30,0.95), rgba(5,0,15,0.95)); color: #eee; padding: 2rem; min-height: 100vh; }
+    .back-button { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 2rem; padding: 10px 20px; background: linear-gradient(135deg, #ff6b9d, #c06c84); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; }
+    .back-button:hover { transform: translateX(-5px); box-shadow: 0 8px 20px rgba(255,107,157,0.3); }
+    h1 { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; background: linear-gradient(135deg, #ffd803, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeIn 1s ease-out; }
+    .videos-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; animation: slideUp 1s ease-out; position: relative; z-index: 1; }
+    .video-card { background: rgba(255,255,255,0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; transition: all 0.4s ease; box-shadow: 0 8px 32px 0 rgba(31,38,135,0.2); }
+    .video-card:hover { transform: translateY(-8px); border-color: rgba(255,215,3,0.5); box-shadow: 0 12px 40px 0 rgba(255,215,3,0.3); background: rgba(255,255,255,0.05); }
+    .video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .video-wrapper mux-player { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; border-radius: 8px; }
+    .video-card h3 { font-size: 1.3rem; margin: 20px 15px 10px 15px; color: #fff; font-weight: 600; }
+    .video-card p { font-size: 0.95rem; color: rgba(255,255,255,0.7); margin: 0 15px 20px 15px; line-height: 1.5; }
+    .update-date { color: #ffd803; font-weight: bold; margin-bottom: 1.5rem; text-align: center; font-size: 1.1em; }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Home</a>
+  <h1>📢 Video Updates</h1>
+  <div class="update-date">March 11, 2026</div>
+  <div class="videos-container" id="updates-videos"></div>
+  <script src="https://unpkg.com/@mux/mux-player"></script>
+  <script src="mux-player.js"></script>
+  <script>
+    // List of all videos (recent first)
+    const updatesVideos = [
+      {
+        playbackId: "IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw",
+        title: "Is the Bible Facts or Fiction? (PART 2)",
+        desc: "PART 2 of 2: Archaeology, manuscript evidence, and fulfilled prophecy—fact or fiction?",
+        date: "2026-03-11"
+      },
+      {
+        playbackId: "fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es",
+        title: "Is the Bible God's Word to Humanity? (PART 1)",
+        desc: "PART 1: Evidence, inspiration, and reliability of the Bible as God's message to all people.",
+        date: "2026-03-11"
+      },
+      {
+        playbackId: "QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ",
+        title: "What is the forbidden fruit Really?",
+        desc: "Explore the real meaning behind the forbidden fruit, the Latin pun 'malum', and why obedience matters more than the fruit itself.",
+        date: "2026-02-28"
+      },
+      // Add all other videos here, most recent first, 1st Commandment last
+      { playbackId: "9YK3gk4u1kebsw6p5zzIqFzo1vCYBK7AByMlZqIXbMM", title: "10th Commandment", desc: "Final episode of the commandments series.", date: "2025-12-01" },
+      { playbackId: "VenN8sry1z2eWrAdoPbgsQlMF029SGK00qBmlnzHbYQPQ", title: "9th Commandment - Do not covet", desc: "Contentment and trust in God's provision.", date: "2025-11-24" },
+      { playbackId: "700Jk02F3jkWj9BbhwpUV4cAWWFcikk01sr01LMxCKrAFBo", title: "8th Commandment - Do not lie", desc: "The power and penalty of falsehood.", date: "2025-11-17" },
+      { playbackId: "KrxyIaJWF8XmqX5xjzkz34aQYo6ECfkgUBvGv9QgnbY", title: "7th Commandment - Do not steal", desc: "Honesty and respect for others’ property.", date: "2025-11-10" },
+      { playbackId: "ug848kYdAXqfuhzB1sKGdYKkV8EiC9OIHYsMplwObMs", title: "6th Commandment - No adultery", desc: "Faithfulness in marriage.", date: "2025-11-03" },
+      { playbackId: "3w3PIq4AHnH9MWsNIxY4kX01slQX8LHt02BeCvPXIawyc", title: "5th Commandment - Do not murder", desc: "The sanctity of human life.", date: "2025-10-27" },
+      { playbackId: "fFpSPCm2u01rdH2XhpEjLg7C6CWQVD9kMWHSsuvD8Bgc", title: "4th Commandment - Honor your parents", desc: "Family obedience and respect.", date: "2025-10-20" },
+      { playbackId: "tL02o02bj5IM7RSt6hywQmA5rrP0001t3qLBLOyz9wNKIqM", title: "3rd Commandment - Respect the Sabbath", desc: "Remember and keep holy the Sabbath day.", date: "2025-10-13" },
+      { playbackId: "cCbeBi2BZhcEEe8MNnYvlI4Cwn02w00wk29x31bHj02XE8", title: "2nd Commandment - No Graven Images", desc: "The prohibition against idols.", date: "2025-10-06" },
+      { playbackId: "At02BeC1XsfvnzLdph1i7WcMbgljkszxUGYd2tH5018Ow", title: "1st Commandment - No other Gods", desc: "Explains the meaning of placing God first and avoiding idols.", date: "2025-09-29" }
+    ];
+    const container = document.getElementById('updates-videos');
+    updatesVideos.forEach(v => {
+      // Classification and recommendations
+      let badge = '';
+      let rec = '';
+      if (v.title.includes('Commandment')) {
+        badge = `<div class='nbtt-badge nbtt-cmd' style="background:#23395d;color:#e0e7ef;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">Commandment Series</div>`;
+      } else if (v.title.includes('MythBuster') || v.title.includes('Facts or Fiction') || v.title.includes('God\'s Word')) {
+        badge = `<div class='nbtt-badge nbtt-myth' style="background:#a855f7;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">MythBuster</div>`;
+      } else if (v.title.includes('History')) {
+        badge = `<div class='nbtt-badge nbtt-hist' style="background:#8b5cf6;color:#fff;display:inline-block;padding:0.3em 0.9em;border-radius:12px;font-size:0.93em;font-weight:700;margin:12px 15px 0 15px;animation:fadeInBadge 1.2s;">History & Doctrinal</div>`;
+      }
+      // Only real, relevant recommendations
+      if (v.title === "Is the Bible Facts or Fiction? (PART 2)" || v.title === "Is the Bible God's Word to Humanity? (PART 1)") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Study:</b> <a href='Studies/why_the_bible_is_expanded.html' style='color:#8bb4f8;text-decoration:underline;'>Is the Bible God's Word to Humanity?</a></span></div>`;
+      } else if (v.title === "What is the forbidden fruit Really?") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/forbidden_fruit_malum.html' style='color:#8bb4f8;text-decoration:underline;'>The Forbidden Fruit: Malum, Apple, and Obedience</a></span></div>`;
+      } else if (v.title === "10th Commandment") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/anchor_of_hope.html' style='color:#8bb4f8;text-decoration:underline;'>Anchor of Hope</a></span></div>`;
+      } else if (v.title === "9th Commandment - Do not covet") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/unshackled_by_grace.html' style='color:#8bb4f8;text-decoration:underline;'>Unshackled by Grace</a></span></div>`;
+      } else if (v.title === "8th Commandment - Do not lie") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/the_power_of_the_cross.html' style='color:#8bb4f8;text-decoration:underline;'>The Power of the Cross</a></span></div>`;
+      } else if (v.title === "7th Commandment - Do not steal") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/walking_in_the_light.html' style='color:#8bb4f8;text-decoration:underline;'>Walking in the Light</a></span></div>`;
+      } else if (v.title === "6th Commandment - No adultery") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/love_that_saves.html' style='color:#8bb4f8;text-decoration:underline;'>Love That Saves</a></span></div>`;
+      } else if (v.title === "5th Commandment - Do not murder") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/faith_under_fire.html' style='color:#8bb4f8;text-decoration:underline;'>Faith Under Fire</a></span></div>`;
+      } else if (v.title === "4th Commandment - Honor your parents") {
+        rec = `<div class='nbtt-recommend' style="background:linear-gradient(90deg,#37306B 0%,#6D67E4 100%);color:#e0e7ef;padding:0.7em 1.1em;border-radius:10px;margin:0 15px 12px 15px;font-size:0.97em;font-weight:600;box-shadow:0 2px 12px #37306B33;animation:fadeInRec 1.2s;display:flex;align-items:center;gap:10px;"><i class='fas fa-star'></i> <span><b>Recommended Devotion:</b> <a href='Devotions/hannahs_devotion.html' style='color:#8bb4f8;text-decoration:underline;'>Hannah's Devotion</a></span></div>`;
+      }
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      card.innerHTML = `
+        <div class="video-wrapper">
+          <mux-player playback-id="${v.playbackId}" metadata-video-title="${v.title}" stream-type="on-demand" style="width:100%;height:100%;border-radius:8px;"></mux-player>
+        </div>
+        ${badge}
+        <h3>🎬 ${v.title}</h3>
+        <div style="color:#ffd803;font-size:0.98em;font-weight:600;margin:0 15px 8px 15px;">${v.date}</div>
+        <p>${v.desc}</p>
+        ${rec}
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
