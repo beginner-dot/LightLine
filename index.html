@@ -595,7 +595,7 @@
 
             <nav class="button-group hero-cta-row hero-stagger" aria-label="Quick access">
                 <button type="button" class="blade-btn btn-main" id="llStartHereBtn" title="Open the quick-start guide"><span aria-hidden="true">🧭</span> Start Here</button>
-                <a href="all-studies.html" class="blade-btn" title="Browse free in-depth Bible studies on faith, baptism, angels, and more"><span aria-hidden="true">📚</span> Explore Studies</a>
+              <a href="all-videos.html" class="blade-btn" title="Watch scripture-based Bible teaching videos and latest releases"><span aria-hidden="true">🎬</span> Explore Videos</a>
             </nav>
         </div>
 
@@ -1034,6 +1034,7 @@
     }
 
       function initQuickGuide() {
+        const quickGuideEnabled = false;
         const guideKey = 'll_quick_guide_seen';
         const guideLastKey = 'll_quick_guide_last';
         const guideFabHiddenKey = 'll_quick_guide_fab_hidden';
@@ -1046,6 +1047,18 @@
         const fabWrap = document.getElementById('llGuideFabWrap');
         const fabDismissBtn = document.getElementById('llGuideFabDismiss');
         const optionBtns = document.querySelectorAll('.ll-onboard-card[data-guide-target]');
+
+        if (!quickGuideEnabled) {
+          if (startBtn) {
+            startBtn.addEventListener('click', () => {
+              window.location.href = 'all-studies.html';
+            });
+          }
+          if (backdrop) backdrop.remove();
+          if (fabWrap) fabWrap.remove();
+          document.body.classList.remove('ll-guide-open');
+          return;
+        }
 
         if (!backdrop) return;
 
@@ -1258,17 +1271,8 @@
             <div class="verse-post-time" id="versePostTime"></div>
           </div>
 
-          <!-- Post Stats -->
-          <div class="post-stats">
-            <span class="stat-item"><i class="fas fa-heart"></i> <span id="likeCount">0</span> Likes</span>
-          </div>
-
           <!-- Post Actions -->
           <div class="post-actions">
-            <button class="action-btn like-btn" id="likeBtn" onclick="toggleLike()">
-              <i class="far fa-heart"></i>
-              <span>Like</span>
-            </button>
             <button class="action-btn devotion-action-btn" id="devotionActionBtn" type="button">
               <i class="fas fa-book"></i>
               <span>Devotion</span>
@@ -2500,7 +2504,8 @@ function openFullscreen(button) {
 </script>
 
 <!-- mux scripts for homepage players -->
-<script defer src="https://unpkg.com/@mux/mux-player"></script>
+<script defer src="lib/mux-player-loader.js"></script>
+<script defer src="lib/mux-telemetry.js"></script>
 <script defer src="mux-player.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -3878,8 +3883,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 <script type="module">
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { addDoc, collection, doc, onSnapshot, serverTimestamp, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { addDoc, collection, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const SITE_URL = "https://lightline.web.app";
 const seedVerses = [
@@ -3947,20 +3951,10 @@ function buildExpandedDevotion(verse) {
 
 const fullDevotions = verses.map((verse, index) => seedDevotions[index] || buildExpandedDevotion(verse));
 
-let currentUser = null;
-let unsubscribeLikeListener = null;
 const getDayOfYear = (d = new Date()) => Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 86400000);
-const toDateId = (d = new Date()) => d.toISOString().slice(0, 10);
 const getTodayVerse = () => verses[(getDayOfYear() - 1) % verses.length];
 const getTodayDevotion = () => fullDevotions[(getDayOfYear() - 1) % fullDevotions.length];
 const getFirebaseCtx = () => window.lightlineFirebase?.auth && window.lightlineFirebase?.db ? window.lightlineFirebase : null;
-
-function setLikeUi(likeCount, didLike) {
-  document.getElementById("likeCount").textContent = String(likeCount);
-  const likeBtn = document.getElementById("likeBtn");
-  likeBtn.innerHTML = didLike ? '<i class="fas fa-heart"></i><span>Liked</span>' : '<i class="far fa-heart"></i><span>Like</span>';
-  likeBtn.classList.toggle("active", didLike);
-}
 
 function renderTodayVerse() {
   const verse = getTodayVerse();
@@ -4029,34 +4023,6 @@ function closeDevotionModal() {
   }, 280);
 }
 
-function startLikeListener() {
-  const fb = getFirebaseCtx();
-  if (!fb) return;
-  if (unsubscribeLikeListener) unsubscribeLikeListener();
-  unsubscribeLikeListener = onSnapshot(doc(fb.db, "verseReactions", toDateId()), (snap) => {
-    const data = snap.exists() ? snap.data() : {};
-    const likeCount = Object.keys(data).filter((k) => data[k] === true).length;
-    const didLike = Boolean(currentUser?.uid && data[currentUser.uid] === true);
-    setLikeUi(likeCount, didLike);
-  });
-}
-
-function ensureAuthListener() {
-  const fb = getFirebaseCtx();
-  if (!fb) return setTimeout(ensureAuthListener, 250);
-  onAuthStateChanged(fb.auth, (user) => { currentUser = user; startLikeListener(); });
-}
-
-window.toggleLike = async function toggleLike() {
-  const fb = getFirebaseCtx();
-  if (!fb) return alert("Auth is still loading. Please try again.");
-  if (!currentUser?.uid) {
-    alert("Please log in to like today's verse.");
-    document.getElementById("navAuthBtn")?.click();
-    return;
-  }
-  await setDoc(doc(fb.db, "verseReactions", toDateId()), { [currentUser.uid]: true }, { merge: true });
-};
 
 window.shareTodayVerse = async function shareTodayVerse() {
   const verse = getTodayVerse();
@@ -4124,7 +4090,6 @@ window.sharePollOnTelegram = function() { window.open(`https://t.me/share/url?ur
 document.addEventListener("DOMContentLoaded", () => {
   renderTodayVerse();
   renderTodayDevotion();
-  ensureAuthListener();
   const devotionBtn = document.getElementById("devotionActionBtn");
   devotionBtn?.addEventListener("click", (e) => {
     e.preventDefault();
@@ -4137,7 +4102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const scheduleNextUpdate = () => {
     const now = new Date();
     const nextMidnight = new Date(now); nextMidnight.setHours(24, 0, 0, 0);
-    setTimeout(() => { renderTodayVerse(); renderTodayDevotion(); startLikeListener(); scheduleNextUpdate(); }, nextMidnight - now);
+    setTimeout(() => { renderTodayVerse(); renderTodayDevotion(); scheduleNextUpdate(); }, nextMidnight - now);
   };
   scheduleNextUpdate();
 });

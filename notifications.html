@@ -15,7 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script defer src="https://unpkg.com/@mux/mux-player"></script>
+    <script defer src="lib/mux-player-loader.js"></script>
+    <script defer src="lib/mux-telemetry.js"></script>
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
@@ -123,7 +124,7 @@
             <div class="section-label"><i class="fas fa-video"></i> Recent Videos</div>
             <div style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;">
                 <div style="flex:1 1 320px;max-width:400px;min-width:260px;">
-                    <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" style="width:100%;aspect-ratio:16/9;min-height:180px;border-radius:12px;border:none;box-shadow:0 4px 24px #0002;" stream-type="on-demand"></mux-player>
+                    <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" preload="metadata" playsinline style="width:100%;aspect-ratio:16/9;min-height:180px;border-radius:12px;border:none;box-shadow:0 4px 24px #0002;" stream-type="on-demand"></mux-player>
                     <div style="font-weight:600;margin-top:0.5em;">What is the forbidden fruit Really? <span style="display:block;font-weight:400;font-size:0.95em;margin-top:0.2em;"><a href='Devotions/forbidden_fruit_malum.html' style='color:#ffd700;text-decoration:underline;'>Read the new devotional</a></span></div>
                 </div>
             </div>

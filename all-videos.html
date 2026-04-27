@@ -698,7 +698,7 @@
         <!-- New MythBuster Short: Forbidden Fruit -->
         <div class="video-card">
           <div class="video-wrapper" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
+            <mux-player playback-id="QUquOOys027GYzzqVn9JGF7hvNMT72hPaHshDedGv2BQ" metadata-video-title="What is the forbidden fruit Really?" preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
           </div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
@@ -712,7 +712,7 @@
         <!-- New MythBuster: Is the Bible God's Word to Humanity PART 1 -->
         <div class="video-card">
           <div class="video-wrapper" style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <mux-player playback-id="fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es" metadata-video-title="Is the Bible God's Word to Humanity? (PART 1)" style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
+            <mux-player playback-id="fit015e600oyWAhLiCm9BT6ElmIFDZRGwqKg59aITj5es" metadata-video-title="Is the Bible God's Word to Humanity? (PART 1)" preload="metadata" playsinline style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;" stream-type="on-demand"></mux-player>
           </div>
           <div class="fullscreen-box">
             <button onclick="openFullscreen(this)">⛶ Fullscreen</button>
@@ -729,6 +729,8 @@
             <mux-player
               playback-id="IRC02cmkZquhwgGTl5AXwILQ00G1DuoeCjeitsfAITZqw"
               metadata-video-title="Is the Bible Facts or Fiction? (PART 2)"
+              preload="metadata"
+              playsinline
               style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border-radius:8px;border:none;box-shadow:0 4px 24px #0002;"
               stream-type="on-demand"
             ></mux-player>
@@ -1052,7 +1054,8 @@ function openFullscreen(button) {
 </script>
 
 <!-- mux player library & helper -->
-<script src="https://unpkg.com/@mux/mux-player"></script>
+<script defer src="lib/mux-player-loader.js"></script>
+<script defer src="lib/mux-telemetry.js"></script>
 <script src="mux-player.js"></script>
 
 <script>

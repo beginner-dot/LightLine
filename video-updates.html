@@ -27,7 +27,8 @@
   <h1>📢 Video Updates</h1>
   <div class="update-date">March 11, 2026</div>
   <div class="videos-container" id="updates-videos"></div>
-  <script src="https://unpkg.com/@mux/mux-player"></script>
+  <script defer src="lib/mux-player-loader.js"></script>
+  <script defer src="lib/mux-telemetry.js"></script>
   <script src="mux-player.js"></script>
   <script>
     // List of all videos (recent first)
@@ -98,7 +99,7 @@
       card.className = 'video-card';
       card.innerHTML = `
         <div class="video-wrapper">
-          <mux-player playback-id="${v.playbackId}" metadata-video-title="${v.title}" stream-type="on-demand" style="width:100%;height:100%;border-radius:8px;"></mux-player>
+          <mux-player playback-id="${v.playbackId}" metadata-video-title="${v.title}" preload="metadata" playsinline stream-type="on-demand" style="width:100%;height:100%;border-radius:8px;"></mux-player>
         </div>
         ${badge}
         <h3>🎬 ${v.title}</h3>
