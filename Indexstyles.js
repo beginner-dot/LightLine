@@ -20,9 +20,9 @@ import { getFirestore, doc, setDoc, getDoc, updateDoc, serverTimestamp
 // ----------------------------------------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-  authDomain: "lightline.firebaseapp.com",
-  projectId: "lightline",
-  storageBucket: "lightline.appspot.com",
+  authDomain: "LightLine-1cd23.firebaseapp.com",
+  projectId: "LightLine-1cd23",
+  storageBucket: "LightLine-1cd23.appspot.com",
   messagingSenderId: "253692400115",
   appId: "1:253692400115:web:7eb36acdf69382d28d0286",
   measurementId: "G-LXVCQNJ6VJ"

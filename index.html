@@ -153,6 +153,11 @@
           <i class="fas fa-user-circle" aria-hidden="true"></i>
           <span class="nav-auth-label">Sign In</span>
         </button>
+        <!-- Must Know — moves here after dock is dismissed -->
+        <button type="button" class="ll-nav-must-know" id="llNavMustKnow" aria-label="Open site updates" style="display:none;">
+          <i class="fas fa-bell" aria-hidden="true"></i>
+          <span>Must Know</span>
+        </button>
         <!-- Theme toggle removed — dark mode only for now -->
         <!-- Search trigger -->
         <button class="search-trigger" aria-label="Search the site">
@@ -841,7 +846,10 @@
       const text = title.getAttribute('data-text') || '';
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      clearInterval(heroTypingTimer);
+      if (heroTypingTimer !== null) {
+        cancelAnimationFrame(heroTypingTimer);
+        heroTypingTimer = null;
+      }
 
       if (prefersReducedMotion || !text) {
         title.textContent = text;
@@ -850,18 +858,43 @@
         return;
       }
 
+      // Lock the title's rendered height before erasing so the hero layout
+      // stays stable for the full duration of the typewriter pass.
+      const measuredHeight = title.getBoundingClientRect().height;
+      if (measuredHeight > 0) title.style.minHeight = measuredHeight + 'px';
+
+      const CHARS_PER_SECOND = 36; // one char every ~28 ms
+      const MS_PER_CHAR = 1000 / CHARS_PER_SECOND;
+
       let index = 0;
+      let lastTimestamp = null;
       title.textContent = '';
       title.style.opacity = '1';
 
-      heroTypingTimer = setInterval(() => {
-        index += 1;
-        title.textContent = text.slice(0, index);
-        if (index >= text.length) {
-          clearInterval(heroTypingTimer);
+      function step(timestamp) {
+        if (lastTimestamp === null) lastTimestamp = timestamp;
+
+        const elapsed = timestamp - lastTimestamp;
+        const advance = Math.floor(elapsed / MS_PER_CHAR);
+
+        if (advance > 0) {
+          index = Math.min(index + advance, text.length);
+          title.textContent = text.slice(0, index);
+          // Consume only the time that maps to whole characters so
+          // the remainder carries forward and prevents drift.
+          lastTimestamp = timestamp - (elapsed % MS_PER_CHAR);
+        }
+
+        if (index < text.length) {
+          heroTypingTimer = requestAnimationFrame(step);
+        } else {
+          heroTypingTimer = null;
+          title.style.minHeight = '';
           requestAnimationFrame(() => performFit());
         }
-      }, 28);
+      }
+
+      heroTypingTimer = requestAnimationFrame(step);
     }
 
     function setupHudCounterObserver() {
@@ -1285,7 +1318,7 @@
               <i class="far fa-bookmark"></i>
               <span>Save</span>
             </button>
-            <button class="action-btn" onclick="toggleSubscribeInline()">
+            <button class="action-btn ll-sub-paused" title="Subscriptions are being upgraded — coming back soon" aria-disabled="true" style="opacity:0.38; filter:grayscale(0.55); cursor:not-allowed; pointer-events:none;">
               <i class="fas fa-bell"></i>
               <span>Subscribe</span>
             </button>
@@ -2658,49 +2691,405 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 </main>
-    <!-- Rebrand Notice -->
-    <section style="
-      max-width:680px;
-      margin:3rem auto 0;
-      padding:2.2rem 1.6rem 2.8rem;
-      border-top:1px solid rgba(255,255,255,0.1);
-      text-align:center;
-    ">
-      <div style="
-        display:inline-block;
-        background:linear-gradient(120deg,#7c3aed,#2563eb);
-        color:#fff;
-        font-size:0.75rem;
-        font-weight:800;
-        letter-spacing:0.09em;
-        text-transform:uppercase;
-        padding:5px 14px;
-        border-radius:999px;
-        margin-bottom:1.2rem;
-      ">A Note From LightLine</div>
-      <p style="color:rgba(255,255,255,0.92);font-size:1.05rem;line-height:1.75;margin:0 0 1.2rem;">
-        <strong style="color:#ffd803;">This site was previously called NothingButTheTRUTH.</strong><br>
-        The name changed — the mission did not. LightLine is the same work, continued with the same conviction:
-        to present Scripture plainly, without additions, without compromise.
-      </p>
-      <blockquote style="
-        border-left:3px solid #ffd803;
-        margin:0 auto 1.2rem;
-        padding:0.7rem 1.2rem;
-        max-width:520px;
-        text-align:left;
-      ">
-        <p style="color:#ffd803;font-size:1rem;font-style:italic;line-height:1.7;margin:0 0 0.3rem;">
-          &ldquo;Thy word is a lamp unto my feet, and a light unto my path.&rdquo;
-        </p>
-        <cite style="color:rgba(255,255,255,0.5);font-size:0.82rem;font-style:normal;">— Psalm 119:105 (KJV)</cite>
-      </blockquote>
-      <p style="color:rgba(255,255,255,0.62);font-size:0.92rem;line-height:1.7;margin:0;">
-        This is a living project. Content is added regularly — videos, studies, devotionals — and there is always more
-        being prepared. What you find here today is not the final picture. If you came back and something has changed
-        or grown, that is intentional. Thank you for being here.
-      </p>
-    </section>
+    <style>
+      .ll-update-dock {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 12500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        animation: llDockRise 520ms ease;
+      }
+
+      .ll-update-open {
+        border: 1px solid rgba(139, 92, 246, 0.5);
+        background: linear-gradient(135deg, rgba(30, 18, 72, 0.97), rgba(12, 10, 38, 0.97));
+        color: #e2d9ff;
+        border-radius: 999px;
+        padding: 11px 15px;
+        font: 700 0.82rem/1.1 "Poppins", sans-serif;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(10, 7, 22, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      .ll-update-open i {
+        color: #a78bfa;
+        font-size: 0.92rem;
+      }
+
+      .ll-update-exit {
+        width: 28px;
+        height: 28px;
+        border: 1px solid rgba(139, 92, 246, 0.35);
+        border-radius: 999px;
+        background: rgba(18, 12, 50, 0.97);
+        color: #a78bfa;
+        font-size: 0.9rem;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      .ll-nav-must-know {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        background: rgba(139, 92, 246, 0.12);
+        color: #c4b5fd;
+        border-radius: 999px;
+        padding: 5px 12px;
+        font: 600 0.78rem/1.1 "Poppins", sans-serif;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.18s, border-color 0.18s;
+      }
+
+      .ll-nav-must-know:hover {
+        background: rgba(139, 92, 246, 0.24);
+        border-color: rgba(139, 92, 246, 0.65);
+      }
+
+      .ll-nav-must-know i {
+        font-size: 0.78rem;
+        color: #a78bfa;
+      }
+
+      .ll-update-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 20000;
+        background:
+          radial-gradient(circle at 16% 14%, rgba(99, 60, 220, 0.18), transparent 42%),
+          radial-gradient(circle at 84% 86%, rgba(139, 92, 246, 0.2), transparent 40%),
+          rgba(5, 5, 20, 0.82);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .ll-update-backdrop.show {
+        display: flex;
+      }
+
+      .ll-update-modal {
+        position: relative;
+        width: min(650px, 100%);
+        max-height: calc(100vh - 34px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        background:
+          linear-gradient(140deg, rgba(18, 12, 58, 0.98), rgba(10, 8, 40, 0.98) 52%, rgba(22, 12, 56, 0.98)),
+          radial-gradient(circle at top right, rgba(139, 92, 246, 0.14), transparent 45%);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 22px;
+        box-shadow: 0 24px 60px rgba(5, 4, 20, 0.7);
+        color: #ddd6fe;
+        padding: 22px 20px 16px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .ll-update-modal::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 22px;
+        pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .ll-update-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+        position: sticky;
+        top: -22px;
+        z-index: 3;
+        padding: 16px 0 12px;
+        background: linear-gradient(180deg, rgba(16, 10, 50, 0.99) 0%, rgba(16, 10, 50, 0.92) 74%, rgba(16, 10, 50, 0));
+      }
+
+      .ll-update-top > div {
+        min-width: 0;
+      }
+
+      .ll-update-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(139, 92, 246, 0.45);
+        color: #c4b5fd;
+        background: rgba(139, 92, 246, 0.1);
+        border-radius: 999px;
+        padding: 5px 15px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+      }
+
+      .ll-update-title {
+        margin: 10px 0 6px;
+        color: #ffffff;
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(1.7rem, 3vw, 2.35rem);
+        letter-spacing: -0.2px;
+        line-height: 1.22;
+      }
+
+      .ll-update-sub {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.86);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .ll-update-header-line {
+        width: 62px;
+        height: 3px;
+        border-radius: 99px;
+        margin: 12px auto 0;
+        background: linear-gradient(90deg, #7c3aed, #a78bfa, rgba(196, 181, 253, 0.4));
+      }
+
+      .ll-update-close {
+        border: 1px solid rgba(139, 92, 246, 0.45);
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.18), rgba(255, 255, 255, 0.04));
+        color: #c4b5fd;
+        border-radius: 10px;
+        padding: 8px 11px;
+        font-weight: 700;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .ll-must-know-list {
+        list-style: none;
+        margin: 16px 0 4px;
+        padding: 0;
+      }
+
+      .ll-must-know-list li {
+        padding: 11px 2px;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.18);
+        font-size: 0.93rem;
+        color: #ddd6fe;
+        line-height: 1.55;
+      }
+
+      .ll-must-know-list li:last-child {
+        border-bottom: none;
+      }
+
+      .ll-must-know-list strong {
+        color: #a78bfa;
+      }
+
+      .ll-update-note {
+        margin-top: 14px;
+        color: rgba(196, 181, 253, 0.75);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      /* Custom scrollbar — matches the violet palette */
+      .ll-update-modal::-webkit-scrollbar {
+        width: 5px;
+      }
+      .ll-update-modal::-webkit-scrollbar-track {
+        background: rgba(139, 92, 246, 0.06);
+        border-radius: 99px;
+      }
+      .ll-update-modal::-webkit-scrollbar-thumb {
+        background: rgba(139, 92, 246, 0.55);
+        border-radius: 99px;
+      }
+      .ll-update-modal::-webkit-scrollbar-thumb:hover {
+        background: rgba(139, 92, 246, 0.8);
+      }
+
+      /* Text selection highlight matches the scrollbar purple */
+      .ll-update-modal ::selection {
+        background: rgba(124, 58, 237, 0.45);
+        color: #fff;
+      }
+
+      @keyframes llDockRise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .ll-update-backdrop {
+          align-items: flex-start;
+          padding: max(8px, env(safe-area-inset-top)) 10px 10px;
+        }
+
+        .ll-update-dock {
+          right: 12px;
+          bottom: 12px;
+          gap: 6px;
+        }
+
+        .ll-update-open {
+          padding: 10px 12px;
+          font-size: 0.77rem;
+        }
+
+        .ll-update-modal {
+          padding: 16px 14px 14px;
+          border-radius: 16px;
+          max-height: calc(100dvh - 16px);
+        }
+
+        .ll-update-title {
+          font-size: 1.2rem;
+        }
+
+        .ll-update-top {
+          top: 0;
+          padding-top: 8px;
+        }
+
+        .ll-update-close {
+          position: sticky;
+          top: 8px;
+          margin-left: auto;
+          z-index: 4;
+        }
+      }
+    </style>
+
+    <div class="ll-update-dock" id="llUpdateDock" role="region" aria-label="Site notification">
+      <button type="button" class="ll-update-open" id="llUpdateOpen" aria-haspopup="dialog" aria-controls="llUpdateModal" aria-label="Open site updates">
+        <i class="fas fa-bell" aria-hidden="true"></i>
+        <span>Must Know</span>
+      </button>
+      <button type="button" class="ll-update-exit" id="llUpdateDismiss" aria-label="Hide this notification">x</button>
+    </div>
+
+    <div class="ll-update-backdrop" id="llUpdateBackdrop" aria-hidden="true">
+      <section class="ll-update-modal" id="llUpdateModal" role="dialog" aria-modal="true" aria-labelledby="llUpdateTitle">
+        <div class="ll-update-top">
+          <div>
+            <span class="ll-update-tag"><i class="fas fa-bullhorn" aria-hidden="true"></i> LightLine Update</span>
+            <h2 class="ll-update-title" id="llUpdateTitle">Why LightLine + What Is Changing</h2>
+            <p class="ll-update-sub">Short and simple updates you need right now.</p>
+            <div class="ll-update-header-line" aria-hidden="true"></div>
+          </div>
+          <button type="button" class="ll-update-close" id="llUpdateClose" aria-label="Close update dialog">Close</button>
+        </div>
+
+        <ul class="ll-must-know-list">
+          <li><strong>New name:</strong> We were NothingButTheTRUTH. We are now LightLine.</li>
+          <li><strong>What LightLine means:</strong> God's Word is our Light. The new name says our mission clearly: simple Bible truth that guides real life.</li>
+          <li><strong>Platform upgrade phase:</strong> LightLine is in a full quality upgrade during the rebrand.</li>
+          <li><strong>Live right now:</strong> Studies, devotions, videos, and games are open and active.</li>
+          <li><strong>Account tools update:</strong> Subscriptions and account sign-up are being upgraded and will return soon.</li>
+          <li><strong>No communication tools yet:</strong> Chat, contact forms, and direct messaging are off while the new domain and safety setup are being finished.</li>
+          <li><strong>Status updates:</strong> We post clear progress notes as features come back online.</li>
+          <li><strong>More is coming:</strong> More videos, studies, sections, and Bible games are being added.</li>
+          <li><strong>Last updated:</strong> 27 April 2026.</li>
+        </ul>
+
+        <p class="ll-update-note">Thanks for your patience. We are making LightLine cleaner, faster, and easier to use.</p>
+      </section>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dock = document.getElementById("llUpdateDock");
+        const openBtn = document.getElementById("llUpdateOpen");
+        const dismissBtn = document.getElementById("llUpdateDismiss");
+        const backdrop = document.getElementById("llUpdateBackdrop");
+        const closeBtn = document.getElementById("llUpdateClose");
+        const navMustKnow = document.getElementById("llNavMustKnow");
+        let lockScrollY = 0;
+
+        if (!dock || !openBtn || !dismissBtn || !backdrop || !closeBtn) return;
+
+        let dismissed = false;
+        try {
+          dismissed = localStorage.getItem("llUpdateDismissed") === "1";
+        } catch (_) {}
+
+        if (dismissed) {
+          dock.style.display = "none";
+          if (navMustKnow) navMustKnow.style.display = "inline-flex";
+        }
+
+        const lockPageScroll = function () {
+          lockScrollY = window.scrollY || window.pageYOffset || 0;
+          document.documentElement.style.overflow = "hidden";
+          document.body.style.position = "fixed";
+          document.body.style.top = `-${lockScrollY}px`;
+          document.body.style.left = "0";
+          document.body.style.right = "0";
+          document.body.style.width = "100%";
+        };
+
+        const unlockPageScroll = function () {
+          document.documentElement.style.overflow = "";
+          document.body.style.position = "";
+          document.body.style.top = "";
+          document.body.style.left = "";
+          document.body.style.right = "";
+          document.body.style.width = "";
+          window.scrollTo(0, lockScrollY);
+        };
+
+        const openModal = function () {
+          backdrop.classList.add("show");
+          backdrop.setAttribute("aria-hidden", "false");
+          lockPageScroll();
+        };
+
+        const closeModal = function () {
+          backdrop.classList.remove("show");
+          backdrop.setAttribute("aria-hidden", "true");
+          unlockPageScroll();
+        };
+
+        openBtn.addEventListener("click", openModal);
+        if (navMustKnow) navMustKnow.addEventListener("click", openModal);
+        closeBtn.addEventListener("click", closeModal);
+
+        backdrop.addEventListener("click", function (event) {
+          if (event.target === backdrop) closeModal();
+        });
+
+        dismissBtn.addEventListener("click", function () {
+          dock.style.display = "none";
+          if (navMustKnow) navMustKnow.style.display = "inline-flex";
+          closeModal();
+          try {
+            localStorage.setItem("llUpdateDismissed", "1");
+          } catch (_) {}
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && backdrop.classList.contains("show")) {
+            closeModal();
+          }
+        });
+      });
+    </script>
 
     <footer class="footer scroll-fade" role="contentinfo">
         <p>&copy; 2026 LightLine. All rights reserved.</p>

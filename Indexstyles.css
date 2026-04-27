@@ -2971,10 +2971,15 @@ body {
            ONBOARDING GATEWAY — Titan Design Language
            Dark #02040a · Gold #FFD700 · Purple ambient
         ══════════════════════════════════════════════ */
+        .ll-onboard-backdrop,
+        .ll-guide-fab-wrap {
+          display: none !important;
+        }
+
         .ll-onboard-backdrop {
           position: fixed;
           inset: 0;
-          z-index: 4500;
+          z-index: 15000;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -3011,6 +3016,9 @@ body {
           position: relative;
           z-index: 1;
           width: min(1000px, 100%);
+          max-height: calc(100vh - 40px);
+          overflow-y: auto;
+          overscroll-behavior: contain;
           /* Glassmorphism — same recipe as .glass-card */
           background: rgba(255, 255, 255, 0.035);
           -webkit-backdrop-filter: blur(22px) saturate(150%);
@@ -3023,7 +3031,7 @@ body {
             inset 0 1px 0 rgba(255, 255, 255, 0.06);
           padding: 32px 26px 24px;
           animation: llGuideIn 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both;
-          overflow: hidden;
+          overflow-x: hidden;
         }
 
         /* Ambient purple glow behind modal — same as hero .ambient-glow */
