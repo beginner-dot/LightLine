@@ -2813,9 +2813,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gap: 12px;
         margin-bottom: 12px;
         position: sticky;
-        top: -22px;
+        top: 0;
         z-index: 3;
-        padding: 16px 0 12px;
+        padding: 16px 74px 12px 0;
         background: linear-gradient(180deg, rgba(16, 10, 50, 0.99) 0%, rgba(16, 10, 50, 0.92) 74%, rgba(16, 10, 50, 0));
       }
 
@@ -2871,6 +2871,10 @@ document.addEventListener('DOMContentLoaded', () => {
         font-weight: 700;
         cursor: pointer;
         flex-shrink: 0;
+        position: absolute;
+        right: 0;
+        top: 14px;
+        z-index: 5;
       }
 
       .ll-must-know-list {
@@ -2938,7 +2942,7 @@ document.addEventListener('DOMContentLoaded', () => {
       @media (max-width: 640px) {
         .ll-update-backdrop {
           align-items: flex-start;
-          padding: max(8px, env(safe-area-inset-top)) 10px 10px;
+          padding: max(8px, env(safe-area-inset-top)) 8px max(8px, env(safe-area-inset-bottom));
         }
 
         .ll-update-dock {
@@ -2953,25 +2957,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         .ll-update-modal {
-          padding: 16px 14px 14px;
+          padding: 12px 12px 12px;
           border-radius: 16px;
-          max-height: calc(100dvh - 16px);
+          max-height: calc(100dvh - 12px);
         }
 
         .ll-update-title {
-          font-size: 1.2rem;
+          margin: 8px 0 4px;
+          font-size: 1.06rem;
+          line-height: 1.2;
         }
 
         .ll-update-top {
           top: 0;
-          padding-top: 8px;
+          margin-bottom: 8px;
+          padding: 8px 66px 8px 0;
+        }
+
+        .ll-update-sub {
+          font-size: 0.84rem;
+          line-height: 1.38;
+        }
+
+        .ll-must-know-list {
+          margin-top: 10px;
+        }
+
+        .ll-must-know-list li {
+          padding: 8px 1px;
+          font-size: 0.86rem;
+          line-height: 1.42;
+        }
+
+        .ll-update-note {
+          margin-top: 10px;
+          font-size: 0.8rem;
+          line-height: 1.4;
         }
 
         .ll-update-close {
-          position: sticky;
           top: 8px;
-          margin-left: auto;
-          z-index: 4;
         }
       }
     </style>
