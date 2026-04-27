@@ -10,7 +10,13 @@ export function ModuleList({ modules }: { modules: Module[] }) {
           <h3 className="mt-2 text-lg font-semibold text-slate-900">{module.title}</h3>
           <p className="mt-2 text-sm text-slate-600">{module.shortDescription}</p>
           <p className="mt-2 text-xs text-slate-500">{module.estimatedMinutes} min · {module.framework}</p>
-          <Link href={`/course/${module.id}`} className="mt-4 inline-flex text-sm font-semibold text-indigo-700">
+          <Link
+            href={`/course/${module.id}`}
+            className="mt-4 inline-flex text-sm font-semibold text-indigo-700"
+            data-analytics-event="study_opened"
+            data-analytics-id={module.id}
+            data-analytics-title={module.title}
+          >
             Start module →
           </Link>
         </article>

@@ -15,6 +15,9 @@ export function LessonCard({ moduleId, lessonSlug, title, description }: Props) 
       <Link
         className="mt-4 inline-flex rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white"
         href={`/course/${moduleId}/${lessonSlug}`}
+        data-analytics-event="study_opened"
+        data-analytics-id={`${moduleId}/${lessonSlug}`}
+        data-analytics-title={title}
       >
         Open lesson
       </Link>

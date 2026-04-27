@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Quiz } from "@/lib/types";
+import { trackGameStarted } from "@/lib/analytics";
 
 export function QuizPlayer({ quiz }: { quiz: Quiz }) {
   const [answers, setAnswers] = useState<number[]>(Array.from({ length: quiz.questions.length }, () => -1));
   const [result, setResult] = useState<number | null>(null);
 
   const submit = async () => {
+    void trackGameStarted({ gameId: quiz.id, title: quiz.title });
     const response = await fetch("/api/quiz/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
