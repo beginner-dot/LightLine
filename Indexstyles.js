@@ -179,7 +179,7 @@ ready(() => {
       wrap = document.createElement("div");
       wrap.id = "sidebarPrivacyWrap";
       wrap.className = "sidebar-privacy-wrap";
-      wrap.innerHTML = '<p class="sidebar-privacy-note"><i class="fas fa-lock"></i> Everything here is <strong>free</strong>. No sign in = <strong>limited</strong>. Public sign in = <strong>unlimited + public profile</strong>. Anonymous sign in = <strong>unlimited + private profile</strong>. <a href="account-options.html" class="sidebar-privacy-link">If you don’t understand then click here</a>.</p>';
+      wrap.innerHTML = '<p class="sidebar-privacy-note"><i class="fas fa-check-circle"></i> Welcome to LightLine. You\'re signed in and have full access to all studies, devotions, and games.</p>';
     }
 
     if (wrap.parentElement !== sidebarProfile) {

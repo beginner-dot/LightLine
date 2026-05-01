@@ -34,10 +34,16 @@
         "source": "/ledger-post.html",
         "destination": "/",
         "type": 302
+      },
+      {
+        "source": "/newsroom.json",
+        "destination": "/",
+        "type": 302
       }
     ],
     "ignore": [
       "firebase.json",
+      "newsroom.json",
       "**/.*",
       "**/node_modules/**",
       "New_Sections/non-live/**",

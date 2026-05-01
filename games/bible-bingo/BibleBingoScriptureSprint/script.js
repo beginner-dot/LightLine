@@ -1,4 +1,4 @@
-let lineScore = 0;
+﻿let lineScore = 0;
 let highScore = 0;
 let teamAScore = 0;
 let teamBScore = 0;
@@ -6,11 +6,10 @@ let currentTeam = "Team A";
 let board = [];
 const boardSize = 5;
 
-// Prompts
-// Added 50 more questions to prompts array
+// Prompts — 52 unique entries, no duplicates
 const prompts = [
   { text: "🧱 Story of Jericho", verse: "Joshua 6:20" },
-  { text: "🌟 Beatitude verse", verse: "Matthew 5:3" },
+  { text: "🌟 Blessed are the poor in spirit", verse: "Matthew 5:3" },
   { text: "🕊️ I leave you peace", verse: "John 14:27" },
   { text: "💪 I can do all things through Christ", verse: "Philippians 4:13" },
   { text: "🌍 Go and make disciples", verse: "Matthew 28:19" },
@@ -19,50 +18,49 @@ const prompts = [
   { text: "🕯️ Light of the world", verse: "Matthew 5:14" },
   { text: "🍞 Jesus feeds 5000", verse: "John 6:11" },
   { text: "💖 Love your neighbor", verse: "Mark 12:31" },
-  { text: "🌿 Jesus’ parable", verse: "Luke 8:4" },
+  { text: "🌿 Parable of the sower", verse: "Luke 8:4" },
   { text: "⛪ Church unity verse", verse: "Ephesians 4:3" },
   { text: "🕊️ Holy Spirit gift", verse: "Acts 2:38" },
   { text: "🛡️ Armor of God", verse: "Ephesians 6:11" },
-  { text: "🌈 Noah’s rainbow", verse: "Genesis 9:13" },
-  { text: "💧 Baptism verse", verse: "Matthew 28:19" },
-  { text: "📖 Scripture memory", verse: "Psalm 119:11" },
-  { text: "🙏 Prayer verse", verse: "1 Thessalonians 5:17" },
-  { text: "👩 Woman in the Bible", verse: "Esther 4:14" },
-  { text: "🕊️ Verse on hope", verse: "Romans 15:13" },
-  { text: "🌟 Beatitude verse", verse: "Matthew 5:8" },
-  { text: "💡 Wisdom verse", verse: "Proverbs 3:5" },
-  { text: "🛐 Worship verse", verse: "John 4:24" },
-  { text: "👣 Jesus’ footsteps", verse: "1 Peter 2:21" },
-  { text: "💬 Proverbs quote", verse: "Proverbs 3:6" },
-  { text: "🦁 Daniel’s lion story", verse: "Daniel 6:22" },
-  { text: "🌊 Miracle by Jesus", verse: "Matthew 14:25" },
-  { text: "🛐 Verse on worship", verse: "John 4:24" },
+  { text: "🌈 Noah's rainbow", verse: "Genesis 9:13" },
+  { text: "📖 Hide your word in my heart", verse: "Psalm 119:11" },
+  { text: "🙏 Pray without ceasing", verse: "1 Thessalonians 5:17" },
+  { text: "👩 Esther's courage", verse: "Esther 4:14" },
+  { text: "🕊️ God of hope", verse: "Romans 15:13" },
+  { text: "🌟 Blessed are the pure in heart", verse: "Matthew 5:8" },
+  { text: "💡 Trust in the Lord with all your heart", verse: "Proverbs 3:5" },
+  { text: "🛐 Worship in Spirit and truth", verse: "John 4:24" },
+  { text: "👣 Follow in Jesus' footsteps", verse: "1 Peter 2:21" },
+  { text: "💬 Acknowledge Him in all your ways", verse: "Proverbs 3:6" },
+  { text: "🦁 Daniel and the lions", verse: "Daniel 6:22" },
+  { text: "🌊 Jesus walks on water", verse: "Matthew 14:25" },
   { text: "😇 Fruit of the Spirit", verse: "Galatians 5:22" },
   { text: "✝️ Name a disciple", verse: "Matthew 10:2" },
-  { text: "💬 Proverbs quote", verse: "Proverbs 3:5" },
-  { text: "🦁 Story from Daniel", verse: "Daniel 6:22" },
-  { text: "📖 Memory verse", verse: "Psalm 119:11" },
-  { text: "🌈 Covenant story", verse: "Genesis 9:13" },
-  { text: "🕊️ Verse with peace", verse: "Philippians 4:7" },
-  { text: "🎵 Psalm about joy", verse: "Psalm 100:1" },
-  { text: "📜 OT Prophet", verse: "Isaiah 6:8" },
-  { text: "👑 Bible king", verse: "1 Samuel 16:13" },
-  { text: "🔥 Story with fire", verse: "Exodus 3:2" },
-  { text: "💡 Verse on wisdom", verse: "James 1:5" },
-  { text: "🚶 Parable of Jesus", verse: "Luke 15:20" },
-  { text: "🛡️ Armor of God", verse: "Ephesians 6:11" },
-  { text: "🌿 NT miracle", verse: "John 2:9" },
-  { text: "📍 Verse with “trust”", verse: "Proverbs 3:5" },
-  { text: "⚓ Hope verse", verse: "Hebrews 11:1" },
-  { text: "👼 Angel story", verse: "Luke 1:26" },
-  { text: "🧍 Commandment ref", verse: "Exodus 20:1" },
-  { text: "💓 God’s love", verse: "John 3:16" },
-  { text: "🌟 Beatitude verse", verse: "Matthew 5:9" },
-  { text: "🕊️ Verse on faith", verse: "Hebrews 11:6" },
-  { text: "💪 Verse on strength", verse: "Isaiah 40:31" },
-  { text: "🌍 Great Commission", verse: "Matthew 28:19" }
+  { text: "🕊️ The peace of God", verse: "Philippians 4:7" },
+  { text: "🎵 Psalm of joy", verse: "Psalm 100:1" },
+  { text: "📜 Isaiah's calling", verse: "Isaiah 6:8" },
+  { text: "🔥 Burning bush", verse: "Exodus 3:2" },
+  { text: "💡 If any lacks wisdom", verse: "James 1:5" },
+  { text: "🚶 Prodigal son parable", verse: "Luke 15:20" },
+  { text: "🍷 Water into wine", verse: "John 2:9" },
+  { text: "⚓ Faith is the substance", verse: "Hebrews 11:1" },
+  { text: "👼 Angel visits Mary", verse: "Luke 1:26" },
+  { text: "🧍 Ten Commandments given", verse: "Exodus 20:1" },
+  { text: "💓 For God so loved the world", verse: "John 3:16" },
+  { text: "🌟 Blessed are the peacemakers", verse: "Matthew 5:9" },
+  { text: "🕊️ Without faith it is impossible", verse: "Hebrews 11:6" },
+  { text: "💪 Those who wait on the Lord", verse: "Isaiah 40:31" },
+  { text: "📜 God's word is a lamp", verse: "Psalm 119:105" },
+  { text: "🌊 Red Sea crossing", verse: "Exodus 14:21" },
+  { text: "👑 Solomon asks for wisdom", verse: "1 Kings 3:9" },
+  { text: "🍎 Forbidden fruit warning", verse: "Genesis 2:17" },
+  { text: "🙌 Be still and know", verse: "Psalm 46:10" },
+  { text: "🔑 Knock and the door shall open", verse: "Matthew 7:7" },
+  { text: "🌱 Mustard seed faith", verse: "Matthew 17:20" },
+  { text: "✨ Created in God's image", verse: "Genesis 1:27" },
+  { text: "📣 John the Baptist's message", verse: "Mark 1:4" },
+  { text: "🗡️ Sword of the Spirit", verse: "Ephesians 6:17" }
 ];
-
 // Shuffle helper (Fisher-Yates)
 function shuffle(array) {
   const arr = [...array];
@@ -291,9 +289,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Orientation detection
+function checkOrientation() {
+  const overlay = document.getElementById("rotateOverlay");
+  if (!overlay) return;
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const isMobile = window.innerWidth < 900;
+  if (isPortrait && isMobile) {
+    overlay.classList.remove("hidden");
+  } else {
+    overlay.classList.add("hidden");
+  }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", checkOrientation);
+
 // Init
 window.addEventListener("DOMContentLoaded", () => {
   // Show instructions overlay on load
   document.getElementById("instructionsOverlay").style.display = "flex";
   document.querySelector(".bingo-container").classList.add("hidden");
+  checkOrientation();
 });
