@@ -1,0 +1,387 @@
+====================================================================
+EVIDENCE DESK / NEWSROOM / WATCHMAN'S LEDGER — FULL CLAUDE BRIEF
+====================================================================
+Date: May 1, 2026
+Project: LightLine
+
+
+====================================================================
+CONCEPT & VISION
+====================================================================
+
+THE WATCHMAN IDENTITY
+---------------------
+The name "Watchman's Ledger" comes from Ezekiel 33, where God appoints
+a watchman whose job is to see danger coming, sound the alarm, and warn
+the people — whether they listen or not. The watchman is not a prophet
+who predicts the future. He is a disciple who reads the signs of the time
+with Scripture in hand and refuses to be silent.
+
+That is the theological engine behind this whole section.
+
+The Evidence Desk exists to do what the biblical watchman does:
+  - Observe what is happening in the world
+  - Frame it honestly and plainly
+  - Anchor it in Bible prophecy
+  - Equip the reader to respond with wisdom, not fear
+
+It is not news for news's sake. It is news in service of discipleship.
+
+THE EDITORIAL PHILOSOPHY
+------------------------
+This is not journalism. It is prophetic discernment applied to current
+events. The difference matters.
+
+A journalist reports facts and lets the reader interpret. The Evidence
+Desk reports facts AND provides the biblical interpretive framework — the
+lens that says: here is what the Bible said would happen, and here is
+what we are seeing. That connection is the whole point.
+
+Every story follows a deliberate five-part analytical framework:
+
+  1. The Directive    What should the reader do or think right now?
+  2. The Brief        What happened? (Factual, plain English)
+  3. The Undercurrent Why does this matter beneath the surface?
+  4. The Logic        How does Scripture speak to this directly?
+  5. The Outlook      What should we watch for next?
+
+This structure is not a blog template. It is a discipleship tool.
+It trains readers to move from news → understanding → scriptural grounding
+→ wise action. Every story walks that path in the same order, on purpose.
+
+THE NEWSROOM CONCEPT
+--------------------
+The data file is named newsroom.json intentionally. The vision is a
+curated editorial desk — not a feed aggregator, not an RSS reader, not
+an AI-generated summary service.
+
+Every story in newsroom.json is:
+  - Hand-selected for prophetic relevance
+  - Manually written in plain, pastoral English
+  - Tied to a specific KJV passage
+  - Framed through the five-part report structure above
+
+Stories are not just "interesting news." They are chosen because they
+connect to themes that the Bible specifically addresses: wars and rumors
+of wars, economic instability, surveillance and control, deception at
+scale, the collapse of truth in public life.
+
+The categories in use reflect this: Global Conflict, Economic Security,
+Tech Policy, Information Integrity, Background Report.
+
+HOW IT FITS INTO LIGHTLINE
+---------------------------
+LightLine is a full faith-learning ecosystem with multiple content pillars:
+
+  Bible Studies     23+ long-form studies (Studies/)
+  Devotions         19+ devotional pages (Devotions/)
+  Games             20+ interactive Bible games (games/)
+  Videos            Curated video hub (video-updates.html, vod.html)
+  Evidence Desk     Current events + prophetic discernment (THIS SECTION)
+
+The Evidence Desk is the "watching the world" pillar. While studies teach
+doctrine and devotions build inner life, the Evidence Desk trains readers
+to look outward — to see current events through a biblical lens rather
+than a political or media lens.
+
+The Watchman's Ledger sits at the intersection of:
+  - Faith (Scripture-anchored analysis)
+  - Education (structured five-part format that teaches a thinking method)
+  - Current events (real stories, real dates, real stakes)
+
+It is the only section on LightLine that engages directly with the
+outside world. That makes it unique in the platform, and it must be
+handled with care — it can build trust fast or lose it fast depending
+on how it is maintained and labeled.
+
+THE KNOWN TENSION
+-----------------
+The biggest unresolved tension in this section is the gap between the
+concept and the current implementation:
+
+  Concept:  A living, regularly updated watchman's desk that reads
+            the signs of the time with Scripture.
+
+  Reality:  A curated local JSON file with a "LIVE" badge on the ticker
+            that has not been updated since early April 2026.
+
+If the Evidence Desk goes stale, the watchman concept collapses. A
+watchman who stops watching is not a watchman. This is the most urgent
+operational risk for this section, and it must be part of any build
+plan or content review.
+
+
+====================================================================
+IDENTITY & NAMING
+====================================================================
+Public-facing name:   The Evidence Desk
+Internal filename:    watchmans-ledger.html
+Legacy working name:  Watchman's Ledger
+Sub-tagline:          "Recent Stories In Prophetic Time"
+Description:          "Premium publication format. Current events, clear reporting,
+                       and disciplined biblical analysis."
+
+The section appears as a branded editorial publication — not a blog, not a news widget.
+The Watchman's Ledger name is internal/filename-only.
+The user-facing brand is: The Evidence Desk.
+
+
+====================================================================
+CURRENT PLATFORM STATUS
+====================================================================
+The Evidence Desk is LIVE as a standalone page (watchmans-ledger.html)
+but HIDDEN from the main site (index.html). Specifically:
+
+- The ledger-styles.css link in index.html is commented out.
+- The nav links to "Newsroom" and "Headlines" in index.html are commented out.
+- The Watchman's Ledger drawer section in index.html is commented out.
+  (<!-- Watchman's Ledger drawer + script hidden until Evidence Desk is ready -->)
+
+You can navigate to it directly at watchmans-ledger.html. It is fully functional
+but not yet surfaced to visitors from the homepage.
+
+
+====================================================================
+FILE INVENTORY
+====================================================================
+watchmans-ledger.html   Main Evidence Desk listing page
+ledger-post.html        Full individual report/article view
+ledger.js               All JS logic — renders both pages from JSON
+ledger-styles.css       All CSS — shared between listing and full report
+newsroom.json           Content data — curated local JSON, NOT a live feed
+
+
+====================================================================
+PAGE 1: watchmans-ledger.html — The Listing Page
+====================================================================
+
+STRUCTURE:
+- Top nav: LightLine brand (cross icon + "LightLine" text), Home link,
+  "Trending Reports" button
+- Header: badge tag ("The Evidence Desk"), h2 ("Recent Stories In
+  Prophetic Time"), subtitle paragraph
+- News ticker (#wl-news-ticker): animated scrolling horizontal ticker
+  with a hardcoded "LIVE" badge pill. Scrolling text is dynamically
+  generated from story headlines in newsroom.json.
+  NOTE: Despite the LIVE badge, this is NOT a live feed — it is curated
+  static JSON. This is a known UX issue flagged in the repo SWOT.
+- Evidence grid (#evidence-grid): 3-column card layout, top 5 stories
+  rendered dynamically. First card is ed-card-main (wider, spans 2 rows).
+  Remaining 4 are ed-card-small.
+- Footer: copyright, "Source: KJV" note, back-to-main-site link
+- Trending Reports drawer: slides in from the right side. Contains the
+  top 5 story titles + dates as clickable links. Opens from the nav button
+  or any ed-drawer-trigger element. Closes via close button, backdrop
+  click, or Escape key.
+
+
+====================================================================
+PAGE 2: ledger-post.html — The Full Report View
+====================================================================
+
+STRUCTURE:
+- Nav: back arrow → "Back to The Evidence Desk"
+- Main container (#evidence-report): fully JS-rendered on page load
+  from URL param ?id=
+- Article layout:
+    Hero image (full-width, 420px min height, gradient overlay)
+    On hero overlay: category + date kicker, h1 headline,
+    Bible verse quote (Playfair italic), Bible reference
+
+    Body section (max 800px centered):
+      1. The Directive   — short action instruction for the reader
+      2. The Brief       — factual news summary (main body)
+      3. The Undercurrent — deeper "why this matters" analysis
+      4. The Logic       — biblical/prophetic interpretation
+         [YouTube video embed — 16:9 responsive iframe]
+      5. The Outlook     — what to watch for next, forward-looking
+         [Photo gallery grid — up to 4 images, 2-column]
+
+- Footer: copyright, links to Evidence Desk and Main Site
+
+
+====================================================================
+THE DATA MODEL — newsroom.json
+====================================================================
+Each story is a JSON object with these fields:
+
+  id              Slug used as URL identifier (?id=slug)
+  category        Global Conflict | Economic Security | Tech Policy |
+                  Information Integrity | Background Report
+  status          Developing | Active | Escalating | High Alert | Context
+  datePublished   YYYY-MM-DD
+  headline        Story headline
+  deck            1-2 sentence subheadline
+  image           Object: { url, alt }
+  bibleReference  Book Chapter:Verses (e.g. "Matthew 24:6-8")
+  bibleVerse      Full KJV text of the passage
+  directive       Short plain-English action instruction for the reader
+  brief           Main news summary — factual, plain English
+  undercurrent    Why this matters — analytical layer
+  logic           Biblical interpretation — how this connects to prophecy
+  outlook         Forward-looking analysis — what to watch for
+  youtubeId       YouTube video ID string (embedded in full report)
+  gallery         Array of image URLs (up to 4 displayed)
+  readTime        "5 min read" etc (field exists, not yet rendered in UI)
+
+
+====================================================================
+CURRENT STORIES (5 total in newsroom.json as of May 1, 2026)
+====================================================================
+
+1. The Islamabad Ceasefire: A Fragile Horizon
+   Category:  Global Conflict
+   Status:    Developing
+   Date:      April 9, 2026
+   Bible Ref: Matthew 24:6-8
+   Summary:   A 14-day ceasefire paused open fire but armed groups stayed
+              put and war teams stayed ready. A pause, not true peace.
+
+2. Behind the Ceasefire: What Started This
+   Category:  Background Report
+   Status:    Context
+   Date:      April 8, 2026
+   Bible Ref: Ecclesiastes 3:1,8
+   Summary:   Stacked events from 2018 onward — JCPOA exit, tanker events,
+              Soleimani killing, proxy spread, cyber probes — built the
+              pressure that led to the ceasefire. Roots, not just the blast.
+
+3. Shipping Risk and Red Sea Aftershocks
+   Category:  Economic Security
+   Status:    Active
+   Date:      April 7, 2026
+   Bible Ref: James 5:1-4
+   Summary:   Route threats fell from peak panic, but costs, delays, and
+              risk prices still move through fuel, freight, and store shelves.
+
+4. Digital Identity Expansion: Convenience and Control
+   Category:  Tech Policy
+   Status:    Escalating
+   Date:      April 6, 2026
+   Bible Ref: Revelation 13:16-17
+   Summary:   Digital ID moved from test runs to wide public use. Gains are
+              real, but weak guardrails can turn ease into force. Pipelines
+              for buy/sell control are being laid now.
+
+5. Deepfake Wave Ahead of Election Season
+   Category:  Information Integrity
+   Status:    High Alert
+   Date:      April 5, 2026
+   Bible Ref: 2 Thessalonians 2:9-11
+   Summary:   Fake video and audio attacks are getting sharper, faster, and
+              harder to check in real time — raising the risk of mass
+              deception during key political windows.
+
+
+====================================================================
+THE JAVASCRIPT ENGINE — ledger.js
+====================================================================
+Pattern: IIFE, strict mode, vanilla JS — zero external dependencies.
+
+SECURITY:
+- esc() uses DOM textContent assignment for XSS-safe HTML output.
+- safeUrl() validates URLs against https?:// regex.
+- YouTube IDs are encodeURIComponent()-escaped before embedding.
+
+FUNCTIONS:
+
+fetchNewsroom()
+  Async fetches newsroom.json. Returns array or [] on failure.
+
+renderHomepageFeed()
+  Targets #evidence-grid on watchmans-ledger.html.
+  Renders top 5 stories. Card 0 = ed-card-main (large), cards 1-4 = small.
+  Each card: hero image, category kicker, headline, deck, status + date,
+  "Read Full Report" link → ledger-post.html?id=<slug>.
+
+renderTrendingDrawer()
+  Wires open/close events on trigger button, backdrop, close button,
+  Escape key. Renders top 5 story titles + dates in drawer body as
+  clickable links.
+
+renderFullReport()
+  Runs on ledger-post.html. Reads ?id= from URL. Looks up story in array.
+  Renders full article: hero overlay, 5 body sections, video, gallery.
+  Also sets document.title dynamically from story headline.
+
+renderGallery()
+  Renders up to 4 gallery images in 2-column grid.
+  Falls back to a placeholder div if no images.
+
+renderVideo()
+  Renders YouTube iframe (16:9 responsive). Falls back to placeholder
+  div if no youtubeId is present.
+
+All three render functions are called together on DOMContentLoaded.
+
+
+====================================================================
+DESIGN SYSTEM — ledger-styles.css
+====================================================================
+
+COLOR TOKENS:
+  --ed-bg:       #0a0a0a   Page background (near-black)
+  --ed-surface:  #121212   Card backgrounds
+  --ed-border:   #232323   All borders
+  --ed-text:     #f6f6f6   Primary text
+  --ed-muted:    #a8a8a8   Secondary/subdued text
+  --ed-accent:   #00d2ff   Cyan — all highlights, kickers, links, active states
+
+TYPOGRAPHY:
+  Body:         Inter (400/500/600/700)
+  Editorial:    Playfair Display (700/800) — used on card h3s, report h1,
+                report section h3s, Bible verse quotes
+
+LAYOUT:
+  Listing grid:   1.7fr 1fr 1fr (3-col desktop)
+                  → 2-col at 980px
+                  → 1-col at 680px
+  Main card:      Spans 2 rows on desktop
+  Report body:    max-width 800px, centered, 1.78 line-height
+  Report hero:    min 420px tall, full-bleed image, gradient overlay
+
+UI COMPONENTS:
+  News ticker:    Animated translateX scroll, 32s duration, "LIVE" badge
+                  left-anchored, #d4f8ff headline text color
+  Cards:          border-radius 12px, hover lift (translateY -3px) +
+                  cyan border glow transition
+  Drawer:         360px wide, slides from right, z-index 901, dark bg
+  Video wrap:     16:9 aspect-ratio iframe with overflow hidden
+  Gallery:        2-col grid, 180px item height, rounded tiles
+
+
+====================================================================
+CONTENT VOICE
+====================================================================
+- Plain English — short sentences, no jargon
+- Pastoral, scripture-first — every story anchored to a KJV verse
+- Prophetic framing — stories interpreted through an end-times lens
+  (Matthew 24, Revelation 13, 2 Thessalonians 2 are recurring anchors)
+- Serious but accessible — written so any reader can follow, not academic
+- Action-oriented — every story ends with things the reader should
+  watch for or do
+
+
+====================================================================
+KNOWN ISSUES / GAPS
+====================================================================
+1. "LIVE" ticker badge is misleading — content is local curated JSON,
+   not a live feed. Should be labeled "Curated" or similar.
+
+2. Hidden from homepage — fully built but not yet connected to main
+   site navigation. Blocked by commented-out markup in index.html.
+
+3. No pagination — only top 5 stories render. Adding more stories
+   to newsroom.json beyond 5 requires new pagination logic.
+
+4. No filtering — no category filter or search on the listing page.
+
+5. No social share, print, or copy-link on full reports.
+
+6. readTime field is never rendered — exists in JSON data but
+   no UI element displays it on cards or full reports.
+
+
+====================================================================
+END OF BRIEF
+====================================================================

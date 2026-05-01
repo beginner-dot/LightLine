@@ -1,4 +1,4 @@
-﻿/* ═══════════════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════
    Indexstyles.js — LightLine Master JS
    All new JavaScript goes in this file.
    ═══════════════════════════════════════════════════════════ */
@@ -20,9 +20,9 @@ import { getFirestore, doc, setDoc, getDoc, updateDoc, serverTimestamp
 // ----------------------------------------------------------
 const firebaseConfig = {
   apiKey: "AIzaSyAFb6AHyBQZwMOrUtgf_-6WJgbmYA4hS8o",
-  authDomain: "LightLine-1cd23.firebaseapp.com",
-  projectId: "LightLine-1cd23",
-  storageBucket: "LightLine-1cd23.appspot.com",
+  authDomain: "nothingbutthetruth-1cd23.firebaseapp.com",
+  projectId: "nothingbutthetruth-1cd23",
+  storageBucket: "nothingbutthetruth-1cd23.firebasestorage.app",
   messagingSenderId: "253692400115",
   appId: "1:253692400115:web:7eb36acdf69382d28d0286",
   measurementId: "G-LXVCQNJ6VJ"
@@ -659,3 +659,4 @@ ready(() => {
   // ---- Mark loaded ----
   document.documentElement.dataset.indexstylesJs = "loaded";
 });
+

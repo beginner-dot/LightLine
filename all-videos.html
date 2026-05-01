@@ -1,14 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
               <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Videos — Bible Video Library | LightLine</title>
   <!-- social/SEO metadata -->
               <meta property="og:title" content="All Videos — Bible Video Library | LightLine">
               <meta property="og:description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
               <meta property="og:type" content="website">
-              <meta property="og:url" content="https://LightLine.web.app/all-videos.html">
+              <meta property="og:url" content="https://nothingbutthetruth.web.app/all-videos.html">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
@@ -238,6 +240,7 @@
       transform: translateY(-2px);
       background: rgba(255,215,3,0.08);
     }
+
     .featured-aside {
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 14px;
@@ -246,12 +249,11 @@
       backdrop-filter: blur(8px);
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 7px;
     }
     .featured-pill {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
       border-radius: 999px;
       border: 1px solid rgba(255,215,3,0.38);
       padding: 6px 10px;
@@ -279,6 +281,21 @@
       text-transform: uppercase;
       background: rgba(255,215,3,0.07);
       transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .video-study-next {
+      margin: 0 15px 14px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: linear-gradient(120deg, rgba(27,36,72,0.55), rgba(34,82,120,0.35));
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.92);
+    }
+    .video-study-next a {
+      color: #93c5fd;
+      font-weight: 700;
+      text-decoration: underline;
     }
     .featured-cta:hover {
       background: rgba(255,215,3,0.14);
@@ -507,14 +524,14 @@
   </style>
               <meta name="description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
               <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-              <link rel="canonical" href="https://LightLine.web.app/all-videos.html">
-              <meta property="og:image" content="https://LightLine.web.app/seo-default-image.jpg">
+              <link rel="canonical" href="https://nothingbutthetruth.web.app/all-videos.html">
+              <meta property="og:image" content="https://nothingbutthetruth.web.app/seo-default-image.jpg">
               <meta name="twitter:card" content="summary_large_image">
               <meta name="twitter:title" content="All Videos — Bible Video Library | LightLine">
               <meta name="twitter:description" content="All Videos — Watch Bible-based video content on LightLine including studies, devotionals, and practical faith resources.">
-              <meta name="twitter:image" content="https://LightLine.web.app/seo-default-image.jpg">
+              <meta name="twitter:image" content="https://nothingbutthetruth.web.app/seo-default-image.jpg">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"All Videos","description":"Watch Bible-based video content including studies, devotionals, and practical faith resources.","url":"https://LightLine.web.app/all-videos.html","isPartOf":{"@type":"WebSite","name":"LightLine","url":"https://LightLine.web.app"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"All Videos","description":"Watch Bible-based video content including studies, devotionals, and practical faith resources.","url":"https://nothingbutthetruth.web.app/all-videos.html","isPartOf":{"@type":"WebSite","name":"LightLine","url":"https://nothingbutthetruth.web.app"}}
   </script>
             <meta name="keywords" content="Bible study, Christian devotion, Scripture, LightLine, Bible resources, study collection, video library, videos, bible, video, library, LightLine">
             <meta name="author" content="LightLine">
@@ -1077,23 +1094,37 @@ document.querySelectorAll('.folder-header').forEach(h => {
 
 // metadata for dynamic video instantiation & SEO
 const muxVideos = [
-  {id:'ep1', play:'At02BeC1XsfvnzLdph1i7WcMbgljkszxUGYd2tH5018Ow', color:'#0077cc', playEmoji:'▶️', pauseEmoji:'⏹️', title:'1st Commandment - No other Gods', desc:'Explains the meaning of placing God first and avoiding idols.'},
-  {id:'ep2', play:'cCbeBi2BZhcEEe8MNnYvlI4Cwn02w00wk29x31bHj02XE8', color:'#00cc77', playEmoji:'🎬', pauseEmoji:'⏸️', title:'2nd Commandment - No Graven Images', desc:'The prohibition against idols.'},
-  {id:'ep3', play:'tL02o02bj5IM7RSt6hywQmA5rrP0001t3qLBLOyz9wNKIqM', color:'#7c3aed', playEmoji:'🕊️', pauseEmoji:'⏸️', title:"3rd Commandment - Do Not Take God's Name in Vain", desc:'Honoring and protecting the name of God.'},
-  {id:'ep4', play:'fFpSPCm2u01rdH2XhpEjLg7C6CWQVD9kMWHSsuvD8Bgc', color:'#cc7700', playEmoji:'🔥', pauseEmoji:'⏸️', title:'4th Commandment - Remember the Sabbath', desc:'Remember and keep holy the Sabbath day.'},
-  {id:'ep5', play:'3w3PIq4AHnH9MWsNIxY4kX01slQX8LHt02BeCvPXIawyc', color:'#ff9900', playEmoji:'👪', pauseEmoji:'⏸️', title:'5th Commandment - Honor Your Parents', desc:'Family obedience and respect.'},
-  {id:'ep6', play:'ug848kYdAXqfuhzB1sKGdYKkV8EiC9OIHYsMplwObMs', color:'#008800', playEmoji:'🛡️', pauseEmoji:'⏸️', title:'6th Commandment - Do Not Murder', desc:'The sanctity of human life.'},
-  {id:'ep7', play:'KrxyIaJWF8XmqX5xjzkz34aQYo6ECfkgUBvGv9QgnbY', color:'#aa00ff', playEmoji:'💔', pauseEmoji:'⏸️', title:'7th Commandment - No Adultery', desc:'Faithfulness in marriage.'},
-  {id:'ep8', play:'700Jk02F3jkWj9BbhwpUV4cAWWFcikk01sr01LMxCKrAFBo', color:'#ffaa00', playEmoji:'💰', pauseEmoji:'⏸️', title:'8th Commandment - Do Not Steal', desc:"Honesty and respect for others' property."},
-  {id:'ep9', play:'VenN8sry1z2eWrAdoPbgsQlMF029SGK00qBmlnzHbYQPQ', color:'#007700', playEmoji:'🗣️', pauseEmoji:'⏸️', title:'9th Commandment - Do Not Bear False Witness', desc:'The power and penalty of falsehood.'},
-  {id:'ep10', play:'9YK3gk4u1kebsw6p5zzIqFzo1vCYBK7AByMlZqIXbMM', color:'#550055', playEmoji:'🔍', pauseEmoji:'⏸️', title:'10th Commandment - Do Not Covet', desc:"Contentment and trust in God's provision."},
-  {id:'hist1', play:'vyyX1iWsXBo647NDltev45sx5JKMA8Wb8lqIktQ02Yb8', color:'#8b5cf6', playEmoji:'🏛️', pauseEmoji:'⏸️', title:'History and Formation of the Christian Church', desc:'A historical teaching on how the Christian church formed, expanded, and endured through biblical history.'}
+  {id:'ep1', play:'At02BeC1XsfvnzLdph1i7WcMbgljkszxUGYd2tH5018Ow', color:'#0077cc', playEmoji:'▶️', pauseEmoji:'⏹️', title:'1st Commandment - No other Gods', desc:'Explains the meaning of placing God first and avoiding idols.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep2', play:'cCbeBi2BZhcEEe8MNnYvlI4Cwn02w00wk29x31bHj02XE8', color:'#00cc77', playEmoji:'🎬', pauseEmoji:'⏸️', title:'2nd Commandment - No Graven Images', desc:'The prohibition against idols.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep3', play:'tL02o02bj5IM7RSt6hywQmA5rrP0001t3qLBLOyz9wNKIqM', color:'#7c3aed', playEmoji:'🕊️', pauseEmoji:'⏸️', title:"3rd Commandment - Do Not Take God's Name in Vain", desc:'Honoring and protecting the name of God.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep4', play:'fFpSPCm2u01rdH2XhpEjLg7C6CWQVD9kMWHSsuvD8Bgc', color:'#cc7700', playEmoji:'🔥', pauseEmoji:'⏸️', title:'4th Commandment - Remember the Sabbath', desc:'Remember and keep holy the Sabbath day.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep5', play:'3w3PIq4AHnH9MWsNIxY4kX01slQX8LHt02BeCvPXIawyc', color:'#ff9900', playEmoji:'👪', pauseEmoji:'⏸️', title:'5th Commandment - Honor Your Parents', desc:'Family obedience and respect.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep6', play:'ug848kYdAXqfuhzB1sKGdYKkV8EiC9OIHYsMplwObMs', color:'#008800', playEmoji:'🛡️', pauseEmoji:'⏸️', title:'6th Commandment - Do Not Murder', desc:'The sanctity of human life.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep7', play:'KrxyIaJWF8XmqX5xjzkz34aQYo6ECfkgUBvGv9QgnbY', color:'#aa00ff', playEmoji:'💔', pauseEmoji:'⏸️', title:'7th Commandment - No Adultery', desc:'Faithfulness in marriage.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep8', play:'700Jk02F3jkWj9BbhwpUV4cAWWFcikk01sr01LMxCKrAFBo', color:'#ffaa00', playEmoji:'💰', pauseEmoji:'⏸️', title:'8th Commandment - Do Not Steal', desc:"Honesty and respect for others' property.", studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep9', play:'VenN8sry1z2eWrAdoPbgsQlMF029SGK00qBmlnzHbYQPQ', color:'#007700', playEmoji:'🗣️', pauseEmoji:'⏸️', title:'9th Commandment - Do Not Bear False Witness', desc:'The power and penalty of falsehood.', studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'ep10', play:'9YK3gk4u1kebsw6p5zzIqFzo1vCYBK7AByMlZqIXbMM', color:'#550055', playEmoji:'🔍', pauseEmoji:'⏸️', title:'10th Commandment - Do Not Covet', desc:"Contentment and trust in God's provision.", studyUrl:'the-ten-commandments.html', studyTitle:'The Ten Commandments'},
+  {id:'hist1', play:'vyyX1iWsXBo647NDltev45sx5JKMA8Wb8lqIktQ02Yb8', color:'#8b5cf6', playEmoji:'🏛️', pauseEmoji:'⏸️', title:'History and Formation of the Christian Church', desc:'A historical teaching on how the Christian church formed, expanded, and endured through biblical history.', studyUrl:'Studies/history_of_christian_faith.html', studyTitle:'History of the Christian Faith'}
 ];
+
+function injectVideoStudyLink(videoMeta) {
+  if (!videoMeta.studyUrl || !videoMeta.studyTitle) return;
+  const wrapper = document.getElementById(videoMeta.id);
+  if (!wrapper) return;
+  const card = wrapper.closest('.video-card');
+  if (!card || card.querySelector('.video-study-next')) return;
+
+  const box = document.createElement('div');
+  box.className = 'video-study-next';
+  box.innerHTML = `<strong>Next step:</strong> Read the matching study: <a href="${videoMeta.studyUrl}">${videoMeta.studyTitle}</a>`;
+  card.appendChild(box);
+}
 
 muxVideos.forEach(v=>{
   const container = document.getElementById(v.id);
   if (container) {
     createMuxExperience(v.play, v.color, v.playEmoji, v.pauseEmoji, container);
+    injectVideoStudyLink(v);
     // add structured data
     const ld = {
       "@context":"http://schema.org",

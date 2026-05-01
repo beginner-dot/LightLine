@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Here | LightLine</title>
+  <meta name="description" content="Start your LightLine journey with a guided path: Study, Watch, Play, or Build a daily rhythm.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    :root {
+      --bg-a: #0a0c10;
+      --bg-b: #111a2f;
+      --ink: #f6f7fb;
+      --muted: #a9b1c9;
+      --gold: #eab308;
+      --blue: #60a5fa;
+      --line: rgba(255,255,255,0.14);
+      --panel: rgba(255,255,255,0.05);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(96,165,250,0.2), transparent 32%),
+        radial-gradient(circle at 90% 82%, rgba(234,179,8,0.2), transparent 38%),
+        linear-gradient(150deg, var(--bg-a), var(--bg-b));
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      background: rgba(7, 10, 16, 0.46);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .back {
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100vh;
+      padding-top: 72px;
+    }
+
+    .slide-shell {
+      height: calc(100vh - 82px);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .slide-card {
+      width: min(960px, 100%);
+      border: 1px solid var(--line);
+      background: linear-gradient(130deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+    }
+
+    .kicker {
+      display: inline-block;
+      border: 1px solid rgba(234,179,8,0.5);
+      color: #fde68a;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1, h2 {
+      margin: 0 0 10px;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.06;
+    }
+
+    h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.4rem); }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 62ch;
+    }
+
+    .actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: #fff;
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+      border-color: rgba(96,165,250,0.5);
+    }
+
+    .btn-alt {
+      background: var(--panel);
+      border-color: var(--line);
+    }
+
+    .steps {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.03);
+      color: #d6ddf0;
+      font-size: 0.92rem;
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #cbd5e1;
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--gold);
+      opacity: 1;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #f8fafc;
+    }
+
+    @media (max-width: 700px) {
+      .slide-card { padding: 20px; border-radius: 20px; }
+      .actions .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">LightLine Start Here</div>
+    <a href="index.html" class="back">Back Home</a>
+  </header>
+
+  <div class="swiper" aria-label="Start Here journey">
+    <div class="swiper-wrapper">
+      <section class="swiper-slide">
+        <div class="slide-shell">
+          <article class="slide-card">
+            <span class="kicker">Slide 1 of 4</span>
+            <h1>One clear path. No overwhelm.</h1>
+            <p>
+              Pick how you want to learn right now. You can always come back and choose another lane later.
+            </p>
+            <div class="steps">
+              <div class="step">Study lane: deep Bible understanding</div>
+              <div class="step">Watch lane: visual teaching sessions</div>
+              <div class="step">Play lane: interactive Scripture games</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="swiper-slide">
+        <div class="slide-shell">
+          <article class="slide-card">
+            <span class="kicker">Slide 2 of 4</span>
+            <h2>Study First</h2>
+            <p>Best if you want strong doctrine and structure. Start with your studies hub, then move to a matching game for retention.</p>
+            <div class="actions">
+              <a class="btn btn-main" href="all-studies.html">Open Studies</a>
+              <a class="btn btn-alt" href="all-games.html">Then play a matching game</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="swiper-slide">
+        <div class="slide-shell">
+          <article class="slide-card">
+            <span class="kicker">Slide 3 of 4</span>
+            <h2>Watch First</h2>
+            <p>Best if you want guided teaching quickly. Watch one video, then open the related study link shown under the video card.</p>
+            <div class="actions">
+              <a class="btn btn-main" href="all-videos.html">Open Videos</a>
+              <a class="btn btn-alt" href="the-ten-commandments.html">Open Commandments Study</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="swiper-slide">
+        <div class="slide-shell">
+          <article class="slide-card">
+            <span class="kicker">Slide 4 of 4</span>
+            <h2>Play First</h2>
+            <p>Best if you learn by interaction. Play one game, then use the new devotion suggestion card shown on game pages.</p>
+            <div class="actions">
+              <a class="btn btn-main" href="all-games.html">Open Games</a>
+              <a class="btn btn-alt" href="vod.html">Open Devotions</a>
+              <a class="btn btn-alt" href="index.html">Enter Main Site</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      loop: false,
+      speed: 650,
+      spaceBetween: 24,
+      keyboard: { enabled: true },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
+</body>
+</html>

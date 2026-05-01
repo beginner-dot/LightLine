@@ -448,6 +448,59 @@ const NBTT = (() => {
   }
 
   /* ═══════════════════════════════════
+     §14.5  CROSS-LINK: GAME -> DEVOTION
+     ═══════════════════════════════════ */
+  const DEVOTION_BY_GAME = {
+    'ark-builder':       { title: 'Anchor of Hope', url: '/Devotions/anchor_of_hope.html' },
+    'bible-bingo':       { title: 'Called to Shine', url: '/Devotions/called_to_shine.html' },
+    'bible-connections': { title: 'Walking in the Light', url: '/Devotions/walking_in_the_light.html' },
+    'bible-memory-match':{ title: 'The Mustard Seed', url: '/Devotions/the_mustard_seed.html' },
+    'bible-sequence':    { title: 'Do It for God', url: '/Devotions/Do_it_for_God.html' },
+    'bible-taboo':       { title: 'Faith Under Fire', url: '/Devotions/faith_under_fire.html' },
+    'bible-timeline':    { title: 'Church Born in Fire', url: '/Devotions/church_born_in_fire.html' },
+    'bible-word-search': { title: 'Take Up the Cross', url: '/Devotions/Take_up_The_Cross.html' },
+    'fruit-catcher':     { title: 'Love That Saves', url: '/Devotions/love_that_saves.html' },
+    'prophecy-match':    { title: 'Final Invitation', url: '/Devotions/final_invitation.html' },
+    'relay-race':        { title: 'Called to Shine', url: '/Devotions/called_to_shine.html' },
+    'scripture-sprint':  { title: 'Importance of Commandments', url: '/Devotions/importance_and_relevance_of_commandments.html' },
+    'verse-hunt':        { title: 'How the Commandments Connect Us with God', url: '/Devotions/how_the_ten_commandments_connect_us_with_god.html' },
+    'walls-of-jericho':  { title: 'Faith Under Fire', url: '/Devotions/faith_under_fire.html' },
+    'who-said-it':       { title: 'Hannah\'s Devotion', url: '/Devotions/hannahs_devotion.html' },
+  };
+
+  function detectCurrentGameId() {
+    const pathName = (window.location.pathname || '').toLowerCase();
+    for (const [gameId, meta] of Object.entries(GAMES)) {
+      const expected = ('/' + meta.url).toLowerCase();
+      if (pathName.endsWith(expected) || pathName.includes(expected.replace('/index.html', ''))) {
+        return gameId;
+      }
+    }
+    return null;
+  }
+
+  function injectDevotionRecommendation() {
+    if (!document.body || document.querySelector('.nbtt-next-devotion')) return;
+
+    const gameId = detectCurrentGameId();
+    if (!gameId) return;
+
+    const rec = DEVOTION_BY_GAME[gameId];
+    if (!rec) return;
+
+    const block = document.createElement('aside');
+    block.className = 'nbtt-next-devotion';
+    block.innerHTML = `
+      <div class="nbtt-next-devotion-inner">
+        <div class="nbtt-next-devotion-label">After this game</div>
+        <div class="nbtt-next-devotion-title">Read this matching devotion next</div>
+        <a class="nbtt-next-devotion-link" href="${rec.url}">Open: ${rec.title}</a>
+      </div>`;
+
+    document.body.appendChild(block);
+  }
+
+  /* ═══════════════════════════════════
      §14  INJECT GLOBAL STYLES
      ═══════════════════════════════════ */
   function _injectStyles() {
@@ -505,15 +558,71 @@ const NBTT = (() => {
       .nbtt-ach-card-icon { font-size: 2rem; margin-bottom: 6px; }
       .nbtt-ach-card-name { font-size: 0.82rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
       .nbtt-ach-card-desc { font-size: 0.7rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+
+      /* ── Game -> Devotion Recommendation ── */
+      .nbtt-next-devotion {
+        position: fixed;
+        left: 14px;
+        bottom: 14px;
+        z-index: 9999;
+        max-width: 320px;
+      }
+      .nbtt-next-devotion-inner {
+        background: linear-gradient(145deg, rgba(20,20,38,0.95), rgba(24,36,60,0.95));
+        border: 1px solid rgba(99,102,241,0.45);
+        border-radius: 14px;
+        padding: 12px 13px;
+        box-shadow: 0 14px 30px rgba(0,0,0,0.34);
+        font-family: 'Poppins', sans-serif;
+      }
+      .nbtt-next-devotion-label {
+        font-size: 0.68rem;
+        color: rgba(255,255,255,0.65);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 4px;
+      }
+      .nbtt-next-devotion-title {
+        font-size: 0.9rem;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .nbtt-next-devotion-link {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(135deg, #6366f1, #3b82f6);
+        color: #fff;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      @media (max-width: 680px) {
+        .nbtt-next-devotion {
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          max-width: none;
+        }
+        .nbtt-next-devotion-link {
+          width: 100%;
+          text-align: center;
+        }
+      }
     `;
     document.head.appendChild(style);
   }
 
   // Inject styles on load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', _injectStyles);
+    document.addEventListener('DOMContentLoaded', () => {
+      _injectStyles();
+      injectDevotionRecommendation();
+    });
   } else {
     _injectStyles();
+    injectDevotionRecommendation();
   }
 
   /* ═══════════════════════════════════

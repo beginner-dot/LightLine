@@ -1,13 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LightLine">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="60%" stop-color="#1d4ed8"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="60%" stop-color="#0f0f1a"/>
+      <stop offset="100%" stop-color="#111128"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="600" y="285" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">LightLine</text>
-  <text x="600" y="360" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#e2e8f0">Truth documented and delivered for the modern seeker</text>
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1"/>
+  <rect x="80" y="200" width="5" height="230" fill="url(#accent)" rx="3"/>
+  <text x="108" y="290" font-size="72" font-family="Segoe UI Emoji, Apple Color Emoji, sans-serif">📖</text>
+  <text x="108" y="375" font-size="82" font-weight="800" font-family="Segoe UI, Arial, sans-serif" fill="#ffffff" letter-spacing="-2">LightLine</text>
+  <text x="110" y="420" font-size="28" font-family="Segoe UI, Arial, sans-serif" fill="#a1a1c0" letter-spacing="1">Bible Studies · Devotions · Games · Videos</text>
+  <text x="110" y="510" font-size="22" font-family="Segoe UI, Arial, sans-serif" fill="#6366f1">The unfiltered Word of God — free for everyone.</text>
+  <circle cx="1080" cy="180" r="120" fill="#6366f1" fill-opacity="0.06"/>
+  <circle cx="1100" cy="460" r="80" fill="#a78bfa" fill-opacity="0.05"/>
 </svg>

@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "lightline",
   "version": "1.0.0",
   "main": "index.js",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.27",
     "create-hintrc": "^4.0.15",
+    "firebase-admin": "^13.8.0",
     "hint": "^7.1.13",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1"

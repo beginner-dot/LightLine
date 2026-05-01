@@ -192,8 +192,9 @@ function buildRelatedSection(page, related) {
   const homeRel  = relPath(page.file, 'index.html');
   const label    = sectionLabel(section);
 
-  // Cross section labels
-  const crossSection = section === 'study' ? 'devotion' : (section === 'devotion' ? 'study' : 'study');
+  // Journey mapping:
+  // study -> game, devotion -> study, game -> devotion
+  const crossSection = section === 'study' ? 'game' : (section === 'devotion' ? 'study' : 'devotion');
   const crossLabel   = sectionLabel(crossSection);
   const crossIcon    = sectionIcon(crossSection);
 
@@ -233,7 +234,7 @@ function buildRelatedSection(page, related) {
     });
   }
 
-  // Game suggestion
+  // Extra suggestion slot (used for studies and devotions)
   if (related.cross2.length && section !== 'game') {
     related.cross2.forEach(r => {
       const href = relPath(page.file, r.file);
